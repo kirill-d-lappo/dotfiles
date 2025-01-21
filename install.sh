@@ -1,15 +1,16 @@
+#!/bin/bash
 
 tdir="$HOME/.dotfiles/"
+wtree="$HOME"
 
 echo ".dotfiles" >> "$HOME/.gitignore"
 
 git clone --bare "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
 
-alias config='/usr/bin/git --git-dir=$tdir --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir="$tdir" --work-tree=$wtree'
 
-config config --local status.showUntrackedFiles no
-
-config checkout -f
+git --git-dir="$tdir" --work-tree="$wtree" --work-tree config --local status.showUntrackedFiles no
+git --git-dir="$tdir" --work-tree="$wtree" --work-tree checkout -f
 
 echo "Restart you session"
-# echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.bashrc
+

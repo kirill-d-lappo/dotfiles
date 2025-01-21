@@ -240,4 +240,4 @@ esac
 
 export PATH="$PATH:$HOME/go/bin"
 
-alias config='/usr/bin/git --git-dir=/home/klappo/.dotfiles/ --work-tree=/home/klappo'
+alias config="/usr/bin/git --git-dir='$HOME/.dotfiles/' --work-tree='$HOME'"
