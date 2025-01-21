@@ -3,7 +3,7 @@ tdir="$HOME/.dotfiles/"
 
 echo ".dotfiles" >> "$HOME/.gitignore"
 
-git clone --bare https://github.com/kirill-d-lappo/dotfiles.git $tdir
+git clone --bare "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
 
 alias config='/usr/bin/git --git-dir=$tdir --work-tree=$HOME'
 
