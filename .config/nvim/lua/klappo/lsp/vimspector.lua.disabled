@@ -1,0 +1,30 @@
+return {
+	"puremourning/vimspector",
+	config = function()
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("VimspectorInit", {}),
+			callback = function(ev)
+				-- local vms = require("vimspector")
+				local map = vim.keymap.set
+
+				local opts = {
+					buffer = ev.buf,
+					silent = true,
+					desc = "Default DAP Command",
+				}
+
+				opts.desc = "Debug: Toggle breakpoint"
+				map("n", "gdb", ":call vimspector#ToggleBreakpoints()<CR>", opts)
+
+				opts.desc = "Debug: Launch"
+				map("n", "gdd", ":call vimspector#Launch()<CR>", opts)
+
+				opts.desc = "Debug: Continue exectuion"
+				map("n", "<F5>", ":call vimspector#Continue()<CR>", opts)
+
+				opts.desc = "Debug: Step Over"
+				map("n", "<F10>", "<Plug>VimspectorStepOver", opts)
+			end,
+		})
+	end,
+}

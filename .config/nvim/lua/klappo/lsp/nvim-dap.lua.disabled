@@ -1,0 +1,49 @@
+return {
+	"mfussenegger/nvim-dap",
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		local dap = require("dap")
+
+		-- For Windows, set noshellslash might be required in order for netcoredbg to find source references for breakpoints.
+		dap.adapters.coreclr = {
+			type = "executable",
+			command = "/path/to/dotnet/netcoredbg/netcoredbg",
+			args = { "--interpreter=vscode" },
+		}
+
+		dap.configurations.cs = {
+			{
+				type = "coreclr",
+				name = "launch - netcoredbg",
+				request = "launch",
+				program = function()
+					-- Todo [2024-09-30] ну это кал полный, надо интегрировать с telescope и выбором проекта
+					return vim.fn.input("Path to dll", vim.fn.getcwd() .. "/bin/Debug/", "file")
+				end,
+			},
+		}
+
+		vim.api.nvim_create_autocmd("LspAttach", {
+			group = vim.api.nvim_create_augroup("DAPInit", {}),
+			callback = function(ev)
+				local dap = require("dap")
+				local map = vim.keymap.set
+
+				local opts = {
+					buffer = ev.buf,
+					silent = true,
+					desc = "Default DAP Command",
+				}
+
+				opts.desc = "Debug: Toggle breakpoint"
+				map("n", "gdb", dap.toggle_breakpoint, opts)
+
+				opts.desc = "Debug: Continue exectuion"
+				map("n", "<F5>", dap.continue, opts)
+
+				opts.desc = "Debug: Step Over"
+				map("n", "<F10>", dap.step_over, opts)
+			end,
+		})
+	end,
+}
