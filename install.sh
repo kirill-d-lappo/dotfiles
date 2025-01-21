@@ -17,7 +17,7 @@ git --git-dir="$tdir" --work-tree="$wtree" checkout -f
 
 echo "Configuring git ...."
 
-git config --global alias.amend "commit --amend --no-editw"
+git config --global alias.amend "commit --amend --no-edit"
 git config --global alias.lol "log --pretty=format:'%x09%x09 %Cred%h%Creset -%Creset %<(60,trunc)%s%Cgreen%<(13,trunc)(%cr) %C(bold blue)%<(15,trunc)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit --graph"
 
 git config --global core.editor "nvim -n --clean"
@@ -31,7 +31,7 @@ git config --global delta.side-by-side "false"
 git config --global delta.navigate "true"
 git config --global delta.light "false"
 
-git config --global merge.conflictstyle diff3
+git config --global merge.conflictstyle zdiff3
 git config --global diff.colorMoved default
 
 git config --global fetch.prune true
