@@ -1,0 +1,77 @@
+# additional settings for profile
+
+# Add path ot PATH only once
+path_prepend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+export EDITOR=nvim
+
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/bin"
+
+# copy to clipboard
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# use bat as cat
+alias cat=bat
+
+# quick quit
+alias q=exit
+
+# prompt
+eval "$(starship init bash)"
+
+# ls replacement
+alias ls="eza -1 --colour=auto --icons --group-directories-first"
+
+# cd with statistics
+eval "$(zoxide init bash)"
+alias cd=z
+
+# dotfiles config command
+alias config="/usr/bin/git --git-dir='$HOME/.dotfiles/' --work-tree='$HOME'"
+
+# rust lang
+. "$HOME/.cargo/env"
+
+# dotnet telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DOTNET_TELEMETRY_OPTOUT=1
+# dotnet telemetry end
+
+# mssql tools
+path_prepend "/opt/mssql-tools18/bin"
+# mssql tools end
+
+# another stuff
+
+# pnpm
+export PNPM_HOME="/home/klappo/.local/share/pnpm"
+path_prepend "$PNPM_HOME"
+# pnpm end
+
+# node version switcher
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+# node version switcher
+
+# Kerio Vpn restart action
+# Overcomplicated because it does not set valid MAC address on its own
+alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
+# Kerio Vpn
+
+alias fzf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+
+# kubectl plugin manager
+path_prepend "${KREW_ROOT:-$HOME/.krew}/bin"
+
+# kubectl plugins aliases
+alias kubectx="kubectl ctx"
+alias kubens="kubectl ns"
+
+path_prepend "${HOME}/.local/share/powershell/bin/"
+
