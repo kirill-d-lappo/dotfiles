@@ -4,7 +4,7 @@
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 echo ".dotfiles" >> .gitignore
 
-git clone --bare git@github.com:kirill-d-lappo/dotfiles.git $HOME/.dotfiles/
+git clone --bare https://github.com/kirill-d-lappo/dotfiles.git $HOME/.dotfiles/
 
 config config --local status.showUntrackedFiles no
 
