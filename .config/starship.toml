@@ -1,0 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# [custom.wttr-in]
+# description = "Weather info by wttr.in"
+# command = "curl wttr.in/?format=3"
+# shell = "/bin/sh"
+# when = "true"
+# symbol = '🌡️ ' 
+#
+# [fill]
+# symbol = ' '
