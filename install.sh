@@ -1,4 +1,5 @@
-tdir = "$HOME/.dotfiles/"
+
+tdir="$HOME/.dotfiles/"
 
 echo ".dotfiles" >> "$HOME/.gitignore"
 
