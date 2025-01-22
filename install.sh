@@ -19,6 +19,7 @@ git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout init                 
 git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout set ""                  # clears all sparse rules
 git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "/**"               # include everything in the repo
 git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!install.sh"       # exclude install script
+git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!init.sh"          # exclude install script
 git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!README.md"        # exclude readme
 
 # fill in working tree (ie home directory), overwrite via -f [!!!!!!!!!]
