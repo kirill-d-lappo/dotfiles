@@ -11,14 +11,23 @@
 curl -Ss https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/install.sh | bash
 ```
 
-## Usage
+## Post-installation
 
 Add `config` command to `.bashrc`
 
 ```bash
 # keep quotes this way so it could work for any user name
-alias config="/usr/bin/git --git-dir='$HOME/.dotfiles/' --work-tree='$HOME'"
+alias config="/usr/bin/git --git-dir='$HOME/.dotfiles.git/' --work-tree='$HOME'"
 ```
+
+## Usage
+
+`config` is just a `git`, but for your home folder
+
+| Command                         | Description                                  |
+|---------------------------------|----------------------------------------------|
+| `config pull`                   | overwrire everthing with updates from remote |
+| `config add -f .config/nvim/**` | add `nvim` config folder to `dotfiles`       |
 
 ## Sources
 
