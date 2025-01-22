@@ -33,7 +33,7 @@ eval "$(zoxide init bash)"
 alias cd=z
 
 # dotfiles config command
-alias config="/usr/bin/git --git-dir='$HOME/.dotfiles/' --work-tree='$HOME'"
+alias config="/usr/bin/git --git-dir='$HOME/.dotfiles.git/' --work-tree='$HOME'"
 
 # rust lang
 . "$HOME/.cargo/env"
@@ -74,4 +74,3 @@ alias kubectx="kubectl ctx"
 alias kubens="kubectl ns"
 
 path_prepend "${HOME}/.local/share/powershell/bin/"
-
