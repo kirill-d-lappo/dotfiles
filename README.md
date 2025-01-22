@@ -20,7 +20,6 @@ Add `config` command to `.bashrc`
 alias config="/usr/bin/git --git-dir='$HOME/.dotfiles/' --work-tree='$HOME'"
 ```
 
-## Sources 
+## Sources
 
 * ["Dotfiles: Best way to store in a bare git repository" by Atlassian](https://www.atlassian.com/git/tutorials/dotfiles)
-

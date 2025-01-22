@@ -1,19 +1,27 @@
 #!/bin/bash
 
-tdir="$HOME/.dotfiles/"
-wtree="$HOME"
+tdir="$HOME/workspace/learn/git/dotfiles-git"
+wtree="$HOME/workspace/learn/git/dotfiles-wt"
+
+# fixme remove delete
+rm -rf $tdir
+rm -rf $wtree
 
 echo "Installing dotfiles...."
 
-echo ".dotfiles" >> "$HOME/.gitignore"
+# echo ".dotfiles" >>"$HOME/.gitignore"
 
-git clone --bare "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
+git clone --bare -b "feature/experiments" "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
 
-alias config='/usr/bin/git --git-dir="$tdir" --work-tree=$wtree'
+# alias config='/usr/bin/git --git-dir="$tdir" --work-tree=$wtree'
 
 git --git-dir="$tdir" --work-tree="$wtree" config --local status.showUntrackedFiles no
 git --git-dir="$tdir" --work-tree="$wtree" checkout -f
 
+git --git-dir="$tdir" --work-tree="$wtree" config --local core.sparseCheckout true
+git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout set home/
+
+return
 
 echo "Configuring git ...."
 
@@ -22,7 +30,7 @@ git config --global alias.lol "log --pretty=format:'%x09%x09 %Cred%h%Creset -%Cr
 
 git config --global core.editor "nvim -n --clean"
 
-git config --global core.pager  "delta"
+git config --global core.pager "delta"
 git config --global interactive.diffFilter "delta --color-only"
 
 git config --global delta.syntax-theme "Dracula"
@@ -40,5 +48,6 @@ git config --global fetch.pruneTags true
 git config --global push.autoSetupRemote true
 git config --global init.defaultBranch main
 
-
 echo "Restart you session"
+
+# alias config="/usr/bin/git --git-dir='$HOME/.dotfiles/' --work-tree='$HOME'"
