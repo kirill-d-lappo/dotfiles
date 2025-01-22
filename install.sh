@@ -1,5 +1,13 @@
 #!/bin/bash
 
+git --version 2>&1 >/dev/null
+GIT_IS_AVAILABLE=$?
+
+if [ $GIT_IS_AVAILABLE -ne 0 ]; then
+    echo -e "Git is required"
+    exit 1
+fi
+
 tdir="$HOME/.dotfiles.git"
 wtree="$HOME"
 
