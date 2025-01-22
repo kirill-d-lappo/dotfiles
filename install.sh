@@ -6,7 +6,7 @@ wtree="$HOME"
 echo "Installing dotfiles...."
 
 # clone git dir only
-git clone --bare -b "feature/experiments" "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
+git clone --bare "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
 
 # now need to configure git dir
 
