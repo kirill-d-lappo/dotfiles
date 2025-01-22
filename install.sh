@@ -7,6 +7,8 @@ wtree="$HOME/workspace/learn/git/dotfiles-wt"
 rm -rf $tdir
 rm -rf $wtree
 
+mkdir -p $wtree
+
 echo "Installing dotfiles...."
 
 # echo ".dotfiles" >>"$HOME/.gitignore"
@@ -19,9 +21,10 @@ git --git-dir="$tdir" --work-tree="$wtree" config --local status.showUntrackedFi
 git --git-dir="$tdir" --work-tree="$wtree" checkout -f
 
 git --git-dir="$tdir" --work-tree="$wtree" config --local core.sparseCheckout true
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout set home/
+git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout set "!install.sh"
+git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout set "!README.md"
 
-return
+exit
 
 echo "Configuring git ...."
 
