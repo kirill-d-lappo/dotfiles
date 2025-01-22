@@ -7,8 +7,31 @@
 
 ## Installation
 
+### Install Existing Dotfiles
+
 ```bash
 curl -Ss https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/install.sh | bash
+```
+
+### Init New Dotfiles
+
+Use to set up dotfiles
+
+```bash
+# Init dotfiles folder
+curl -Ss https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/init.sh | bash
+
+# restart session
+
+# Create remote repo on your favourate git hoster
+# git url for example: git@github.com:kirill-d-lappo/dotfiles.git
+
+config remote add origin git@github.com:kirill-d-lappo/dotfiles.git
+config branch -u origin/main main
+
+# use it
+
+
 ```
 
 ## Post-installation
@@ -26,7 +49,7 @@ alias config="/usr/bin/git --git-dir='$HOME/.dotfiles.git/' --work-tree='$HOME'"
 
 | Command                         | Description                                  |
 |---------------------------------|----------------------------------------------|
-| `config checkout -f`            | overwrire everthing with updates from remote |
+| `config pull`            | overwrire everthing with updates from remote |
 | `config add -f .config/nvim/**` | add `nvim` config folder to `dotfiles`       |
 
 ## Sources

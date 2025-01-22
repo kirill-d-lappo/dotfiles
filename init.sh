@@ -17,7 +17,7 @@ git init --bare $tdir
 
 git --git-dir="$tdir" --work-tree="$wtree" config --local status.showUntrackedFiles no
 
-echo "alias config=\"/usr/bin/git --git-dir='\$HOME/.dotfiles.git' --work-tree='\$HOME'\" " >>$HOME/.bashrc_temp
+echo "alias config=\"/usr/bin/git --git-dir='\$HOME/.dotfiles.git' --work-tree='\$HOME'\" " >>$HOME/.bashrc
 
 echo "dotfiles were initialized."
 echo
