@@ -49,7 +49,7 @@ alias config="/usr/bin/git --git-dir='$HOME/.dotfiles.git/' --work-tree='$HOME'"
 
 | Command                         | Description                                  |
 |---------------------------------|----------------------------------------------|
-| `config pull`            | overwrire everthing with updates from remote |
+| `config pull`                   | overwrire everthing with updates from remote |
 | `config add -f .config/nvim/**` | add `nvim` config folder to `dotfiles`       |
 
 ## Sources
