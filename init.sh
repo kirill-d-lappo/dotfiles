@@ -2,8 +2,8 @@
 
 # Inits dotfiles config in home directory
 
-tdir="$HOME/.dotfiles.temp.git"
-wtree="$HOME/.dotfiles.temp.wt"
+tdir="$HOME/.dotfiles.git"
+wtree="$HOME"
 
 git init --bare $tdir
 
