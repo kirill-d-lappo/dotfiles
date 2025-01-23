@@ -17,12 +17,13 @@ return {
 		dashboard.section.header.val = get_logo()
 
 		-- Set menu
+		-- Ctrl+V, then u, then hex code for icons
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
-			dashboard.button("F3", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
+			dashboard.button("F3", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
 			dashboard.button("SPC ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
-			dashboard.button("SPC fs", "  > Find String", "<cmd>Telescope live_grep<CR>"),
-			dashboard.button("SPC wr", "󰁯  > Work Restore", "<cmd>SessionRestore<CR>"),
+			dashboard.button("SPC fs", "󰺯  > Find String", "<cmd>Telescope live_grep<CR>"),
+			dashboard.button("SPC wr", "  > Work Restore", "<cmd>SessionRestore<CR>"),
 			dashboard.button("SPC fcl", "  > Try Color Theme", "<cmd>Telescope colorscheme<CR>"),
 			dashboard.button("q", "  > Quit", "<cmd>qa<CR>"),
 		}
