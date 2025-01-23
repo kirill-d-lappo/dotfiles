@@ -61,7 +61,7 @@ export NVS_HOME="$HOME/.nvs"
 
 # Kerio Vpn restart action
 # Overcomplicated because it does not set valid MAC address on its own
-alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
+alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
 # Kerio Vpn
 
 alias fzf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
