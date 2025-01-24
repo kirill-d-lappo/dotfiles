@@ -10,7 +10,7 @@
 ### Install Existing Dotfiles
 
 ```bash
-curl -Ss https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/install.sh | bash
+curl -LSsf https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/install.sh | bash
 ```
 
 ### Init New Dotfiles
@@ -19,7 +19,7 @@ Use to set up dotfiles
 
 ```bash
 # Init dotfiles folder
-curl -Ss https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/init.sh | bash
+curl -LSsf https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/init.sh | bash
 
 # restart session
 
