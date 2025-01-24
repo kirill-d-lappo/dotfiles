@@ -12,6 +12,5 @@ startup_mode = "Windowed"
 save_to_clipboard = true
 
 [font]
-builtin_box_drawing = false
-normal = { family = "FiraCode Nerd Font Mono" }
+builtin_box_drawing = true
 size = 11
