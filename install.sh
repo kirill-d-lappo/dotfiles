@@ -34,7 +34,7 @@ git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!README.md"     
 git --git-dir="$tdir" --work-tree="$wtree" checkout -f
 
 # configure remote for pushing changes
-git --git-dir="$tdir" --work-tree="$wtree" set-url origin https://github.com/kirill-d-lappo/dotfiles.git
+git --git-dir="$tdir" --work-tree="$wtree" remote set-url origin https://github.com/kirill-d-lappo/dotfiles.git
 
 # now general git configuration on a clean system, still doesn't break much on existing one
 echo "Configuring git ...."
