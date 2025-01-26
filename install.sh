@@ -33,7 +33,8 @@ git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!README.md"     
 # fill in working tree (ie home directory), overwrite via -f [!!!!!!!!!]
 git --git-dir="$tdir" --work-tree="$wtree" checkout -f
 
-# configure remote for pushing changes, setups fetch patterns
+# configure remote for puling changes, setups fetch patterns
+# so `config pull` action works
 git --git-dir="$tdir" --work-tree="$wtree" remote remove origin
 git --git-dir="$tdir" --work-tree="$wtree" remote add origin https://github.com/kirill-d-lappo/dotfiles.git
 git --git-dir="$tdir" --work-tree="$wtree" fetch
