@@ -33,8 +33,12 @@ git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!README.md"     
 # fill in working tree (ie home directory), overwrite via -f [!!!!!!!!!]
 git --git-dir="$tdir" --work-tree="$wtree" checkout -f
 
-# configure remote for pushing changes
-git --git-dir="$tdir" --work-tree="$wtree" remote set-url origin https://github.com/kirill-d-lappo/dotfiles.git
+# configure remote for pushing changes, setups fetch patterns
+git --git-dir="$tdir" --work-tree="$wtree" remote remove origin
+git --git-dir="$tdir" --work-tree="$wtree" remote add origin https://github.com/kirill-d-lappo/dotfiles.git
+git --git-dir="$tdir" --work-tree="$wtree" fetch
+git --git-dir="$tdir" --work-tree="$wtree" branch -u origin/main main
+git --git-dir="$tdir" --work-tree="$wtree" pull
 
 # now general git configuration on a clean system, still doesn't break much on existing one
 echo "Configuring git ...."
