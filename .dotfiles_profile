@@ -64,7 +64,7 @@ export NVS_HOME="$HOME/.nvs"
 alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
 # Kerio Vpn
 
-alias fzf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias fzf="fzf --preview='bat --color=always --style=numbers --line-range=:500 {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
 # kubectl plugin manager
 path_prepend "${KREW_ROOT:-$HOME/.krew}/bin"
