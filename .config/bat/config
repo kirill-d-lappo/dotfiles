@@ -1,0 +1,2 @@
+# Custom profile settings from dotfiles repo
+--map-syntax "*.dotfiles_profile:Bourne Again Shell (bash)"
