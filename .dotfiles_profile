@@ -6,6 +6,12 @@
 # Add path ot PATH only once
 path_prepend() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="$1:${PATH+"$PATH"}"
+    fi
+}
+
+path_append() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="${PATH:+"$PATH:"}$1"
     fi
 }
@@ -74,3 +80,7 @@ alias kubectx="kubectl ctx"
 alias kubens="kubectl ns"
 
 path_prepend "${HOME}/.local/share/powershell/bin/"
+
+# jetbrains tools cli
+path_prepend "${HOME}/.local/share/JetBrains/Toolbox/scripts/"
+
