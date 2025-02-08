@@ -1,19 +1,22 @@
 # additional settings for profile
 
 # rust lang
-. "$HOME/.cargo/env"
+rust_env="$HOME/.cargo/env"
+if [ -f "$rust_env" ]; then
+	. "$rust_env"
+fi
 
 # Add path ot PATH only once
 path_prepend() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="$1:${PATH+"$PATH"}"
-    fi
+	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+		PATH="$1${PATH:+":$PATH"}"
+	fi
 }
 
 path_append() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
-    fi
+	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+		PATH="${PATH:+"$PATH:"}$1"
+	fi
 }
 
 export EDITOR=nvim
@@ -26,20 +29,28 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # use bat as cat
-alias cat=bat
+if command -v bat &>/dev/null; then
+	alias cat=bat
+fi
 
 # quick quit
 alias q=exit
 
 # prompt
-eval "$(starship init bash)"
+if command -v starship &>/dev/null; then
+	eval "$(starship init bash)"
+fi
 
 # ls replacement
-alias ls="eza -1 --colour=auto --icons --group-directories-first"
+if command -v eza &>/dev/null; then
+	alias ls="eza -1 --colour=auto --icons --group-directories-first"
+fi
 
 # cd with statistics
-eval "$(zoxide init bash)"
-alias cd=z
+if command -v zoxide &>/dev/null; then
+	eval "$(zoxide init bash)"
+	alias cd=z
+fi
 
 # dotfiles config command
 alias config="/usr/bin/git --git-dir='$HOME/.dotfiles.git/' --work-tree='$HOME'"
@@ -50,19 +61,20 @@ export DOTNET_TELEMETRY_OPTOUT=1
 # dotnet telemetry end
 
 # mssql tools
-path_prepend "/opt/mssql-tools18/bin"
+path_append "/opt/mssql-tools18/bin"
 # mssql tools end
 
 # another stuff
 
 # pnpm
 export PNPM_HOME="/home/klappo/.local/share/pnpm"
-path_prepend "$PNPM_HOME"
+path_append "$PNPM_HOME"
 # pnpm end
 
 # node version switcher
 export NVS_HOME="$HOME/.nvs"
-[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+nvs_env="$NVS_HOME/nvs.sh"
+[ -s "$nvs_env" ] && . "$nvs_env"
 # node version switcher
 
 # Kerio Vpn restart action
@@ -70,7 +82,15 @@ export NVS_HOME="$HOME/.nvs"
 alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
 # Kerio Vpn
 
-alias fzf="fzf --preview='bat --color=always --style=numbers --line-range=:500 {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+if command -v fzf &>/dev/null; then
+	fzf_alias="fzf --bind shift-up:preview-page-up,shift-down:preview-page-down"
+
+	if command -v bat &>/dev/null; then
+		fzf_alias="$fzf_alias --preview='bat --color=always --style=numbers --line-range=:500 {}'"
+	fi
+
+	alias fzf="$fzf_alias"
+fi
 
 # kubectl plugin manager
 path_prepend "${KREW_ROOT:-$HOME/.krew}/bin"
@@ -79,8 +99,7 @@ path_prepend "${KREW_ROOT:-$HOME/.krew}/bin"
 alias kubectx="kubectl ctx"
 alias kubens="kubectl ns"
 
-path_prepend "${HOME}/.local/share/powershell/bin/"
+path_append "${HOME}/.local/share/powershell/bin/"
 
 # jetbrains tools cli
-path_prepend "${HOME}/.local/share/JetBrains/Toolbox/scripts/"
-
+path_append "${HOME}/.local/share/JetBrains/Toolbox/scripts/"
