@@ -4,8 +4,8 @@ git --version 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
 
 if [ $GIT_IS_AVAILABLE -ne 0 ]; then
-    echo -e "Git is required"
-    exit 1
+	echo -e "Git is required"
+	exit 1
 fi
 
 tdir="$HOME/.dotfiles.git"
@@ -44,6 +44,15 @@ git --git-dir="$tdir" --work-tree="$wtree" pull
 
 # now general git configuration on a clean system, still doesn't break much on existing one
 echo "Configuring git ...."
+
+# setup name and email only when setup from scratch
+if [[ "$(git config --global user.name)" == "" ]]; then
+	git config --global user.name "Kirill Lappo"
+fi
+
+if [[ "$(git config --global user.email)" == "" ]]; then
+	git config --global user.email "kirill-lappo@outlook.com"
+fi
 
 # "git amend": so you can meld working changes into latest commit (any other commit as well, but usually latest)
 # "git amend -a": add everything to the latest commit, who cares
