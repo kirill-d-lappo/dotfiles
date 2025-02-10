@@ -1,5 +1,9 @@
 # additional settings for profile
 
+# detects name of current shell
+# $self option is for fish they say
+export DOTFILES_SHELL=$($(which ps) -p $$ -o 'comm=' || $(which ps) -p $self -o 'comm=' | tr '[:upper:]' '[:lower:]')
+
 # rust lang
 rust_env="$HOME/.cargo/env"
 if [ -f "$rust_env" ]; then
@@ -38,7 +42,7 @@ alias q=exit
 
 # prompt
 if command -v starship &>/dev/null; then
-	eval "$(starship init bash)"
+	eval "$(starship init "$DOTFILES_SHELL")"
 fi
 
 # ls replacement
@@ -48,7 +52,7 @@ fi
 
 # cd with statistics
 if command -v zoxide &>/dev/null; then
-	eval "$(zoxide init bash)"
+	eval "$(zoxide init "$DOTFILES_SHELL")"
 	alias cd=z
 fi
 
