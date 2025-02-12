@@ -47,6 +47,7 @@ return {
 				"pylint", -- python linter
 				"eslint_d", -- js linter
 				"shfmt",
+				"yamlfmt", -- yaml formatter by google
 			},
 		})
 	end,
