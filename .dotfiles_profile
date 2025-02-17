@@ -2,7 +2,7 @@
 
 # detects name of current shell
 # $self option is for fish they say
-export DOTFILES_SHELL=$($(which ps) -p $$ -o 'comm=' || $(which ps) -p $self -o 'comm=' | tr '[:upper:]' '[:lower:]')
+export DOTFILES_SHELL_NAME=$($(which ps) -p $$ -o 'comm=' || $(which ps) -p $self -o 'comm=' | tr '[:upper:]' '[:lower:]')
 
 # rust lang
 rust_env="$HOME/.cargo/env"
@@ -10,13 +10,14 @@ if [ -f "$rust_env" ]; then
 	. "$rust_env"
 fi
 
-# Add path ot PATH only once
+### One-time add path to PATH to the beginning
 path_prepend() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="$1${PATH:+":$PATH"}"
 	fi
 }
 
+### One-time add path to PATH to the end
 path_append() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="${PATH:+"$PATH:"}$1"
@@ -42,7 +43,13 @@ alias q=exit
 
 # prompt
 if command -v starship &>/dev/null; then
-	eval "$(starship init "$DOTFILES_SHELL")"
+	# need to check shell support first, because starship may write error message at start up
+	# for ex., while loading in lightdm session
+	# the list of supported shells as of 2025-02-17
+  supported_shells=("bash" "elvish" "fish" "ion" "powershell" "tcsh" "zsh" "nu" "xonsh" "cmd")
+	if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
+	  eval "$(starship init "$DOTFILES_SHELL_NAME")"
+	fi
 fi
 
 # ls replacement
@@ -52,8 +59,12 @@ fi
 
 # cd with statistics
 if command -v zoxide &>/dev/null; then
-	eval "$(zoxide init "$DOTFILES_SHELL")"
-	alias cd=z
+	# supported_shells : same as for starship
+  supported_shells=("bash" "elvish" "fish" "ion" "powershell" "tcsh" "zsh" "nu" "xonsh" "cmd")
+	if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
+	  eval "$(zoxide init "$DOTFILES_SHELL_NAME")"
+	  alias cd=z
+	fi
 fi
 
 # dotfiles config command
@@ -76,12 +87,15 @@ path_append "$PNPM_HOME"
 # pnpm end
 
 # node version switcher
-export NVS_HOME="$HOME/.nvs"
+NVS_HOME="$HOME/.nvs"
 nvs_env="$NVS_HOME/nvs.sh"
-[ -s "$nvs_env" ] && . "$nvs_env"
+if [[ -s "$nvs_env" ]]; then
+	export NVS_HOME
+	. "$nvs_env"
+fi
 # node version switcher
 
-# Kerio Vpn restart action
+# Kerio Vpn start/restart action
 # Overcomplicated because it does not set valid MAC address on its own
 alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
 # Kerio Vpn
