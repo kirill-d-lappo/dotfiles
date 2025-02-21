@@ -7,21 +7,26 @@ export DOTFILES_SHELL_NAME=$($(which ps) -p $$ -o 'comm=' || $(which ps) -p $sel
 # rust lang
 rust_env="$HOME/.cargo/env"
 if [ -f "$rust_env" ]; then
-	. "$rust_env"
+  . "$rust_env"
 fi
 
 ### One-time add path to PATH to the beginning
 path_prepend() {
-	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-		PATH="$1${PATH:+":$PATH"}"
-	fi
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="$1${PATH:+":$PATH"}"
+  fi
 }
 
 ### One-time add path to PATH to the end
 path_append() {
-	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-		PATH="${PATH:+"$PATH:"}$1"
-	fi
+  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
+
+### Detects if command is available
+has_command() {
+  command -v "$1" &>/dev/null
 }
 
 export EDITOR=nvim
@@ -29,42 +34,45 @@ export EDITOR=nvim
 path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/bin"
 
+# Go installed tools
+path_prepend "$HOME/go/bin"
+
 # copy to clipboard
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 # use bat as cat
-if command -v bat &>/dev/null; then
-	alias cat=bat
+if has_command bat; then
+  alias cat=bat
 fi
 
 # quick quit
 alias q=exit
 
 # prompt
-if command -v starship &>/dev/null; then
-	# need to check shell support first, because starship may write error message at start up
-	# for ex., while loading in lightdm session
-	# the list of supported shells as of 2025-02-17
+if has_command starship; then
+  # need to check shell support first, because starship may write error message at start up
+  # for ex., while loading in lightdm session
+  # the list of supported shells as of 2025-02-17
   supported_shells=("bash" "elvish" "fish" "ion" "powershell" "tcsh" "zsh" "nu" "xonsh" "cmd")
-	if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
-	  eval "$(starship init "$DOTFILES_SHELL_NAME")"
-	fi
+  if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
+    eval "$(starship init "$DOTFILES_SHELL_NAME")"
+  fi
 fi
 
 # ls replacement
-if command -v eza &>/dev/null; then
-	alias ls="eza -1 --colour=auto --icons --group-directories-first"
+if has_command eza; then
+  alias ls="eza -1 --colour=auto --icons --group-directories-first"
 fi
 
 # cd with statistics
-if command -v zoxide &>/dev/null; then
-	# supported_shells : same as for starship
+if has_command zoxide; then
+  # supported_shells : same as for starship
   supported_shells=("bash" "elvish" "fish" "ion" "powershell" "tcsh" "zsh" "nu" "xonsh" "cmd")
-	if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
-	  eval "$(zoxide init "$DOTFILES_SHELL_NAME")"
-	  alias cd=z
-	fi
+  if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
+    eval "$(zoxide init "$DOTFILES_SHELL_NAME")"
+    alias cd=z
+  fi
 fi
 
 # dotfiles config command
@@ -90,8 +98,8 @@ path_append "$PNPM_HOME"
 NVS_HOME="$HOME/.nvs"
 nvs_env="$NVS_HOME/nvs.sh"
 if [[ -s "$nvs_env" ]]; then
-	export NVS_HOME
-	. "$nvs_env"
+  export NVS_HOME
+  . "$nvs_env"
 fi
 # node version switcher
 
@@ -100,14 +108,14 @@ fi
 alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
 # Kerio Vpn
 
-if command -v fzf &>/dev/null; then
-	fzf_alias="fzf --bind shift-up:preview-page-up,shift-down:preview-page-down"
+if has_command fzf; then
+  fzf_alias="fzf --bind shift-up:preview-page-up,shift-down:preview-page-down"
 
-	if command -v bat &>/dev/null; then
-		fzf_alias="$fzf_alias --preview='bat --color=always --style=numbers --line-range=:500 {}'"
-	fi
+  if has_command bat; then
+    fzf_alias="$fzf_alias --preview='bat --color=always --style=numbers --line-range=:500 {}'"
+  fi
 
-	alias fzf="$fzf_alias"
+  alias fzf="$fzf_alias"
 fi
 
 # kubectl plugin manager
