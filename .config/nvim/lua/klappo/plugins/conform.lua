@@ -19,7 +19,17 @@ return {
 				graphql = { "prettier" },
 				liquid = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "isort", "black", stop_after_first = true },
+				bash = { "shfmt", "beautysh", stop_after_first = true },
+				sh = { "shfmt", "beautysh", stop_after_first = true },
+				shell = { "shfmt", "beautysh", stop_after_first = true },
+			},
+			formatters = {
+				shfmt = {
+					prepend_args = function(self, ctx)
+						return { "-i", "2", "-ci", "-bn" }
+					end,
+				},
 			},
 			format_on_save = {
 				lsp_fallback = true,

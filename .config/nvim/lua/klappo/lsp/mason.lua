@@ -46,7 +46,7 @@ return {
 				"black", -- python formatter
 				"pylint", -- python linter
 				"eslint_d", -- js linter
-				"shfmt",
+				-- "shfmt",
 				"yamlfmt", -- yaml formatter by google
 			},
 		})
