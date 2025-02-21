@@ -74,6 +74,7 @@ git config --global delta.line-numbers "true"
 git config --global delta.side-by-side "false"
 git config --global delta.navigate "true"
 git config --global delta.light "false"
+git config --global delta.tabs 2
 
 git config --global merge.conflictstyle zdiff3
 git config --global diff.colorMoved default
