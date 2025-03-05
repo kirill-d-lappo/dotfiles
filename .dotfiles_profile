@@ -58,6 +58,8 @@ if has_command starship; then
   if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
     eval "$(starship init "$DOTFILES_SHELL_NAME")"
   fi
+
+  unset supported_shells
 fi
 
 # ls replacement
@@ -73,6 +75,8 @@ if has_command zoxide; then
     eval "$(zoxide init "$DOTFILES_SHELL_NAME")"
     alias cd=z
   fi
+
+  unset supported_shells
 fi
 
 # dotfiles config command
@@ -117,13 +121,13 @@ if has_command fzf; then
 
   alias fzf="$fzf_alias"
 
-	# requires fd tool installed, find replacement
-	# fd respects .gitignore
-	# so fd will provide a list of files in directory to fzf
-	if has_command fd; then
-		export FZF_DEFAULT_COMMAND='fd --type file'
+  # requires fd tool installed, find replacement
+  # fd respects .gitignore
+  # so fd will provide a list of files in directory to fzf
+  if has_command fd; then
+    export FZF_DEFAULT_COMMAND='fd --type file'
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-	fi
+  fi
 fi
 
 # kubectl plugin manager

@@ -21,6 +21,10 @@ print_usage() {
   echo "  -h:  Print help"
 }
 
+has_command() {
+  command -v "$1" &>/dev/null 2>&1
+}
+
 while getopts "fh" opt; do
   case $opt in
   f) FORCE_INSTALL=1 ;;
@@ -127,4 +131,24 @@ git config --global push.autoSetupRemote true
 # default branch, PC my ass
 git config --global init.defaultBranch main
 
+# install cargo tools
+
+cargo_tools=("bat" "zoxide" "starship" "eza" "fd-find" "alacritty")
+if has_command cargo; then
+  echo "Installing helper tools using cargo"
+
+  cargo install ${cargo_tools[*]}
+else
+  echo "Cargo was not found, install rust sdk first, then execute command:"
+  echo ""
+  echo "cargo install ${cargo_tools[*]}"
+fi
+
+unset cargo_tools
+
+unset DOT_DIR
+unset WORKING_TREE
+unset FORCE_INSTALL
+
+echo ""
 echo "Done. Restart you session."
