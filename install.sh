@@ -38,7 +38,7 @@ done
 echo "Installing dotfiles...."
 
 if [[ -d "$DOT_DIR" ]]; then
-  if [[ "$FORCE" -eq "1" ]]; then
+  if [[ "$FORCE_INSTALL" -eq "1" ]]; then
     echo "Cleaning up existing dotfiles..."
     rm -rf "$DOT_DIR"
   else
