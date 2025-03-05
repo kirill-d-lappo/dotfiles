@@ -116,6 +116,14 @@ if has_command fzf; then
   fi
 
   alias fzf="$fzf_alias"
+
+	# requires fd tool installed, find replacement
+	# fd respects .gitignore
+	# so fd will provide a list of files in directory to fzf
+	if has_command fd; then
+		export FZF_DEFAULT_COMMAND='fd --type file'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+	fi
 fi
 
 # kubectl plugin manager
