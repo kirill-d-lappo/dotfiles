@@ -1,57 +1,95 @@
 #!/bin/bash
 
+set -e
+
 git --version 2>&1 >/dev/null
 GIT_IS_AVAILABLE=$?
 
 if [ $GIT_IS_AVAILABLE -ne 0 ]; then
-	echo -e "Git is required"
-	exit 1
+  echo -e "Git is required"
+  exit 1
 fi
 
-tdir="$HOME/.dotfiles.git"
-wtree="$HOME"
+DOT_DIR="$HOME/.dotfiles.git"
+WORKING_TREE="$HOME"
+
+FORCE_INSTALL=0
+
+print_usage() {
+  echo "Usage: $0 [-fh]"
+  echo "  -f:  Force installation"
+  echo "  -h:  Print help"
+}
+
+while getopts "fh" opt; do
+  case $opt in
+  f) FORCE_INSTALL=1 ;;
+  h)
+    print_usage
+    exit 0
+    ;;
+  *)
+    print_usage
+    exit 1
+    ;;
+  esac
+done
 
 echo "Installing dotfiles...."
 
+if [[ -d "$DOT_DIR" ]]; then
+  if [[ "$FORCE" -eq "1" ]]; then
+    echo "Cleaning up existing dotfiles..."
+    rm -rf "$DOT_DIR"
+  else
+    echo "Dotfiles already exists. Aborting to avoid conflicts."
+    exit 1
+  fi
+fi
+
 # clone git dir only
-git clone --bare "https://github.com/kirill-d-lappo/dotfiles.git" "$tdir"
+git clone --bare "https://github.com/kirill-d-lappo/dotfiles.git" "$DOT_DIR"
+if [[ "$?" -ne "0" ]]; then
+  echo "Failed to clone the dotfiles repository. Please check your network connection and try again."
+  exit 1
+fi
 
 # now need to configure git dir
 
 # do not track untracked files, always add new ones with "config add -f file.sh"
-git --git-dir="$tdir" --work-tree="$wtree" config --local status.showUntrackedFiles no
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" config --local status.showUntrackedFiles no
 
 # use sparse checkout to exclude some files from checkout and pull operations
-git --git-dir="$tdir" --work-tree="$wtree" config --local core.sparseCheckout true # enable sparse checkout, config file is .git/info/sparse-checkout
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout init                    # init sparse
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout set ""                  # clears all sparse rules
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "/**"               # include everything in the repo
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!install.sh"       # exclude install script
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!init.sh"          # exclude install script
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!README.md"        # exclude readme
-git --git-dir="$tdir" --work-tree="$wtree" sparse-checkout add "!.gitattributes"   # exclude .gitignore
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" config --local core.sparseCheckout true # enable sparse checkout, config file is .git/info/sparse-checkout
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout init                    # init sparse
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout set ""                  # clears all sparse rules
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout add "/**"               # include everything in the repo
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout add "!install.sh"       # exclude install script
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout add "!init.sh"          # exclude install script
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout add "!README.md"        # exclude readme
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" sparse-checkout add "!.gitattributes"   # exclude .gitignore
 
 # fill in working tree (ie home directory), overwrite via -f [!!!!!!!!!]
-git --git-dir="$tdir" --work-tree="$wtree" checkout -f
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" checkout -f
 
 # configure remote for puling changes, setups fetch patterns
 # so `config pull` action works
-git --git-dir="$tdir" --work-tree="$wtree" remote remove origin
-git --git-dir="$tdir" --work-tree="$wtree" remote add origin https://github.com/kirill-d-lappo/dotfiles.git
-git --git-dir="$tdir" --work-tree="$wtree" fetch
-git --git-dir="$tdir" --work-tree="$wtree" branch -u origin/main main
-git --git-dir="$tdir" --work-tree="$wtree" pull
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" remote remove origin
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" remote add origin https://github.com/kirill-d-lappo/dotfiles.git
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" fetch
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" branch -u origin/main main
+git --git-dir="$DOT_DIR" --work-tree="$WORKING_TREE" pull
 
 # now general git configuration on a clean system, still doesn't break much on existing one
 echo "Configuring git ...."
 
 # setup name and email only when setup from scratch
 if [[ "$(git config --global user.name)" == "" ]]; then
-	git config --global user.name "Kirill Lappo"
+  git config --global user.name "Kirill Lappo"
 fi
 
 if [[ "$(git config --global user.email)" == "" ]]; then
-	git config --global user.email "kirill-lappo@outlook.com"
+  git config --global user.email "kirill-lappo@outlook.com"
 fi
 
 # "git amend": so you can meld working changes into latest commit (any other commit as well, but usually latest)
