@@ -2,6 +2,8 @@
 # expand tab to 2 spaces
 --tabs 2
 
+--theme="DarkNeon"
+
 # Custom profile settings from dotfiles repo
 --map-syntax ".dotfiles_profile:Bourne Again Shell (bash)"
 --map-syntax ".local_profile:Bourne Again Shell (bash)"
