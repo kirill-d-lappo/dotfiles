@@ -35,6 +35,7 @@ path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/bin"
 
 # Go installed tools
+path_prepend /usr/local/go/bin
 path_prepend "$HOME/go/bin"
 
 # copy to clipboard
