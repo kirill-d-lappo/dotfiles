@@ -1,6 +1,10 @@
 #!/bin/bash
 
 file="$1"
+width=$2
+height=$3
+x=$4
+y=$5
 
 # Check if a command is available
 command_exists() {
@@ -10,9 +14,8 @@ command_exists() {
 # Preview files based on type
 if [[ -f "$file" ]]; then
     case "$file" in
-        *.jpg|*.jpeg|*.png|*.gif|*.svg)
+        *.jpg|*.jpeg|*.png|*.gif)						
             if command_exists viu; then
-							  width=$2
                 viu --width "$width" -s "$file"
             else
 							  echo "$file"
