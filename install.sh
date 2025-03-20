@@ -133,7 +133,7 @@ git config --global init.defaultBranch main
 
 # install cargo tools
 
-cargo_tools=("bat" "zoxide" "starship" "eza" "fd-find" "alacritty" "viu")
+cargo_tools=("bat" "zoxide" "starship" "eza" "fd-find" "alacritty" "viu" "git-delta")
 if has_command cargo; then
   echo "Installing helper tools using cargo"
 
