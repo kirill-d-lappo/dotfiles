@@ -35,3 +35,8 @@ fi
 if [ -f "$HOME/.local_profile" ]; then
 	source "$HOME/.local_profile"
 fi
+
+
+# Added by Toolbox App
+export PATH="$PATH:$HOME/.local/share/JetBrains/Toolbox/scripts"
+
