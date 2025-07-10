@@ -16,7 +16,7 @@
     "metrics": false,
     "diagnostics": false
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4o"
@@ -32,7 +32,7 @@
     "dark": "One Dark"
   },
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true,
