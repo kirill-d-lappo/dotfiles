@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+TryExec=/home/klappo/apps/OnlyOffice/DesktopEditors-x86_64.AppImage
+Exec=/home/klappo/apps/OnlyOffice/DesktopEditors-x86_64.AppImage
+Icon=onlyoffice
+Terminal=false
+Categories=Office
+
+Name=Only Office
+GenericName=Only Office
+Comment=Office on Linux
+StartupNotify=false

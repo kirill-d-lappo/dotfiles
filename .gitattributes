@@ -1,0 +1,5 @@
+# GitHub Language Highlight Settings [https://github.com/github-linguist/linguist]
+#
+# Overrides: https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#overrides
+
+.dotfiles_profile linguist-language=bash

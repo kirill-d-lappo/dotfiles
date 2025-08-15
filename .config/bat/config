@@ -1,0 +1,17 @@
+# General
+# expand tab to 2 spaces
+--tabs 2
+
+--theme="DarkNeon"
+
+# Custom profile settings from dotfiles repo
+--map-syntax ".dotfiles_profile:Bourne Again Shell (bash)"
+--map-syntax ".local_profile:Bourne Again Shell (bash)"
+
+# Dotnet project files: csproj, sln, slnx
+--map-syntax "*.csproj:XML"
+--map-syntax "*.slnx:XML"
+--map-syntax "*.props:XML"
+--map-syntax "NuGet.Config:XML"
+--map-syntax "*.dotsettings:XML"
+--map-syntax "*.dotsettings.user:XML"

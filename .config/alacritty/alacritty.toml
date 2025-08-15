@@ -1,0 +1,19 @@
+[env]
+TERM = "xterm-256color" # not all shells recognize "alacritty" value
+
+[general]
+import = ["./tokyo_night.toml"]
+live_config_reload = true
+
+[window]
+dimensions = { columns = 130, lines = 30 }
+padding = { x = 3, y = 3 }
+startup_mode = "Windowed"
+
+[selection]
+save_to_clipboard = true
+
+[font]
+builtin_box_drawing = true
+normal.family = "FiraCode Nerd Font Mono"
+size = 9

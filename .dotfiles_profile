@@ -1,0 +1,154 @@
+# additional settings for profile
+
+# detects name of current shell
+# $self option is for fish they say
+export DOTFILES_SHELL_NAME=$($(which ps) -p $$ -o 'comm=' || $(which ps) -p $self -o 'comm=' | tr '[:upper:]' '[:lower:]')
+
+# rust lang
+rust_env="$HOME/.cargo/env"
+if [ -f "$rust_env" ]; then
+  . "$rust_env"
+fi
+
+### checks if the path is part of PATH variable
+has_in_path(){
+  [[ ":$PATH:" = *":$1:"* ]];
+}
+
+### One-time add path to PATH to the beginning
+path_prepend() {
+  if [ -d "$1" ] && ! has_in_path "$1"; then
+    PATH="$1${PATH:+":$PATH"}"
+  fi
+}
+
+### One-time add path to PATH to the end
+path_append() {
+  if [ -d "$1" ] && ! has_in_path "$1"; then
+    PATH="${PATH:+"$PATH:"}$1"
+  fi
+}
+
+### Detects if command is available
+has_command() {
+  command -v "$1" &>/dev/null 2>&1
+}
+
+export EDITOR=nvim
+
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/bin"
+
+# Go installed tools
+path_prepend /usr/local/go/bin
+path_prepend "$HOME/go/bin"
+
+# copy to clipboard
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# use bat as cat
+if has_command bat; then
+  alias cat=bat
+fi
+
+# quick quit
+alias q=exit
+
+# prompt
+if has_command starship; then
+  # need to check shell support first, because starship may write error message at start up
+  # for ex., while loading in lightdm session
+  # the list of supported shells as of 2025-02-17
+  supported_shells=("bash" "elvish" "fish" "ion" "powershell" "tcsh" "zsh" "nu" "xonsh" "cmd")
+
+  if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
+    eval "$(starship init "$DOTFILES_SHELL_NAME")"
+  fi
+
+  unset supported_shells
+fi
+
+# ls replacement
+if has_command eza; then
+  alias ls="eza -1 --colour=auto --icons --group-directories-first"
+fi
+
+# cd with statistics
+if has_command zoxide; then
+  # supported_shells : same as for starship
+  supported_shells=("bash" "elvish" "fish" "ion" "powershell" "tcsh" "zsh" "nu" "xonsh" "cmd")
+
+  if [[ " ${supported_shells[*]} " =~ " ${DOTFILES_SHELL_NAME} " ]]; then
+    eval "$(zoxide init "$DOTFILES_SHELL_NAME")"
+    alias cd=z
+  fi
+
+  unset supported_shells
+fi
+
+# dotfiles config command
+alias config="/usr/bin/git --git-dir='$HOME/.dotfiles.git/' --work-tree='$HOME'"
+
+# dotnet telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export DOTNET_TELEMETRY_OPTOUT=1
+if ! has_command dotnet; then
+	path_append "$HOME/.dotnet"
+fi
+# dotnet telemetry end
+
+# mssql tools
+path_append "/opt/mssql-tools18/bin"
+# mssql tools end
+
+# another stuff
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+path_append "$PNPM_HOME"
+# pnpm end
+
+# node version switcher
+NVS_HOME="$HOME/.nvs"
+nvs_env="$NVS_HOME/nvs.sh"
+if [[ -s "$nvs_env" ]]; then
+  export NVS_HOME
+  . "$nvs_env"
+fi
+# node version switcher
+
+# Kerio Vpn start/restart action
+# Overcomplicated because it does not set valid MAC address on its own
+alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
+# Kerio Vpn
+
+if has_command fzf; then
+  fzf_alias="fzf --bind shift-up:preview-page-up,shift-down:preview-page-down"
+
+  if has_command bat; then
+    fzf_alias="$fzf_alias --preview='bat --color=always --style=numbers --line-range=:500 {}'"
+  fi
+
+  alias fzf="$fzf_alias"
+
+  # requires fd tool installed, find replacement
+  # fd respects .gitignore
+  # so fd will provide a list of files in directory to fzf
+  if has_command fd; then
+    export FZF_DEFAULT_COMMAND='fd --type file'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+  fi
+fi
+
+# kubectl plugin manager
+path_prepend "${KREW_ROOT:-$HOME/.krew}/bin"
+
+# kubectl plugins aliases
+alias kubectx="kubectl ctx"
+alias kubens="kubectl ns"
+
+path_append "${HOME}/.local/share/powershell/bin/"
+
+# jetbrains tools cli
+path_append "${HOME}/.local/share/JetBrains/Toolbox/scripts/"

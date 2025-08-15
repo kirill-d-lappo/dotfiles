@@ -1,0 +1,41 @@
+return {}
+-- return {
+-- 	"smoka7/multicursors.nvim",
+-- 	event = "VeryLazy",
+-- 	dependencies = {
+-- 		"nvimtools/hydra.nvim",
+-- 	},
+-- 	tag = "v2.0.0",
+-- 	cmd = { "MCstart", "MCvisual", "MCclear", "MCpattern", "MCvisualPattern", "MCunderCursor" },
+-- 	keys = {
+-- 		{
+-- 			mode = { "v", "n" },
+-- 			"<Leader>m",
+-- 			"<cmd>MCstart<cr>",
+-- 			desc = "Create a selection for selected text or word under the cursor",
+-- 		},
+-- 	},
+-- 	config = function()
+-- 		local mc = require("multicursors")
+--
+-- 		mc.setup({
+-- 			hint_config = {
+-- 				float_opts = {
+-- 					border = "rounded",
+-- 				},
+-- 				position = "bottom-right",
+-- 			},
+-- 			generate_hints = {
+-- 				normal = true,
+-- 				insert = true,
+-- 				extend = true,
+-- 				config = {
+-- 					column_count = 1,
+-- 					max_hint_length = 25,
+-- 				},
+-- 			},
+-- 		})
+-- 	end,
+-- }
+--
+--

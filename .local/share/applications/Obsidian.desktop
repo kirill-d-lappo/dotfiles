@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+TryExec=obsidian
+Exec=obsidian
+Icon=Obsidian
+Terminal=false
+Categories=Office;
+
+Name=Obsidian
+GenericName=Obsidian
+Comment=Markdown-powered notes
+StartupNotify=false
+StartupWMClass=Obisidian
+Actions=New;
+
+[Desktop Action New]
+Name=Open Obsidian
+Exec=obsidian
