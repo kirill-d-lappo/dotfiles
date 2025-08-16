@@ -80,7 +80,7 @@ set -e
   # stow --dir and --target properties just do not work
   # "No package to stow or unstow"
   
-  stow .
+  stow . --adopt
   
   cd -
 
