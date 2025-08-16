@@ -65,20 +65,23 @@ set -e
 
   # now need to configure git dir
 
+  cd $DOT_DIR
+
   # configure remote for puling changes, setups fetch patterns
   # so `config pull` action works
-  git --work-tree="$DOT_DIR" remote remove origin
-  git --work-tree="$DOT_DIR" remote add origin $REMOTE_CONFIG_REPO_URL
-  git --work-tree="$DOT_DIR" fetch
-  git --work-tree="$DOT_DIR" branch -u origin/main main
-  git --work-tree="$DOT_DIR" pull
+  git remote remove origin
+  git remote add origin $REMOTE_CONFIG_REPO_URL
+  git fetch
+  git branch -u origin/main main
+  git pull
 
   echo "Attack, Stow!"
 
   # stow --dir and --target properties just do not work
   # "No package to stow or unstow"
-  cd $DOT_DIR
+  
   stow .
+  
   cd -
 
   # now general git configuration on a clean system, still doesn't break much on existing one
