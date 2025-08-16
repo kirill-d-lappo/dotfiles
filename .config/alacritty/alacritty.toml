@@ -16,4 +16,4 @@ save_to_clipboard = true
 [font]
 builtin_box_drawing = true
 normal.family = "FiraCode Nerd Font Mono"
-size = 9
+size = 11
