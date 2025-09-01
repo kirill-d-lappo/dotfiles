@@ -124,3 +124,18 @@ fi
 if [ -f "$HOME/.local_profile" ]; then
   source "$HOME/.local_profile"
 fi
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/klappo/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/klappo/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
