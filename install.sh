@@ -133,7 +133,7 @@ set -e
 
   # install cargo tools
 
-  cargo_tools=("bat" "zoxide" "starship" "eza" "fd-find" "alacritty" "viu" "git-delta")
+  cargo_tools=("bat" "zoxide" "starship" "eza" "alacritty" "git-delta")
   if has_command cargo; then
     echo "Installing helper tools using cargo"
 
