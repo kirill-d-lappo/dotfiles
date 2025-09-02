@@ -95,6 +95,7 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export DOTNET_TELEMETRY_OPTOUT=1
 if ! has_command dotnet; then
 	path_append "$HOME/.dotnet"
+	path_append "$HOME/.dotnet/tools/"
 fi
 # dotnet telemetry end
 
