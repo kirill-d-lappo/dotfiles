@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Exec=Postman
+Icon=postman
+Terminal=false
+Categories=System;TerminalEmulator;
+
+Name=Postman
+Comment=All-in-one API platform for building and working with APIs.
+StartupNotify=false
+StartupWMClass=Postman
+
+
