@@ -105,47 +105,62 @@ return {
 			})
 		end
 
-		local caps = cmp_nvim_lsp.default_capabilities()
-		local pwsh_edit_svc_path = utils.get_mason_package_folder_path("powershell-editor-services")
+		-- local caps = cmp_nvim_lsp.default_capabilities()
+		-- local pwsh_edit_svc_path = utils.get_mason_package_folder_path("powershell-editor-services")
 
-		mason_lspconfig.setup_handlers({
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = caps,
-				})
-			end,
-			["powershell_es"] = function()
-				lspconfig["powershell_es"].setup({
-					capabilities = caps,
-					bundle_path = pwsh_edit_svc_path,
-				})
-			end,
-			["omnisharp"] = function()
-				lspconfig["omnisharp"].setup({
-					capabilities = caps,
-					cmd = { "dotnet", utils.get_mason_package_folder_path("omnisharp") .. "/libexec/OmniSharp.dll" },
-					enable_roslyn_analysers = true,
-					enable_import_completion = true,
-					organize_imports_on_format = true,
-					enable_decompilation_support = true,
-					filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
-				})
-			end,
-			["lua_ls"] = function()
-				lspconfig["lua_ls"].setup({
-					capabilities = caps,
-					settings = {
-						Lua = {
-							diagnostics = {
-								globals = { "vim" },
-							},
-							completion = {
-								callSnippet = "Replace",
-							},
-						},
+		vim.lsp.config()
+		vim.lsp.config("lua_ls", {
+			capabilities = caps,
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { "vim", "require" },
 					},
-				})
-			end,
+					completion = {
+						callSnippet = "Replace",
+					},
+				},
+			},
 		})
+		mason_lspconfig.setup()
+		-- mason_lspconfig.setup_handlers({
+		-- 	function(server_name)
+		-- 		lspconfig[server_name].setup({
+		-- 			capabilities = caps,
+		-- 		})
+		-- 	end,
+		-- 	["powershell_es"] = function()
+		-- 		lspconfig["powershell_es"].setup({
+		-- 			capabilities = caps,
+		-- 			bundle_path = pwsh_edit_svc_path,
+		-- 		})
+		-- 	end,
+		-- 	["omnisharp"] = function()
+		-- 		lspconfig["omnisharp"].setup({
+		-- 			capabilities = caps,
+		-- 			cmd = { "dotnet", utils.get_mason_package_folder_path("omnisharp") .. "/libexec/OmniSharp.dll" },
+		-- 			enable_roslyn_analysers = true,
+		-- 			enable_import_completion = true,
+		-- 			organize_imports_on_format = true,
+		-- 			enable_decompilation_support = true,
+		-- 			filetypes = { "cs", "vb", "csproj", "sln", "slnx", "props", "csx", "targets" },
+		-- 		})
+		-- 	end,
+		-- 	["lua_ls"] = function()
+		-- 		lspconfig["lua_ls"].setup({
+		-- 			capabilities = caps,
+		-- 			settings = {
+		-- 				Lua = {
+		-- 					diagnostics = {
+		-- 						globals = { "vim" },
+		-- 					},
+		-- 					completion = {
+		-- 						callSnippet = "Replace",
+		-- 					},
+		-- 				},
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- })
 	end,
 }
