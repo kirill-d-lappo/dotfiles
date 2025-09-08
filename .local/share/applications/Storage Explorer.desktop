@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Exec=storage-explorer
+Icon=/home/klappo/workspace/apps/StorageExplorer-linux-x64/StorageExplorerColor.svg
+Terminal=false
+Categories=Internet;Cloud
+
+Name=Storage Explorer
+Comment=Manage your Azure cloud storage resources from your desktop.
+StartupNotify=false
+StartupWMClass=StorageExplorer
+Name[en_US]=Storage Explorer
+
+
