@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Exec=storage-explorer
-Icon=/home/klappo/workspace/apps/StorageExplorer-linux-x64/StorageExplorerColor.svg
+Icon=storage-explorer.svg
 Terminal=false
 Categories=Internet;Cloud
 
