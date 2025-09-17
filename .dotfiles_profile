@@ -120,6 +120,10 @@ if [[ -s "$nvs_env" ]]; then
 fi
 # node version switcher
 
+# Next.js
+export NEXT_TELEMETRY_DISABLED=1
+# Next.js
+
 # Kerio Vpn start/restart action
 # Overcomplicated because it does not set valid MAC address on its own
 alias keriovpn="sudo service kerio-kvc restart && cat /var/log/kerio-kvc/debug.log | grep --text MAC | tail -1 | tr - : |rev|cut -d' '  -f 1|rev| xargs -I {} sudo ip link set kvnet addr {}"
