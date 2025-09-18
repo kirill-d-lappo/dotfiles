@@ -1,0 +1,14 @@
+[Desktop Entry]
+Name=Audio Converter
+Name[ru]=Аудио конвертер
+GenericName=Audio Converter
+Comment=Convert your audio files between popular formats.
+Comment[ru]=Конвертируйте аудиофайлы в различные форматы.
+Exec=/opt/aimp/AIMPac
+TryExec=/opt/aimp/AIMPac
+Icon=/opt/aimp/Assets/ac-tile-sm.png
+Terminal=false
+Type=Application
+Categories=Audio;AudioVideo;Player;AIMP
+# use dedicated GPU if available
+PrefersNonDefaultGPU=true
