@@ -4,17 +4,9 @@ function dev() {
     Set-Location "~/workspace/vopty"
 }
 
-function Show-Jwt($jwt)
-{
-	$jwt | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
-}
-
-function ls {
-    eza --color=auto --icons $args
-}
-
-function cat {
-    bat --color=auto $args
+$UtilsFilePath = "$profileRoot\PowerShell.Utils.ps1"
+if (Test-Path $UtilsFilePath) {
+    . $UtilsFilePath
 }
 
 $AutocompletionFilePath = "$profileRoot\PowerShell.AutoCompletion.ps1"
@@ -28,13 +20,12 @@ if (Test-Path $AliasRemovalFilePath) {
 }
 
 #Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-if ($host.Name -eq 'ConsoleHost')
-{
+if ($host.Name -eq 'ConsoleHost') {
     Import-Module PSReadLine
 
-	Set-PSReadLineOption -EditMode Windows
-	Set-PSReadLineOption -PredictionViewStyle ListView
-	Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+    Set-PSReadLineOption -EditMode Windows
+    Set-PSReadLineOption -PredictionViewStyle ListView
+    Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 }
 
 
