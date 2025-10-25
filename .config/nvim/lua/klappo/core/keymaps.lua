@@ -1,5 +1,5 @@
 local cmd = vim.cmd -- execute Vim commands
-local g = vim.g -- global variables
+local g = vim.g     -- global variables
 local opt = vim.opt -- global/buffer/windows-scoped options
 
 local map = vim.keymap.set
@@ -7,7 +7,7 @@ local default_opts = { noremap = true, silent = true }
 
 g.mapleader = " " -- Space as <leader>
 
--- Типа 'Нажимает' на ESC при быстром нажатии jj, чтобы не тянутся
+-- Типа 'Нажимает' на ESC при быстром нажатии jj, чтобы не тянуться
 map("i", "jj", "<Esc>", { noremap = true, desc = "Back to NORMAL mode" })
 map("i", "kk", "<Esc>", { noremap = true, desc = "Back to NORMAL mode" })
 
@@ -37,7 +37,3 @@ map("n", "<leader>tp", "<CMD>tabp<CR>", { desc = "To prev tab" })
 map("n", "<leader>tf", "<CMD>tabnew %<CR>", { desc = "Current buffer in a new tab" })
 
 map("n", "<C-s>", "<CMD>wa!<CR>", { desc = "Save everything" })
-
--- commenting
--- local comment = require("Comment.api")
--- map("n", "<C-_>", comment.toggle.linewise, { desc = "Comment current line (gcc)" })

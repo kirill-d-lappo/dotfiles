@@ -5,3 +5,4 @@ require("klappo.packages")
 
 require("klappo.snippets")
 
+require("klappo.lsp")

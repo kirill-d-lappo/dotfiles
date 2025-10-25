@@ -1,3 +1,3 @@
 return {
-	"klappo-d-lappo/nvim-clerk",
+  "kirill-d-lappo/nvim-clerk",
 }

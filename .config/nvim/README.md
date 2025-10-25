@@ -1,3 +1,3 @@
 # neovim config
 
-tested on 0.7.2
+tested on 0.11.4
