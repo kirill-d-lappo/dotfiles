@@ -5,6 +5,7 @@
 .dotfiles_profile linguist-language=bash
 
 # User image
-.face -text
-.face binary
+.face linguist-detectable=true
+.face linguist-language=Image
+.face linguist-documentation=false
 
