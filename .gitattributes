@@ -3,3 +3,8 @@
 # Overrides: https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#overrides
 
 .dotfiles_profile linguist-language=bash
+
+# User image
+.face -text
+.face binary
+
