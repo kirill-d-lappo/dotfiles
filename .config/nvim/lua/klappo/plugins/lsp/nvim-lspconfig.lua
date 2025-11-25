@@ -27,7 +27,7 @@ return {
       "jsonls",
       "dockerls",
       "powershell_es"
-    }
+    },
   },
   config = function()
     local lspconfig = require("lspconfig")

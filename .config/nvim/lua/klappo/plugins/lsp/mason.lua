@@ -2,7 +2,7 @@ return {
   "mason-org/mason.nvim",
   dependencies = {
     "mason-org/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim"
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
     local m = require("mason")
@@ -14,23 +14,24 @@ return {
         icons = {
           package_installed = "✓",
           package_pending = "➜",
-          package_uninstalled = "✗"
-        }
-      }
+          package_uninstalled = "✗",
+        },
+      },
     })
 
     mason_tool_installer.setup({
       ensure_installed = {
         "yamllint",
         "prettier", -- prettier formatter
-        "stylua",   -- lua formatter
-        "isort",    -- python formatter
-        "black",    -- python formatter
-        "pylint",   -- python linter
+        "stylua", -- lua formatter
+        "isort", -- python formatter
+        "black", -- python formatter
+        "pylint", -- python linter
         "eslint_d", -- js linter
         -- "shfmt",
-        "yamlfmt"   -- yaml formatter by google
-      }
+        "yamlfmt", -- yaml formatter by google
+        "lua-language-server",
+      },
     })
-  end
+  end,
 }
