@@ -5,28 +5,12 @@
 
 . "$PSScriptRoot/PowerShell.UserFunctions.ps1"
 
-Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-# if ($host.Name -eq 'ConsoleHost') {
-#     Import-Module PSReadLine -ErrorAction SilentlyContinue
-
-#     if (Get-Module -Name PSReadLine) {
-#         Set-PSReadLineOption -EditMode Windows
-#         Set-PSReadLineOption -PredictionViewStyle ListView
-#         Set-PSReadLineOption -PredictionSource HistoryAndPlugin
-#     }
-# }
-
-# starship support for transient prompt
-function Invoke-Starship-TransientFunction {
-    & starship module character
-}
-
-load "$PSScriptRoot/PowerShell.AliasRemoval.ps1"  --verify
+. "$PSScriptRoot/PowerShell.AliasRemoval.ps1"
 
 if ($IsWindows) {
-    load "$PSScriptRoot/PowerShell.CoreUtils.ps1" --verify
+    . "$PSScriptRoot/PowerShell.CoreUtils.ps1"
 }
 
-load "$PSScriptRoot/PowerShell.Utils.ps1" --verify
+. "$PSScriptRoot/PowerShell.Utils.ps1"
 
-Enable-TransientPrompt
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
