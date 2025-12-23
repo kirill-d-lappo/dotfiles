@@ -1,8 +1,7 @@
-$profileRoot = "$PSScriptRoot"
+# VS Code-specific PowerShell profile
 
-Invoke-Expression (&starship init powershell)
+# Simplified in comparison to Microsoft.VSCode_profile.ps1
+# for quicker load times in VS Code terminal
 
-$UtilsFilePath = "$profileRoot\PowerShell.Utils.ps1"
-if (Test-Path $UtilsFilePath) {
-    . $UtilsFilePath
-}
+. "$PSScriptRoot/PowerShell.UserFunctions.ps1"
+. "$PSScriptRoot/PowerShell.Utils.ps1"
