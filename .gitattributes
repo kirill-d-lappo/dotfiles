@@ -3,6 +3,7 @@
 # Overrides: https://github.com/github-linguist/linguist/blob/main/docs/overrides.md#overrides
 
 .dotfiles_profile linguist-language=bash
+.stow-local-ignore linguist-language=ignore
 
 # User image
 .face linguist-detectable=true
