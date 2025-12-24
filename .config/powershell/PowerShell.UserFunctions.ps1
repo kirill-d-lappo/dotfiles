@@ -9,6 +9,14 @@ if ($IsWindows) {
 
 #region Common functions
 
+function ll {
+    ls -l $args
+}
+
+function la {
+    ls -la $args
+}
+
 function Show-Jwt($jwt) {
     $jwt | jq -R 'split(".") | .[0],.[1] | @base64d | fromjson'
 }
