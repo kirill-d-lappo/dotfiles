@@ -2,7 +2,7 @@
 TERM = "xterm-256color" # not all shells recognize "alacritty" value
 
 [general]
-import = ["./tokyo_night.toml"]
+import = ["./themes/kanagawa_wave.toml"]
 live_config_reload = true
 
 [window]
@@ -17,3 +17,4 @@ save_to_clipboard = true
 builtin_box_drawing = true
 normal.family = "FiraCode Nerd Font Mono"
 size = 11
+
