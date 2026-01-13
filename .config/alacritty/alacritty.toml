@@ -18,3 +18,11 @@ builtin_box_drawing = true
 normal.family = "FiraCode Nerd Font Mono"
 size = 11
 
+[keyboard]
+bindings = [
+  # Shift+Enter binding for tmux compatibility
+  # By default, Alacritty doesn't send the correct escape sequence for Shift+Enter.
+  # This binding sends CSI u escape sequence (\u001b[13;2u) which tmux with
+  # `extended-keys always` will pass through to inner applications (e.g., OpenCode CLI).
+  { key = "Return", mods = "Shift", chars = "\u001b[13;2u" }
+]
