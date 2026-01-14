@@ -1,0 +1,11 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "rosepine",
+  "autoupdate": true,
+  "permission": {
+    "git push": "ask",
+    "kubectl": "ask",
+    "kubectx": "ask",
+    "az": "ask"
+  }
+}
