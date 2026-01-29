@@ -3,10 +3,23 @@
   "theme": "rosepine",
   "autoupdate": true,
   "permission": {
-    "git push": "ask",
-    "kubectl": "ask",
-    "kubectx": "ask",
-    "az": "ask"
+    "*": "ask",
+    "bash": {
+      "*": "ask",
+      "git push": "ask",
+      "git *": "allow",
+      "grep *": "allow",
+      "npm *": "allow",
+      "dotnet *": "allow",
+      "rm *": "deny",
+      "kubectl *": "deny",
+      "kubectx *": "deny",
+      "az *": "deny",
+      "ls *": "allow"
+    },
+    "external_directory": {
+      "*": "ask"
+    }
   },
   "lsp": {
     "julia": {
