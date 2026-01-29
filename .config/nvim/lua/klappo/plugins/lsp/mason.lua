@@ -30,6 +30,7 @@ return {
         "eslint_d", -- js linter
         -- "shfmt",
         "yamlfmt", -- yaml formatter by google
+        "yaml-language-server",
         "lua-language-server",
       },
     })
