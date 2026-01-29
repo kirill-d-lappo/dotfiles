@@ -139,3 +139,6 @@ case ":$PATH:" in
 esac
 
 # <<< juliaup initialize <<<
+
+# opencode
+export PATH=/home/klappo/.opencode/bin:$PATH
