@@ -7,10 +7,16 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "context_servers": {
+    "mcp-server-github": {
+      "enabled": true,
+      "settings": {}
+    }
+  },
   "icon_theme": {
     "mode": "dark",
-    "light": "JetBrains New UI Icons (Dark)",
-    "dark": "VSCode Icons for Zed (Dark Official Icons)"
+    "light": "VSCode Icons for Zed (Light Official Icons)",
+    "dark": "VSCode Icons for Zed (Dark Official Icons)",
   },
   "base_keymap": "JetBrains",
   "ui_font_size": 18,
@@ -18,57 +24,57 @@
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "telemetry": {
     "metrics": false,
-    "diagnostics": false
+    "diagnostics": false,
   },
   "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "gpt-4o"
+      "model": "gpt-4o",
     },
   },
   "features": {
-    "edit_prediction_provider": "copilot"
+    "edit_prediction_provider": "copilot",
   },
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark"
+    "dark": "One Dark",
   },
   "inlay_hints": {
     "enabled": false,
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true,
-    "show_background": true
+    "show_background": true,
   },
   "preferred_line_length": 120,
   "wrap_guides": [80, 120],
   "diagnostics": {
     "inline": {
-      "enabled": true
-    }
+      "enabled": true,
+    },
   },
   "tab_bar": {
     "show": false,
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "close_position": "right",
     "file_icons": true,
     "git_status": true,
     "activate_on_close": "history",
-    "show_close_button": "always"
+    "show_close_button": "always",
   },
   "git": {
     "inline_blame": {
-      "enabled": false
+      "enabled": false,
     },
-    "git_gutter": "tracked_files"
+    "git_gutter": "tracked_files",
   },
   "autosave": {
     "after_delay": {
-      "milliseconds": 5000
-    }
-  }
+      "milliseconds": 5000,
+    },
+  },
 }
