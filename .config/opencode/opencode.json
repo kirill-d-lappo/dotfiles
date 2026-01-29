@@ -4,6 +4,9 @@
   "autoupdate": true,
   "permission": {
     "*": "ask",
+    "external_directory": {
+      "*": "ask"
+    },
     "bash": {
       "*": "ask",
       "git push": "ask",
@@ -11,14 +14,11 @@
       "grep *": "allow",
       "npm *": "allow",
       "dotnet *": "allow",
+      "dotnet tool *": "ask",
       "rm *": "deny",
       "kubectl *": "deny",
       "kubectx *": "deny",
-      "az *": "deny",
-      "ls *": "allow"
-    },
-    "external_directory": {
-      "*": "ask"
+      "az *": "deny"
     }
   },
   "lsp": {
