@@ -109,7 +109,8 @@ layout {
         proportion 0.25
         proportion 0.5
         proportion 0.75
-        // Fixed sets the width in logical pixels exactly.
+        proportion 1.0
+				// Fixed sets the width in logical pixels exactly.
         // fixed 1920
     }
     // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
@@ -267,6 +268,11 @@ window-rule {
 
 debug {
     honor-xdg-activation-with-invalid-serial
+}
+
+binds {
+  Win+E hotkey-overlay-title="Open Files" { spawn "nemo"; }
+	Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
 }
 
 // Override to disable super+tab
