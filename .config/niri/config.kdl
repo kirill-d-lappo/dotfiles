@@ -16,6 +16,10 @@ gestures {
 // Find the full list of options on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Input
 input {
+	
+    focus-follows-mouse max-scroll-amount="0%"
+    workspace-auto-back-and-forth
+
     keyboard {
         xkb {
             // You can set rules, model, layout, variant and options.
@@ -92,8 +96,17 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
+		
     // Set gaps around windows in logical pixels.
+		gaps 4
+
     background-color "transparent"
+
+    focus-ring {
+        width 1.5
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
     //   or right edge of the screen.
@@ -136,19 +149,23 @@ layout {
         inactive-color "#d0d0d0"      // Light gray
         urgent-color   "#cc4444"      // Softer red
     }
+
     shadow {
         softness 30
         spread 5
         offset x=0 y=5
         color "#0007"
     }
+
     struts {
     }
 }
+
 layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
 }
+
 overview {
     workspace-shadow {
         off
@@ -165,7 +182,6 @@ environment {
 hotkey-overlay {
     skip-at-startup
 }
-prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 animations {
     workspace-switch {
@@ -199,11 +215,22 @@ animations {
         spring damping-ratio=0.85 stiffness=800 epsilon=0.0001
     }
 }
+
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
+
+// Default window rules for all windows
+prefer-no-csd
+
+window-rule {
+	geometry-corner-radius 4
+  clip-to-geometry true
+}
+
 window-rule {
     // This regular expression is intentionally made as specific as possible,
     // since this is the default config, and we want no false positives.
@@ -231,7 +258,6 @@ window-rule {
     match app-id=r#"^gnome-calculator$"#
     match app-id=r#"^galculator$"#
     match app-id=r#"^blueman-manager$"#
-    match app-id=r#"^org\.gnome\.Nautilus$"#
     match app-id=r#"^steam$"#
     match app-id=r#"^xdg-desktop-portal$"#
     open-floating true
@@ -266,12 +292,19 @@ window-rule {
     default-column-width { proportion 0.2; }
 }
 
+window-rule {
+	match app-id="org.gnome.Nautilus"
+
+	open-floating false
+	default-column-width { proportion 0.5; }
+}
+
 debug {
     honor-xdg-activation-with-invalid-serial
 }
 
 binds {
-  Win+E hotkey-overlay-title="Open Files" { spawn "nemo"; }
+  Win+E hotkey-overlay-title="Open Files" { spawn "nautilus || nemo"; }
 	Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
 }
 
