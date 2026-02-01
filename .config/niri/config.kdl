@@ -311,6 +311,8 @@ debug {
 binds {
   Win+E hotkey-overlay-title="Open Files (nemo, nautiluse, etc)" { spawn-sh "nautilus || nemo"; }
 	Mod+Return hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
+	
+	Alt+F4 hotkey-overlay-title="Good-old close window action" repeat=false { close-window; }
 }
 
 // Override to disable super+tab
