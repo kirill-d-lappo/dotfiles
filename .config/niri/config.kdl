@@ -11,7 +11,7 @@ environment {
 spawn-at-startup "waybar";
 
 // Note [2026/02/03 klappo] Desktop Background image loader
-spawn-at-startup "swaybg" "-i" "$HOME/Pictures/alena-aenami-for-y1900.jpg"; // Wallpaper
+spawn-at-startup "swaybg -i $HOME/Pictures/alena-aenami-for-y1900.jpg"; // Wallpaper
 
 // Note [2026/02/03 klappo] Notification Daemon
 spawn-at-startup "swaync";
