@@ -175,3 +175,8 @@ path_append "${HOME}/.local/share/powershell/bin/"
 
 # jetbrains tools cli
 path_append "${HOME}/.local/share/JetBrains/Toolbox/scripts/"
+
+# Opencode binary
+path_append "${HOME}/.opencode/bin"
+
+
