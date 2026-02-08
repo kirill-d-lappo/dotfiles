@@ -64,7 +64,7 @@ input {
     // Omitting settings disables them, or leaves them at their default values.
     // All commented-out settings here are examples, not defaults.
     touchpad {
-        off
+//        off
         tap
         natural-scroll
     }
@@ -506,3 +506,10 @@ binds {
 //     }
 // }
 
+include "dms/colors.kdl"
+include "dms/alttab.kdl"
+include "dms/binds.kdl"
+include "dms/cursor.kdl"
+include "dms/layout.kdl"
+include "dms/outputs.kdl"
+include "dms/wpblur.kdl"
