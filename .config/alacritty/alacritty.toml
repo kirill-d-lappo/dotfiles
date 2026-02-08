@@ -9,6 +9,7 @@ live_config_reload = true
 dimensions = { columns = 130, lines = 30 }
 padding = { x = 3, y = 3 }
 startup_mode = "Windowed"
+opacity = 0.95
 
 [selection]
 save_to_clipboard = true
