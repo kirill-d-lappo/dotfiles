@@ -534,8 +534,8 @@ binds {
    Ctrl+Print { screenshot-screen; }
 
 	 // screenshot alternative, region
-	 Mod+Shift+S  hotkey-overlay-title="Flameshot region"  { spawn-sh "flameshot gui"; }  
-	 Mod+S        hotkey-overlay-title="Flameshot monitor" { spawn-sh "flameshot screen --clipboard"; }  
+	 Mod+Shift+S  hotkey-overlay-title="Flameshot region"  { spawn "flameshot" "gui"; }  
+	 Mod+S        hotkey-overlay-title="Flameshot monitor" { spawn "flameshot" "screen" "--clipboard"; }  
 }
 
 // Override to disable super+tab
