@@ -18,6 +18,7 @@
       "tail *": "allow",
       "rm *": "ask",
       "mv *": "ask",
+      "cp *": "allow",
       "grep *": "allow",
       "rg *": "allow",
       "find *": "allow",
