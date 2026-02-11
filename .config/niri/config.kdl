@@ -283,6 +283,33 @@ window-rule {
   default-column-width { proportion 0.5; }
 }
 
+window-rule {
+    match app-id=r#".*flameshot.*"#
+		open-floating true
+		open-fullscreen true
+		focus-ring {
+			off
+		}
+		border{
+			off
+		}
+		shadow{
+			off
+		}
+		tab-indicator {
+
+		}
+    // animation = fade
+    // rounding = 0
+    // border_size = 0
+    // fullscreen_state = 0 0
+    // float = on
+    // pin = on
+    // monitor = DP-1
+    // move = 0 0
+    // size = (monitor_w*2) (monitor_h)
+}
+
 debug {
     honor-xdg-activation-with-invalid-serial
 }
@@ -495,6 +522,13 @@ binds {
    Print { screenshot; }
    Alt+Print { screenshot-window; }
    Ctrl+Print { screenshot-screen; }
+
+	 // screenshot alternative, region
+	 Mod+S            { spawn "grim -g \"$(slurp)\" - | satty --filename - --copy-command=wl-copy"; }  
+   // monitor
+	 Mod+Ctrl+S       { spawn "grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | satty --filename - --copy-command=wl-copy"; }
+   // all monitors
+	 Mod+Ctrl+Shift+S { spawn "grim - | satty --filename - --copy-command=wl-copy"; }
 }
 
 // Override to disable super+tab

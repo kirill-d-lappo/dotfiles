@@ -19,8 +19,22 @@ builtin_box_drawing = true
 normal.family = "FiraCode Nerd Font Mono"
 size = 11
 
+[mouse]
+hide_when_typing = true
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+blink_interval = 500
+unfocused_hollow = true
+
 [keyboard]
 bindings = [
+  { key = "C",       mods = "Control|Shift", action = "Copy"  },
+  { key = "V",       mods = "Control|Shift", action = "Paste" },
+  { key = "N",       mods = "Control|Shift", action = "SpawnNewInstance" },
+  { key = "Equals",  mods = "Control|Shift", action = "IncreaseFontSize" },
+  { key = "Minus",   mods = "Control",       action = "DecreaseFontSize" },
+  { key = "Key0",    mods = "Control",       action = "ResetFontSize"    },
   # Shift+Enter binding for tmux compatibility
   # By default, Alacritty doesn't send the correct escape sequence for Shift+Enter.
   # This binding sends CSI u escape sequence (\u001b[13;2u) which tmux with
