@@ -7,15 +7,6 @@ environment {
   XDG_CURRENT_DESKTOP "niri"
 }
 
-// Note [2026/02/03 klappo] status bar
-spawn-at-startup "waybar";
-
-// Note [2026/02/03 klappo] Desktop Background image loader
-spawn-sh-at-startup "swaybg -i $HOME/Pictures/alena-aenami-for-y1900.jpg"; // Wallpaper
-
-// Note [2026/02/03 klappo] Notification Daemon
-spawn-at-startup "swaync";
-
 // Note [2026/02/03 klappo] Browser
 spawn-at-startup "google-chrome-stable";
 
@@ -154,6 +145,11 @@ layer-rule {
   block-out-from "screencast"
 }
 
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
+
 overview {
     workspace-shadow {
         off
@@ -214,6 +210,20 @@ window-rule {
   match app-id="Aimp"
 
   default-column-width { proportion 0.3; }
+  open-floating false
+}
+
+window-rule {
+  match app-id="AIMPac"
+
+  default-column-width { proportion 0.5; }
+  open-floating false
+}
+
+window-rule {
+  match app-id="AIMPate"
+
+  default-column-width { proportion 0.5; }
   open-floating false
 }
 
@@ -361,15 +371,15 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
 
-    Mod+D hotkey-overlay-title="Start Launcher: fuzzel" { spawn "fuzzel"; }
-    Ctrl+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    // Mod+D hotkey-overlay-title="Start Launcher: fuzzel" { spawn "fuzzel"; }
+    // Ctrl+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     Win+E hotkey-overlay-title="Open Files (nemo, nautiluse, etc)" { spawn-sh "nautilus || nemo"; }
 
     Win+G hotkey-overlay-title="Open Browser (chrome, firefox, etc)" { spawn-sh "google-chrome-stable || firefox"; }
 
     // # Toggle control center
-    Mod+Shift+N  hotkey-overlay-title="Open/Close Notifications" repeat=false { spawn-sh "swaync-client -t -sw"; }
+    // Mod+Shift+N  hotkey-overlay-title="Open/Close Notifications" repeat=false { spawn-sh "swaync-client -t -sw"; }
 
 
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -524,22 +534,19 @@ binds {
    Ctrl+Print { screenshot-screen; }
 
 	 // screenshot alternative, region
-	 Mod+S            { spawn "grim -g \"$(slurp)\" - | satty --filename - --copy-command=wl-copy"; }  
-   // monitor
-	 Mod+Ctrl+S       { spawn "grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') - | satty --filename - --copy-command=wl-copy"; }
-   // all monitors
-	 Mod+Ctrl+Shift+S { spawn "grim - | satty --filename - --copy-command=wl-copy"; }
+	 Mod+Shift+S  hotkey-overlay-title="Flameshot region"  { spawn-sh "flameshot gui"; }  
+	 Mod+S        hotkey-overlay-title="Flameshot monitor" { spawn-sh "flameshot screen --clipboard"; }  
 }
 
 // Override to disable super+tab
-// recent-windows {
-//     binds {
-//         Alt+Tab         { next-window scope="output"; }
-//         Alt+Shift+Tab   { previous-window scope="output"; }
-//         Alt+grave       { next-window filter="app-id"; }
-//         Alt+Shift+grave { previous-window filter="app-id"; }
-//     }
-// }
+recent-windows {
+    binds {
+        Alt+Tab         { next-window scope="output"; }
+        Alt+Shift+Tab   { previous-window scope="output"; }
+        Alt+grave       { next-window filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+    }
+}
 
 include "dms/colors.kdl"
 include "dms/alttab.kdl"
