@@ -369,6 +369,11 @@
           "enabled": true
         },
         {
+          "id": "keyboard_layout_name",
+          "enabled": true,
+          "keyboardLayoutNameCompactMode": true
+        },
+        {
           "id": "battery",
           "enabled": true
         },
