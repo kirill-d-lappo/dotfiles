@@ -377,21 +377,21 @@
           "enabled": true
         },
         {
-          "id": "controlCenterButton",
+          "id": "clock",
           "enabled": true,
-          "showAudioPercent": false,
-          "showBrightnessIcon": false,
-          "showMicIcon": false,
-          "showBatteryIcon": false
+          "clockCompactMode": false
         },
         {
           "id": "notificationButton",
           "enabled": true
         },
         {
-          "id": "clock",
+          "id": "controlCenterButton",
           "enabled": true,
-          "clockCompactMode": false
+          "showAudioPercent": false,
+          "showBrightnessIcon": false,
+          "showMicIcon": false,
+          "showBatteryIcon": false
         }
       ],
       "spacing": 4,
