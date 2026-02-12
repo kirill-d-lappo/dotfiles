@@ -58,6 +58,11 @@ input {
 //        off
         tap
         natural-scroll
+				disabled-on-external-mouse
+				// disable when typing
+				dwt
+				// disable when traclkpoint
+				dwtp
     }
 
     mouse {
