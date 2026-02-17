@@ -89,10 +89,11 @@ input {
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
 // Remember to uncomment the node by removing "/-"!
-/-output "eDP-2" {
-    mode "2560x1600@239.998993"
-    position x=2560 y=0
-    variable-refresh-rate
+output "eDP-1" {
+    // mode "2560x1600@239.998993"
+    // position x=2560 y=0
+    // variable-refresh-rate
+		focus-at-startup
 }
 
 
@@ -170,6 +171,7 @@ prefer-no-csd
 window-rule {
   geometry-corner-radius 4
   clip-to-geometry true
+	open-on-output "eDP-1"
 }
 
 window-rule {
@@ -237,6 +239,13 @@ window-rule {
   match app-id="AIMPate"
 
   default-column-width { proportion 0.5; }
+  open-floating false
+}
+
+window-rule {
+	match app-id="SourceGit"
+  
+	default-column-width { proportion 1.0; }
   open-floating false
 }
 

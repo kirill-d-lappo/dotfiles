@@ -5,6 +5,6 @@
 
 cursor {
     xcursor-theme "Win7Bulid-cursors"
-    xcursor-size 42
+    xcursor-size 32
     hide-when-typing
 }

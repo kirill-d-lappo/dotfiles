@@ -1,8 +1,10 @@
 {
   "currentThemeName": "blue",
   "currentThemeCategory": "generic",
-  "customThemeFile": "",
-  "registryThemeVariants": {},
+  "customThemeFile": "/home/klappo/.config/DankMaterialShell/themes/kanagawaWl/theme.json",
+  "registryThemeVariants": {
+    "rosePine": "rosePine"
+  },
   "matugenScheme": "scheme-tonal-spot",
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
@@ -151,7 +153,7 @@
   "iconTheme": "Numix-Circle",
   "cursorSettings": {
     "theme": "Win7Bulid-cursors",
-    "size": 42,
+    "size": 32,
     "niri": {
       "hideWhenTyping": true,
       "hideAfterInactiveMs": 0
@@ -206,7 +208,11 @@
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
   "brightnessDevicePins": {},
-  "wifiNetworkPins": {},
+  "wifiNetworkPins": {
+    "preferredWifi": [
+      "kira-2.4_5G"
+    ]
+  },
   "bluetoothDevicePins": {},
   "audioInputDevicePins": {},
   "audioOutputDevicePins": {},
