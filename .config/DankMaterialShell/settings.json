@@ -178,9 +178,9 @@
   },
   "appDrawerSectionViewModes": {},
   "niriOverviewOverlayEnabled": true,
-  "dankLauncherV2Size": "compact",
-  "dankLauncherV2BorderEnabled": false,
-  "dankLauncherV2BorderThickness": 2,
+  "dankLauncherV2Size": "large",
+  "dankLauncherV2BorderEnabled": true,
+  "dankLauncherV2BorderThickness": 1,
   "dankLauncherV2BorderColor": "primary",
   "dankLauncherV2ShowFooter": true,
   "dankLauncherV2UnloadOnClose": false,
@@ -429,7 +429,10 @@
         {
           "id": "runningApps",
           "enabled": true,
-          "runningAppsCompactMode": true
+          "runningAppsCompactMode": true,
+          "runningAppsGroupByApp": true,
+          "runningAppsCurrentWorkspace": false,
+          "runningAppsCurrentMonitor": false
         }
       ],
       "rightWidgets": [
