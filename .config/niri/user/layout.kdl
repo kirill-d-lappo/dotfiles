@@ -1,0 +1,59 @@
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
+layout {
+
+    gaps 4
+
+    focus-ring {
+        width 1.5
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+    }
+
+    default-column-width { proportion 0.5; }
+
+    background-color "#0b2958"
+
+    // When to center a column when changing focus, options are: never, always, on-overflow
+    // - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
+    center-focused-column "never"
+
+    // "switch-preset-column-width" (Mod+R) toggles between.
+    preset-column-widths {
+        proportion 0.25
+        proportion 0.5
+        proportion 0.75
+        proportion 1.0
+    }
+
+    // disabled
+    border {
+        off
+        width 4
+        active-color   "#707070"      // Neutral gray
+        inactive-color "#d0d0d0"      // Light gray
+        urgent-color   "#cc4444"      // Softer red
+    }
+
+    shadow {
+        softness 30
+        spread 5
+        offset x=0 y=5
+        color "#0007"
+    }
+
+    struts {
+    }
+}
+
+layer-rule {
+  match namespace="^notifications$"
+
+  block-out-from "screencast"
+}
+
+layer-rule {
+    match namespace="^quickshell$"
+    place-within-backdrop true
+}
