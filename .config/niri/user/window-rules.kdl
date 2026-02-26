@@ -6,7 +6,7 @@ prefer-no-csd
 window-rule {
   geometry-corner-radius 4
   clip-to-geometry true
-	open-on-output "eDP-1"
+	// open-on-output "eDP-1"
 }
 
 window-rule {
@@ -61,6 +61,12 @@ window-rule {
 
   default-column-width { proportion 0.25; }
   open-floating false
+}
+
+window-rule {
+  match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler)$"#
+
+  open-floating true
 }
 
 window-rule {
