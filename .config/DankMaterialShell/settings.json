@@ -472,7 +472,7 @@
         }
       ],
       "spacing": 4,
-      "innerPadding": 4,
+      "innerPadding": 10,
       "bottomGap": 0,
       "transparency": 0.3,
       "widgetTransparency": 0.2,
@@ -497,7 +497,7 @@
       "visible": true,
       "popupGapsAuto": true,
       "popupGapsManual": 4,
-      "maximizeDetection": true,
+      "maximizeDetection": false,
       "scrollEnabled": true,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
