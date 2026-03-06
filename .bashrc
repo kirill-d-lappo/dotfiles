@@ -111,3 +111,4 @@ esac
 
 # opencode
 export PATH=/home/klappo/.opencode/bin:$PATH
+

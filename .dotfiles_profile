@@ -116,15 +116,6 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 path_append "$PNPM_HOME"
 # pnpm end
 
-# node version switcher
-NVS_HOME="$HOME/.nvs"
-nvs_env="$NVS_HOME/nvs.sh"
-if [[ -s "$nvs_env" ]]; then
-  export NVS_HOME
-  . "$nvs_env"
-fi
-# node version switcher
-
 # Next.js
 export NEXT_TELEMETRY_DISABLED=1
 # Next.js
@@ -184,4 +175,8 @@ path_append "${HOME}/.local/share/JetBrains/Toolbox/scripts/"
 # Opencode binary
 path_append "${HOME}/.opencode/bin"
 
-
+# fns setup (Node Version Manager)
+if has_command fnm; then
+    eval "$(fnm env --use-on-cd --shell bash)"
+fi
+# fns setup (Node Version Manager)
