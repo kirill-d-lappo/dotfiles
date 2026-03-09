@@ -175,8 +175,11 @@ path_append "${HOME}/.local/share/JetBrains/Toolbox/scripts/"
 # Opencode binary
 path_append "${HOME}/.opencode/bin"
 
-# fns setup (Node Version Manager)
-if has_command fnm; then
-    eval "$(fnm env --use-on-cd --shell bash)"
-fi
-# fns setup (Node Version Manager)
+
+# nvs (Node Version Switcher)
+
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+
+# nvs (Node Version Switcher)
+
