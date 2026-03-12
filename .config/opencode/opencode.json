@@ -44,19 +44,5 @@
       "target/debug/**",
       "out/**"
     ]
-  },
-  "lsp": {
-    "julia": {
-      "command": [
-        "julia",
-        "--project=@lsp",
-        "--startup-file=no",
-        "--history-file=no",
-        "--depwarn=no",
-        "-e",
-        "using LanguageServer; runserver()"
-      ],
-      "extensions": [".jl"]
-    }
   }
 }
