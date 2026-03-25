@@ -1,10 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "autoupdate": true,
-  "enabled_providers": ["github-copilot"],
+  "enabled_providers": [
+    "github-copilot"
+  ],
   "permission": {
     "external_directory": {
-      "*": "ask"
+      "*": "ask",
+      "/home/klappo/workspace/vopty/src/**": "allow",
+      "~/workspace/vopty/src/**": "allow"
     },
     "bash": {
       "*": "ask",
@@ -22,7 +26,6 @@
       "git *": "allow",
       "grep *": "allow",
       "head *": "allow",
-      "jq *": "allow",
       "ls *": "allow",
       "mkdir *": "allow",
       "mv *": "ask",

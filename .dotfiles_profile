@@ -183,3 +183,6 @@ export NVS_HOME="$HOME/.nvs"
 
 # nvs (Node Version Switcher)
 
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
