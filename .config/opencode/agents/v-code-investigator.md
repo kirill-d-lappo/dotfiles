@@ -176,6 +176,17 @@ Before presenting the final implementation plan, verify:
 - [ ] The plan respects existing project conventions and patterns.
 - [ ] Risks are documented with mitigations.
 
+## AGENT_MEMORY.md
+
+If the orchestrator provides a path to `AGENT_MEMORY.md`:
+- **Read it first**, before any other action. It contains the ticket summary, prior decisions, open questions, and context from the orchestrator and any other subagents that already ran.
+- Use it to avoid re-investigating what was already discovered and to respect decisions already made.
+- **After completing your investigation**, append your key findings to the `### v-code-investigator` section in `AGENT_MEMORY.md`:
+  - Files and patterns discovered that are relevant to the plan
+  - Risks and constraints identified
+  - Any open questions you cannot resolve alone
+  - The final implementation plan you produced
+
 ## What You Do NOT Do
 - You do not write the actual implementation code — your output is the plan.
 - You do not make architectural decisions unilaterally — you surface options and consult the architect.

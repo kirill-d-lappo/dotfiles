@@ -148,6 +148,18 @@ Before finalizing, verify:
 - Highlight any concerns, risks, or follow-up items that fall outside the current issue scope
 - Be concise — avoid unnecessary verbosity in explanations
 
+## AGENT_MEMORY.md
+
+If the orchestrator provides a path to `AGENT_MEMORY.md`:
+- **Read it first**, before writing any code. It contains the ticket summary, the implementation plan, decisions made by the architect, findings from `v-code-investigator`, and any constraints or open questions.
+- Use it to understand what has already been investigated, what patterns to follow, and what approach was agreed upon.
+- **After completing your implementation**, append your key findings to the `### v-developer-backend` section in `AGENT_MEMORY.md`:
+  - Files created or modified (with a brief description of each change)
+  - Any significant design decisions or trade-offs you made
+  - Database migrations or schema changes applied
+  - Any assumptions made when the issue was ambiguous
+  - Blockers or follow-up items outside your scope
+
 ## Boundaries
 - Do NOT implement features not described in the issue
 - Do NOT refactor unrelated code even if you spot improvements

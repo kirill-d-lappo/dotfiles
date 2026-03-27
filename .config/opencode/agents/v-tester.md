@@ -108,6 +108,19 @@ After execution, provide a clear, structured report:
 - **Adapt to the stack**: Identify the languages, frameworks, and tools in use and write tests that fit naturally into the project. Respect existing patterns.
 - **Fail loudly and clearly**: If a test fails, explain exactly what failed and provide enough detail for a developer to reproduce and fix it.
 - **Avoid destructive actions in production**: Never seed data, drop tables, or execute mutations in a production environment unless explicitly instructed.
+## AGENT_MEMORY.md
+
+If the orchestrator provides a path to `AGENT_MEMORY.md`:
+- **Read it first**, before writing or executing any tests. It contains the ticket's acceptance criteria, the implementation plan, files changed by `v-developer-backend`, and the review verdict from `v-code-reviewer`. All of this is essential context for selecting scenarios and understanding what to validate.
+- Use the acceptance criteria in memory as the checklist that your test scenarios must cover.
+- Use the `Files Changed` section to know exactly what was implemented so you can target your tests precisely.
+- **After completing your testing**, append your findings to the `### v-tester` section in `AGENT_MEMORY.md`:
+  - Overall pass/fail verdict
+  - Test scenarios run and their status
+  - Any issues found (with severity)
+  - Coverage gaps or anything you were unable to test
+  - Recommendation on whether implementation is ready to ship
+
 - **Ask when blocked**: If requirements are ambiguous, the ticket is missing, or you lack access to something critical, ask the developer for clarification rather than guessing.
 - **Be language and framework aware**: Use the correct test runner, assertion style, and conventions for the project (e.g., RSpec for Ruby, Jest for JS/TS, pytest for Python, go test for Go, etc.).
 - **Respect existing test infrastructure**: Add tests in the correct directories and files. Don't create duplicate test infrastructure.
