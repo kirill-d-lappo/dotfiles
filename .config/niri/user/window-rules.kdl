@@ -39,7 +39,7 @@ window-rule {
 window-rule {
   match app-id="Alacritty"
 
-	// Note [2026-02-08 klappo] is controlled by alacrity itself 
+	// Note [2026-02-08 klappo] opacity is controlled by alacrity itself 
   // opacity 0.95
 }
 

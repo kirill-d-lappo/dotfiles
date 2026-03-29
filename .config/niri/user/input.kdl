@@ -17,8 +17,10 @@ input {
             options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
         }
 
+				// Note [2026-03-29 klappo] faster input
         repeat-delay 400
         repeat-rate 70
+
 				track-layout "window"
 
         // Note [2026/02/03 klappo] I don't like enabled numlock at start

@@ -9,16 +9,13 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
 
-    // Mod+D hotkey-overlay-title="Start Launcher: fuzzel" { spawn "fuzzel"; }
-    // Ctrl+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+		// Note [2026-03-29 klappo] works only for dms
+    Ctrl+Alt+L repeat=false hotkey-overlay-title="Lock screen (dms)" { spawn-sh "dms ipc call lock lock"; }
+
 
     Win+E hotkey-overlay-title="Open Files (nemo, nautiluse, etc)" { spawn-sh "nautilus || nemo"; }
 
     Win+G hotkey-overlay-title="Open Browser (chrome, firefox, etc)" { spawn-sh "google-chrome-stable || firefox"; }
-
-    // # Toggle control center
-    // Mod+Shift+N  hotkey-overlay-title="Open/Close Notifications" repeat=false { spawn-sh "swaync-client -t -sw"; }
-
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
