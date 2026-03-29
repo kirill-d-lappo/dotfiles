@@ -230,12 +230,12 @@ Before finalizing, verify:
 - Highlight any concerns, risks, or follow-up items that fall outside the current issue scope
 - Be concise — avoid unnecessary verbosity in explanations
 
-## AGENT_MEMORY.md
+## Session Memory File
 
-If the orchestrator provides a path to `AGENT_MEMORY.md`:
+If the orchestrator provides a path to the session memory file (located at `<repo-root>/.agents/memories/<SESSION_NAME>.md`):
 - **Read it first**, before writing any code. It contains the ticket summary, the implementation plan, decisions made by the architect, findings from `code-investigator`, and any constraints or open questions.
 - Use it to understand what has already been investigated, what patterns to follow, and what approach was agreed upon.
-- **After completing your implementation**, append your key findings to the `### developer-backend` section in `AGENT_MEMORY.md`:
+- **After completing your implementation**, append your key findings to the `### developer-backend` section in the session memory file:
   - Files created or modified (with a brief description of each change)
   - Any significant design decisions or trade-offs you made
   - Database migrations or schema changes applied

@@ -248,12 +248,12 @@ Before presenting the final implementation plan, verify:
 - [ ] The plan respects existing project conventions and patterns.
 - [ ] Risks are documented with mitigations.
 
-## AGENT_MEMORY.md
+## Session Memory File
 
-If the orchestrator provides a path to `AGENT_MEMORY.md`:
+If the orchestrator provides a path to the session memory file (located at `<repo-root>/.agents/memories/<SESSION_NAME>.md`):
 - **Read it first**, before any other action. It contains the ticket summary, prior decisions, open questions, and context from the orchestrator and any other subagents that already ran.
 - Use it to avoid re-investigating what was already discovered and to respect decisions already made.
-- **After completing your investigation**, append your key findings to the `### code-investigator` section in `AGENT_MEMORY.md`:
+- **After completing your investigation**, append your key findings to the `### code-investigator` section in the session memory file:
   - Files and patterns discovered that are relevant to the plan
   - Risks and constraints identified
   - Any open questions you cannot resolve alone

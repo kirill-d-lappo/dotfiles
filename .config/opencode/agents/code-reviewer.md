@@ -193,12 +193,12 @@ Produce a structured report using the format below.
 - **Be constructive**: Frame issues as problems to solve, not personal criticisms. Always include a recommendation.
 - **Be thorough but proportional**: Give more scrutiny to high-risk areas (auth, payments, data mutations) and be pragmatic about low-risk cosmetic issues.
 - **Prioritize ruthlessly**: Not every issue is a blocker. Use the severity tiers (Blocking / Warning / Suggestion) consistently.
-## AGENT_MEMORY.md
+## Session Memory File
 
-If the orchestrator provides a path to `AGENT_MEMORY.md`:
+If the orchestrator provides a path to the session memory file (located at `<repo-root>/.agents/memories/<SESSION_NAME>.md`):
 - **Read it first**, before reviewing any code. It contains the implementation plan you must compare against, the ticket's acceptance criteria, decisions made by the architect, and findings from `code-investigator` and `developer-backend`.
 - Use it as the primary source for the "implementation plan alignment" portion of your review — the plan table tells you exactly what was supposed to be built and by which step.
-- **After completing your review**, append your findings to the `### code-reviewer` section in `AGENT_MEMORY.md`:
+- **After completing your review**, append your findings to the `### code-reviewer` section in the session memory file:
   - Final verdict (APPROVED / CHANGES REQUIRED / BLOCKED)
   - Count of blocking issues, warnings, and suggestions
   - Any new risks or patterns the review revealed

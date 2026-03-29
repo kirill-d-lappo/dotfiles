@@ -135,7 +135,7 @@ Based on the nature of the change, select the most appropriate testing approach(
 
 **Integration Tests**: Use when multiple components interact (e.g., service + database, multiple internal modules). Verify that the system behaves correctly as a whole.
 
-**Direct API Testing (REST/GraphQL/gRPC/WebSocket)**: Use when an endpoint or API contract has been added or modified. Send real requests with valid and invalid payloads. Verify response status codes, response bodies, headers, error messages, and schema conformance.
+**Direct API Testing (REST/GraphQL/gRPC/WebSocket)**: Use when an endpoint or API contract has been added or modified. Send real requests with valid and invalid payloads. Verify response status codes, response bodies, headers, error messages, and schema conformance. See the **Direct API Testing** section below for step-by-step instructions on how to run the server and execute requests.
 
 **Database State Verification**: Use when the change involves data creation, mutation, or deletion. Seed the database with necessary data, trigger the implementation, and query the database directly to confirm the correct state changes occurred.
 
@@ -157,6 +157,122 @@ Based on the nature of the change, select the most appropriate testing approach(
   - Boundary conditions or edge cases mentioned in the ticket
   - Any regression risk areas affected by the change
 - When writing automated tests, follow the project's existing test conventions, file structure, naming patterns, and assertion libraries.
+
+---
+
+## Direct API Testing
+
+When the implementation affects API behaviour (a new endpoint, a modified GraphQL mutation/query, a changed gRPC method, or any change to request/response contracts), you **must** test the API handles directly by starting the server and sending real requests. Do not rely solely on unit tests for these cases.
+
+### Step 1: Identify the API type and port
+
+Look in the repository for how the application is started:
+- `Dockerfile`, `docker-compose.yml` — check exposed ports and entrypoint
+- `README`, `Makefile`, scripts named `run.*`, `start.*`, `dev.*`
+- Framework-specific files: `Program.cs` / `appsettings.json` (ASP.NET), `config/routes.rb` (Rails), `main.go`, `index.ts`, `app.py`, etc.
+
+Note the base URL (typically `http://localhost:<PORT>`) and API style (REST, GraphQL, gRPC).
+
+### Step 2: Start the server
+
+Start the application in a way that reflects the runtime environment. Prefer the project's documented dev-start command. Examples:
+
+```bash
+# .NET
+dotnet run --project src/MyApp
+
+# Node.js / TypeScript
+npm run dev
+
+# Ruby on Rails
+bin/rails server
+
+# Go
+go run ./cmd/server
+
+# Docker Compose (when the project uses containers)
+docker compose up
+```
+
+Wait until the server is ready before sending requests (watch for a "listening on port" log line or poll with a health check endpoint if available).
+
+### Step 3: Send requests — by API type
+
+#### REST
+
+Use `curl` (or `httpie`/`wget` if available) to exercise each affected endpoint:
+
+```bash
+# GET
+curl -s -o /dev/null -w "%{http_code}" http://localhost:PORT/api/resource
+
+# POST with JSON body
+curl -s -X POST http://localhost:PORT/api/resource \
+  -H "Content-Type: application/json" \
+  -d '{"field": "value"}' | jq .
+
+# With auth token
+curl -s -X GET http://localhost:PORT/api/protected \
+  -H "Authorization: Bearer <TOKEN>" | jq .
+```
+
+#### GraphQL
+
+```bash
+# Query
+curl -s -X POST http://localhost:PORT/graphql \
+  -H "Content-Type: application/json" \
+  -d '{"query": "{ myQuery { id name } }"}' | jq .
+
+# Mutation
+curl -s -X POST http://localhost:PORT/graphql \
+  -H "Content-Type: application/json" \
+  -d '{"query": "mutation { myMutation(input: {field: \"value\"}) { id } }"}' | jq .
+
+# With variables
+curl -s -X POST http://localhost:PORT/graphql \
+  -H "Content-Type: application/json" \
+  -d '{"query": "mutation MyMut($input: MyInput!) { myMutation(input: $input) { id } }", "variables": {"input": {"field": "value"}}}' | jq .
+```
+
+#### gRPC
+
+Use `grpcurl` if available:
+
+```bash
+# List services
+grpcurl -plaintext localhost:PORT list
+
+# Describe a method
+grpcurl -plaintext localhost:PORT describe my.package.MyService.MyMethod
+
+# Call a method
+grpcurl -plaintext -d '{"field": "value"}' localhost:PORT my.package.MyService.MyMethod
+```
+
+### Step 4: What to verify for each request
+
+For every scenario you test, check:
+- **Status code / gRPC status** — matches expected (200, 201, 400, 401, 404, 422, etc.)
+- **Response body** — correct shape, field values, no unexpected nulls or missing fields
+- **Error messages** — descriptive, not leaking internals, matching ticket requirements
+- **Headers** — `Content-Type`, auth-related headers, pagination headers where applicable
+- **Database state** — for mutations/POSTs, query the DB directly to confirm the expected record was created/modified/deleted
+- **Negative cases** — missing required fields, invalid types, unauthorized access, duplicate submissions
+
+### Step 5: Tear down
+
+If you started a server process in the background, stop it after testing:
+
+```bash
+# Kill by port (if needed)
+kill $(lsof -ti:PORT)
+
+# Or stop Docker Compose
+docker compose down
+```
+
+---
 
 ### 5. Evaluate and Report
 After execution, provide a clear, structured report:
@@ -184,13 +300,13 @@ After execution, provide a clear, structured report:
 - **Adapt to the stack**: Identify the languages, frameworks, and tools in use and write tests that fit naturally into the project. Respect existing patterns.
 - **Fail loudly and clearly**: If a test fails, explain exactly what failed and provide enough detail for a developer to reproduce and fix it.
 - **Avoid destructive actions in production**: Never seed data, drop tables, or execute mutations in a production environment unless explicitly instructed.
-## AGENT_MEMORY.md
+## Session Memory File
 
-If the orchestrator provides a path to `AGENT_MEMORY.md`:
+If the orchestrator provides a path to the session memory file (located at `<repo-root>/.agents/memories/<SESSION_NAME>.md`):
 - **Read it first**, before writing or executing any tests. It contains the ticket's acceptance criteria, the implementation plan, files changed by `developer-backend`, and the review verdict from `code-reviewer`. All of this is essential context for selecting scenarios and understanding what to validate.
 - Use the acceptance criteria in memory as the checklist that your test scenarios must cover.
 - Use the `Files Changed` section to know exactly what was implemented so you can target your tests precisely.
-- **After completing your testing**, append your findings to the `### tester` section in `AGENT_MEMORY.md`:
+- **After completing your testing**, append your findings to the `### tester` section in the session memory file:
   - Overall pass/fail verdict
   - Test scenarios run and their status
   - Any issues found (with severity)

@@ -194,7 +194,9 @@
   "spotlightSectionViewModes": {
     "apps": "list"
   },
-  "appDrawerSectionViewModes": {},
+  "appDrawerSectionViewModes": {
+    "apps": "list"
+  },
   "niriOverviewOverlayEnabled": true,
   "dankLauncherV2Size": "large",
   "dankLauncherV2BorderEnabled": true,

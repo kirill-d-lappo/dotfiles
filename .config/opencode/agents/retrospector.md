@@ -158,12 +158,12 @@ A prioritized, actionable list of knowledge artifacts to create or update, forma
 ### 💡 Agent Guidance Recommendations
 Specific, ready-to-use rule statements written in the imperative that can be directly inserted into agent system prompts or skill files.
 
-## AGENT_MEMORY.md
+## Session Memory File
 
-If the orchestrator provides a path to `AGENT_MEMORY.md`:
+If the orchestrator provides a path to the session memory file (located at `<repo-root>/.agents/memories/<SESSION_NAME>.md`):
 - **Read it in full**, before any other analysis. It is the most comprehensive source of session context: the original ticket, every decision made, the implementation plan, and all subagent findings. Use it as primary evidence alongside the git diff.
 - The `Decisions & Assumptions`, `Subagent Findings`, `Files Changed`, and `Technical Context` sections are especially valuable for pattern mining — they capture the reasoning behind the implementation, not just the code.
-- **After completing your retrospective**, append your findings to the `### retrospector` section in `AGENT_MEMORY.md`:
+- **After completing your retrospective**, append your findings to the `### retrospector` section in the session memory file:
   - New patterns or rules to codify
   - Updated or deprecated conventions
   - Recommended actions (CREATE/UPDATE/DEPRECATE skill files or rules)
