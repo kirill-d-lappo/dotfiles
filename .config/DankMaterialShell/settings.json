@@ -156,12 +156,12 @@
   "barMaxVisibleApps": 0,
   "barMaxVisibleRunningApps": 0,
   "barShowOverflowBadge": true,
-  "appsDockHideIndicators": false,
-  "appsDockColorizeActive": false,
+  "appsDockHideIndicators": true,
+  "appsDockColorizeActive": true,
   "appsDockActiveColorMode": "primary",
-  "appsDockEnlargeOnHover": false,
-  "appsDockEnlargePercentage": 125,
-  "appsDockIconSizePercentage": 100,
+  "appsDockEnlargeOnHover": true,
+  "appsDockEnlargePercentage": 130,
+  "appsDockIconSizePercentage": 120,
   "keyboardLayoutNameCompactMode": false,
   "runningAppsCurrentWorkspace": false,
   "runningAppsGroupByApp": true,
@@ -446,12 +446,9 @@
       ],
       "centerWidgets": [
         {
-          "id": "runningApps",
+          "id": "appsDock",
           "enabled": true,
-          "runningAppsCompactMode": true,
-          "runningAppsGroupByApp": true,
-          "runningAppsCurrentWorkspace": false,
-          "runningAppsCurrentMonitor": false
+          "barShowOverflowBadge": true
         }
       ],
       "rightWidgets": [
@@ -494,8 +491,8 @@
           "showBatteryIcon": false
         }
       ],
-      "spacing": 6,
-      "innerPadding": 4,
+      "spacing": 4,
+      "innerPadding": 15,
       "bottomGap": 0,
       "transparency": 0.3,
       "widgetTransparency": 0.2,
@@ -519,7 +516,7 @@
       "openOnOverview": true,
       "visible": true,
       "popupGapsAuto": true,
-      "popupGapsManual": 4,
+      "popupGapsManual": 0,
       "maximizeDetection": false,
       "scrollEnabled": true,
       "scrollXBehavior": "column",
@@ -528,7 +525,7 @@
       "shadowOpacity": 50,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
-      "widgetPadding": 4,
+      "widgetPadding": 5,
       "iconScale": 1,
       "removeWidgetPadding": false,
       "maximizeWidgetText": false,
