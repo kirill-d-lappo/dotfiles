@@ -106,6 +106,7 @@ Load these when the implementation being tested touches the relevant area:
 |------------------------------------|------|
 | Auth, permissions, data access, or secrets | `skill("security")` — to ensure security scenarios are covered |
 | Docker or containerization | `skill("docker")` — to understand the runtime environment |
+| Direct API testing (REST or GraphQL) against a running server | Scan available skills for any project-specific debug or local-run skill (e.g. `*-debug`, `*-local*`, `vopty-general-input`, or any skill whose name or description mentions starting the app, local setup, or debug mode). Load it before attempting to start the server or send requests — it contains the correct startup commands, required services, auth bypass configuration, and port mappings for this specific project. |
 
 ### Step 4: Apply What You Loaded
 
