@@ -7,7 +7,7 @@ layout {
 
     focus-ring {
         width 1
-        active-color "#7fc8ff"
+        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
         inactive-color "#505050"
     }
 
@@ -18,6 +18,7 @@ layout {
     // When to center a column when changing focus, options are: never, always, on-overflow
     // - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
     center-focused-column "never"
+    always-center-single-column
 
     // "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
