@@ -4,11 +4,15 @@
   "customThemeFile": "/home/klappo/.config/DankMaterialShell/themes/catppuccin/theme.json",
   "registryThemeVariants": {
     "rosePine": "moon",
-    "flexoki": "magenta",
+    "flexoki": "red",
     "catppuccin": {
       "dark": {
         "flavor": "mocha",
         "accent": "blue"
+      },
+      "light": {
+        "flavor": "frappe",
+        "accent": "mauve"
       }
     }
   },
@@ -19,9 +23,9 @@
   "dockTransparency": 1,
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "default",
-  "controlCenterTileColorMode": "primary",
-  "buttonColorMode": "primary",
-  "cornerRadius": 12,
+  "controlCenterTileColorMode": "primaryContainer",
+  "buttonColorMode": "primaryContainer",
+  "cornerRadius": 6,
   "niriLayoutGapsOverride": 4,
   "niriLayoutRadiusOverride": 8,
   "niriLayoutBorderSize": 1,
@@ -204,7 +208,7 @@
   "dankLauncherV2BorderColor": "primary",
   "dankLauncherV2ShowFooter": true,
   "dankLauncherV2UnloadOnClose": false,
-  "useAutoLocation": true,
+  "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
   "iconTheme": "Numix-Circle",
@@ -492,18 +496,18 @@
         }
       ],
       "spacing": 4,
-      "innerPadding": 15,
+      "innerPadding": 11,
       "bottomGap": 0,
-      "transparency": 0.3,
-      "widgetTransparency": 0.2,
+      "transparency": 1,
+      "widgetTransparency": 1,
       "squareCorners": false,
       "noBackground": false,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
       "borderEnabled": true,
-      "borderColor": "primary",
-      "borderOpacity": 0.4,
+      "borderColor": "secondary",
+      "borderOpacity": 0.3,
       "borderThickness": 1,
       "widgetOutlineEnabled": true,
       "widgetOutlineColor": "primary",
@@ -522,14 +526,14 @@
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
-      "shadowOpacity": 50,
+      "shadowOpacity": 10,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
-      "widgetPadding": 5,
+      "widgetPadding": 6,
       "iconScale": 1,
       "removeWidgetPadding": false,
       "maximizeWidgetText": false,
-      "maximizeWidgetIcons": false
+      "maximizeWidgetIcons": true
     }
   ],
   "desktopClockEnabled": false,
