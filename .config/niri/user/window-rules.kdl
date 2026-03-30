@@ -23,6 +23,23 @@ window-rule{
   default-column-width { proportion 1.0; }
 }
 
+window-rule{
+  match app-id="jetbrains-rider" is-floating=true
+
+  default-column-width { proportion 1.0; }
+  open-focused false
+
+  shadow {
+    on
+    softness 40
+    spread 15
+    offset x=0 y=5
+    draw-behind-window true
+    color "#00000064"
+    inactive-color "#00000064"
+  }
+}
+
 window-rule {
   match app-id="google-chrome"
 
