@@ -83,7 +83,8 @@ window-rule {
 }
 
 window-rule {
-  match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler)$"#
+	// Doesn't work when translated to other language obviously
+  match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler|Managing playlists|Add link|Information Box|Visualizations)$"#
 
   open-floating true
 }
@@ -106,7 +107,6 @@ window-rule {
 	match app-id="SourceGit"
   
 	default-column-width { proportion 1.0; }
-  open-floating false
 }
 
 window-rule {
