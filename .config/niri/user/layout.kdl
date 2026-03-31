@@ -18,6 +18,8 @@ layout {
     // When to center a column when changing focus, options are: never, always, on-overflow
     // - "on-overflow", focusing a column will center it if it doesn't fit together with the previously focused column.
     center-focused-column "never"
+
+		// convinient when opening a new window on an empty monitor
     always-center-single-column
 
     // "switch-preset-column-width" (Mod+R) toggles between.

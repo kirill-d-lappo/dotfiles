@@ -26,7 +26,7 @@ window-rule{
 window-rule{
   match app-id="jetbrains-rider" is-floating=true
 
-  default-column-width { proportion 1.0; }
+  default-column-width { proportion 0.5; }
   open-focused false
 
   shadow {
@@ -44,6 +44,8 @@ window-rule {
   match app-id="google-chrome"
 
   default-column-width { proportion 1.0; }
+	open-maximized false
+	open-maximized-to-edges false
 }
 
 // Note [2026/02/03 klappo] VS Code
