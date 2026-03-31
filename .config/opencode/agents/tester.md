@@ -106,7 +106,7 @@ Load these when the implementation being tested touches the relevant area:
 |------------------------------------|------|
 | Auth, permissions, data access, or secrets | `skill("security")` — to ensure security scenarios are covered |
 | Docker or containerization | `skill("docker")` — to understand the runtime environment |
-| Direct API testing (REST or GraphQL) against a running server | Scan available skills for any project-specific debug or local-run skill (e.g. `*-debug`, `*-local*`, `vopty-general-input`, or any skill whose name or description mentions starting the app, local setup, or debug mode). Load it before attempting to start the server or send requests — it contains the correct startup commands, required services, auth bypass configuration, and port mappings for this specific project. |
+| Any API endpoint, GraphQL query/mutation/type, or schema file was added or modified | Scan the available skills list for a project-specific debug or local-run skill (look for names or descriptions that mention starting the app, local setup, launch profiles, dev mode, auth bypass, or port mappings). Load it **before** attempting to start the server or send any requests — it contains the correct startup commands, required services, auth bypass configuration, and port mappings for this specific project. If no such skill exists, inspect the project's README, Dockerfile, and launch config yourself to determine how to start the service. |
 
 ### Step 4: Apply What You Loaded
 
@@ -143,6 +143,8 @@ Based on the nature of the change, select the most appropriate testing approach(
 **Background Job / Worker Testing**: If the change involves async processing, trigger the job/worker and verify side effects (DB changes, external calls, emitted events).
 
 **Event / Message Queue Testing**: If events or messages are produced or consumed, verify the correct events are emitted with the correct payloads and that consumers handle them correctly.
+
+**Non-negotiable rule — API changes require direct API testing**: If the implementation added or modified any API endpoint, GraphQL query, mutation, type, or schema file — regardless of how many other tests you run — you **must** exercise the changed contract by starting the server and sending real requests. A unit test or a schema diff is not a substitute. The goal is to confirm the endpoint is reachable, returns the expected shape, and handles at minimum one success case and one failure case from a real client perspective.
 
 ### 3. Prepare the Test Environment
 - Identify any setup required: database seeds, environment variables, mock services, test users, authentication tokens, etc.
@@ -323,6 +325,7 @@ If the orchestrator provides a path to the session memory file (located at `<rep
 - [ ] Did I review the actual code changes to understand the implementation?
 - [ ] Did I select testing approaches appropriate to the nature of the change?
 - [ ] Did I cover the happy path, at least one failure case, and any edge cases from the ticket?
+- [ ] If any API endpoint, GraphQL query/mutation/type, or schema file was changed — did I start the server and send real requests to verify the contract directly?
 - [ ] Did I verify database state where relevant?
 - [ ] Did I follow the project's existing test conventions?
 - [ ] Is my report clear enough that a developer can act on it immediately?
