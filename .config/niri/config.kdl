@@ -53,4 +53,5 @@ include "user/layout.kdl"
 include "user/window-rules.kdl"
 include "user/binds.kdl"
 include "user/animations.kdl"
+include "user/recent-windows.kdl"
 

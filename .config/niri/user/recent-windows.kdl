@@ -1,0 +1,38 @@
+recent-windows {
+    // off
+    debounce-ms 750
+
+    // Snappy reveal — feels responsive without flashing on quick switches
+    open-delay-ms 100
+
+    highlight {
+        // Catppuccin Macchiato blue with strong opacity — punchy and on-theme
+        active-color "#8aadf466"
+        // Urgent gets the red accent, also semi-transparent
+        urgent-color "#ed879666"
+        // Generous padding so the glow breathes around the preview
+        padding 6
+        // Rounded to match the rest of the theme (border/tab-indicator use similar values)
+        corner-radius 6
+    }
+
+    previews {
+        // Taller previews — actually see what's in each window
+        max-height 1600
+        // Allow scaling up a bit more on large monitors
+        max-scale 0.7
+    }
+
+    binds {
+        Alt+Tab         { next-window; }
+        Alt+Shift+Tab   { previous-window; }
+        Alt+grave       { next-window     filter="app-id"; }
+        Alt+Shift+grave { previous-window filter="app-id"; }
+
+        Mod+Tab         { next-window; }
+        Mod+Shift+Tab   { previous-window; }
+        Mod+grave       { next-window     filter="app-id"; }
+        Mod+Shift+grave { previous-window filter="app-id"; }
+    }
+}
+
