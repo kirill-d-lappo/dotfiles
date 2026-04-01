@@ -89,6 +89,12 @@ window-rule {
 }
 
 window-rule {
+  match app-id="Aimp" title="TrayControl"
+
+  open-floating true
+}
+
+window-rule {
 	// Doesn't work when translated to other language obviously
   match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler|Managing playlists|Add link|Information Box|Visualizations)$"#
 
