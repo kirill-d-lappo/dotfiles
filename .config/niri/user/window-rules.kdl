@@ -187,6 +187,14 @@ window-rule {
   default-column-width { proportion 0.5; }
 }
 
+// Note [2026-04-01 klappo] "Open Folder" dialog by Nautilus
+window-rule {
+  match app-id="org.gnome.Nautilus" title="Open Folder"
+
+  open-floating true
+  default-column-width { proportion 0.5; }
+}
+
 window-rule {
     match app-id=r#".*flameshot.*"#
 		open-floating true
