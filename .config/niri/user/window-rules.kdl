@@ -48,6 +48,12 @@ window-rule {
 	open-maximized-to-edges false
 }
 
+// Note [2026-04-01 klappo] Google chrom picture-in-picture
+window-rule {
+    match app-id="" title="^Picture in picture$"
+    open-floating true
+}
+
 // Note [2026/02/03 klappo] VS Code
 window-rule {
   match app-id="code"
