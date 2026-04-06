@@ -203,7 +203,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="flameshot"
+		match app-id="flameshot" title="flameshot"
 		open-floating true
 		open-fullscreen true
 		focus-ring {
