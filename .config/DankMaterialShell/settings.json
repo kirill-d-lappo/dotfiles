@@ -274,7 +274,11 @@
       "kira-2.4_5G"
     ]
   },
-  "bluetoothDevicePins": {},
+  "bluetoothDevicePins": {
+    "preferredDevice": [
+      "34:88:5D:D2:B3:B7"
+    ]
+  },
   "audioInputDevicePins": {},
   "audioOutputDevicePins": {},
   "gtkThemingEnabled": false,

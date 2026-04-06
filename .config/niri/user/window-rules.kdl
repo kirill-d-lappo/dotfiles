@@ -18,13 +18,13 @@ window-rule {
 
 // Note [2026/02/03 klappo] "open-maximized true" sometimes overflows waybar
 window-rule{
-  match app-id="jetbrains-rider"
+  match app-id=r#"jetbrains-rider|jetbrains-phpstorm|jetbrains-rustrover"#
 
   default-column-width { proportion 1.0; }
 }
 
 window-rule{
-  match app-id="jetbrains-rider" is-floating=true
+  match app-id=r#"jetbrains-rider|jetbrains-phpstorm|jetbrains-rustrover"# is-floating=true
 
   default-column-width { proportion 0.5; }
   open-focused false
@@ -196,7 +196,14 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#".*flameshot.*"#
+  match app-id="org.gnome.Nautilus" title="Open File"
+
+  open-floating true
+  default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="flameshot"
 		open-floating true
 		open-fullscreen true
 		focus-ring {
