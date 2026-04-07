@@ -524,7 +524,7 @@
       "openOnOverview": true,
       "visible": true,
       "popupGapsAuto": true,
-      "popupGapsManual": 4,
+      "popupGapsManual": 50,
       "maximizeDetection": false,
       "scrollEnabled": true,
       "scrollXBehavior": "column",
@@ -537,7 +537,7 @@
       "iconScale": 1,
       "removeWidgetPadding": false,
       "maximizeWidgetText": false,
-      "maximizeWidgetIcons": true
+      "maximizeWidgetIcons": false
     }
   ],
   "desktopClockEnabled": false,
