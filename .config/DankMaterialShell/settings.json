@@ -526,7 +526,7 @@
       "popupGapsAuto": true,
       "popupGapsManual": 50,
       "maximizeDetection": false,
-      "scrollEnabled": true,
+      "scrollEnabled": false,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
