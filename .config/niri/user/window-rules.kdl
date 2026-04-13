@@ -16,23 +16,51 @@ window-rule {
   default-floating-position x=4 y=4 relative-to="bottom-right"
 }
 
-// Note [2026/02/03 klappo] "open-maximized true" sometimes overflows waybar
+// Note [2026/02/03 klappo] "open-maximized true" sometimes overflows waybar, so do not use it
 window-rule{
-  match app-id=r#"jetbrains-rider|jetbrains-phpstorm|jetbrains-rustrover"#
+  match app-id=r#"jetbrains-.+"#
 
   default-column-width { proportion 1.0; }
 }
 
 window-rule{
-  match app-id=r#"jetbrains-rider|jetbrains-phpstorm|jetbrains-rustrover"# is-floating=true
+  match app-id=r#"jetbrains-.+"# is-floating=true
 
   default-column-width { proportion 0.5; }
   open-focused false
 
-  shadow {
+	// See notes on JB window radius below
+	geometry-corner-radius 12
+  
+	shadow {
     on
-    softness 40
-    spread 15
+    softness 20
+    spread 8
+    offset x=0 y=5
+    draw-behind-window true
+    color "#00000064"
+    inactive-color "#00000064"
+  }
+}
+
+window-rule{
+  match app-id=r#"jetbrains-.+"# title=r#"^Welcome to .+"#
+
+  // default-column-width { proportion 0.5; }
+  open-focused true
+  open-floating true
+	open-maximized false
+  open-maximized-to-edges false
+  // default-window-height { proportion 1.0; }
+
+	// Note [2026-04-13 klappo] Jetbrains Welcome window has ~12px radius;
+  // Note [2026-04-13 klappo] as any other JB window I assume
+	geometry-corner-radius 12
+
+	shadow {
+    on
+    softness 20
+    spread 8
     offset x=0 y=5
     draw-behind-window true
     color "#00000064"
