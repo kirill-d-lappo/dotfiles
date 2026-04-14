@@ -257,3 +257,11 @@ window-rule {
     // size = (monitor_w*2) (monitor_h)
 }
 
+window-rule {
+  match app-id="Docker Desktop"
+
+	open-fullscreen false
+	open-maximized-to-edges false
+	open-maximized true
+}
+
