@@ -80,6 +80,13 @@ window-rule {
 window-rule {
     match app-id="" title="^Picture in picture$"
     open-floating true
+    border {
+        on
+        width 1
+        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
+        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
+        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
+    }
 }
 
 // Note [2026/02/03 klappo] VS Code
@@ -93,7 +100,6 @@ window-rule {
   match app-id="Alacritty"
 
 	// Note [2026-02-08 klappo] opacity is controlled by alacrity itself 
-  // opacity 0.95
 }
 
 window-rule {
@@ -191,6 +197,13 @@ window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     match app-id="zoom"
     open-floating true
+    border {
+        on
+        width 1
+        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
+        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
+        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
+    }
 }
 
 // Open dms windows as floating by default
@@ -221,6 +234,13 @@ window-rule {
 
   open-floating true
   default-column-width { proportion 0.5; }
+  border {
+        on
+        width 1
+        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
+        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
+        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
+    }
 }
 
 window-rule {
@@ -228,6 +248,13 @@ window-rule {
 
   open-floating true
   default-column-width { proportion 0.5; }
+  border {
+        on
+        width 1
+        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
+        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
+        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
+    }
 }
 
 window-rule {
