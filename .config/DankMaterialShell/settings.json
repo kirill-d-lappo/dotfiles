@@ -108,22 +108,22 @@
       "width": 50
     },
     {
-      "id": "audioOutput",
-      "enabled": true,
-      "width": 50
-    },
-    {
       "id": "audioInput",
       "enabled": true,
       "width": 50
     },
     {
-      "id": "nightMode",
+      "id": "audioOutput",
       "enabled": true,
       "width": 50
     },
     {
-      "id": "darkMode",
+      "id": "battery",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "builtin_vpn",
       "enabled": true,
       "width": 50
     }
@@ -279,8 +279,16 @@
       "34:88:5D:D2:B3:B7"
     ]
   },
-  "audioInputDevicePins": {},
-  "audioOutputDevicePins": {},
+  "audioInputDevicePins": {
+    "preferredInput": [
+      "alsa_input.pci-0000_00_1f.3.analog-stereo"
+    ]
+  },
+  "audioOutputDevicePins": {
+    "preferredOutput": [
+      "alsa_output.pci-0000_00_1f.3.analog-stereo"
+    ]
+  },
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
@@ -369,7 +377,7 @@
   "notificationHistorySaveNormal": true,
   "notificationHistorySaveCritical": true,
   "notificationRules": [],
-  "osdAlwaysShowValue": false,
+  "osdAlwaysShowValue": true,
   "osdPosition": 5,
   "osdVolumeEnabled": true,
   "osdMediaVolumeEnabled": true,
@@ -448,7 +456,7 @@
           "minimumWidth": true
         },
         {
-          "id": "network_speed_monitor",
+          "id": "music",
           "enabled": true
         }
       ],
@@ -470,10 +478,6 @@
           "keyboardLayoutNameCompactMode": true
         },
         {
-          "id": "battery",
-          "enabled": true
-        },
-        {
           "id": "privacyIndicator",
           "enabled": true
         },
@@ -487,16 +491,15 @@
           "enabled": true
         },
         {
-          "id": "vpn",
-          "enabled": true
-        },
-        {
           "id": "controlCenterButton",
           "enabled": true,
+          "showBluetoothIcon": true,
+          "showAudioIcon": true,
           "showAudioPercent": false,
           "showBrightnessIcon": false,
           "showMicIcon": false,
-          "showBatteryIcon": false
+          "showBatteryIcon": true,
+          "showPrinterIcon": true
         }
       ],
       "spacing": 4,
