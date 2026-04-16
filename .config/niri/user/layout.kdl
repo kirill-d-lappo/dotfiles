@@ -13,6 +13,7 @@ layout {
 
     default-column-width { proportion 0.5; }
 
+		// Note [2026-04-16 klappo] background color covers background completely
     background-color "#0b2958"
 
     // When to center a column when changing focus, options are: never, always, on-overflow

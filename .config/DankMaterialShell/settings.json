@@ -533,7 +533,7 @@
       "scrollEnabled": false,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
-      "shadowIntensity": 0,
+      "shadowIntensity": 100,
       "shadowOpacity": 10,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
