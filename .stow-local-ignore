@@ -26,3 +26,6 @@ _darcs
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+# Any disabled file or folder
+.+\.disabled
