@@ -95,7 +95,8 @@
     {
       "id": "brightnessSlider",
       "enabled": true,
-      "width": 50
+      "width": 50,
+      "deviceName": "backlight:intel_backlight"
     },
     {
       "id": "wifi",
@@ -202,7 +203,7 @@
     "apps": "list"
   },
   "niriOverviewOverlayEnabled": true,
-  "dankLauncherV2Size": "large",
+  "dankLauncherV2Size": "medium",
   "dankLauncherV2BorderEnabled": true,
   "dankLauncherV2BorderThickness": 1,
   "dankLauncherV2BorderColor": "primary",
@@ -268,7 +269,9 @@
   "fadeToDpmsEnabled": true,
   "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
-  "brightnessDevicePins": {},
+  "brightnessDevicePins": {
+    "HDMI-A-2": "backlight:intel_backlight"
+  },
   "wifiNetworkPins": {
     "preferredWifi": [
       "kira-2.4_5G"
@@ -504,7 +507,7 @@
         }
       ],
       "spacing": 4,
-      "innerPadding": 9,
+      "innerPadding": 4,
       "bottomGap": 0,
       "transparency": 1,
       "widgetTransparency": 1,
@@ -515,11 +518,11 @@
       "gothCornerRadiusValue": 12,
       "borderEnabled": true,
       "borderColor": "secondary",
-      "borderOpacity": 0.3,
+      "borderOpacity": 0.4,
       "borderThickness": 1,
       "widgetOutlineEnabled": true,
-      "widgetOutlineColor": "primary",
-      "widgetOutlineOpacity": 0.2,
+      "widgetOutlineColor": "surfaceText",
+      "widgetOutlineOpacity": 0.3,
       "widgetOutlineThickness": 1,
       "fontScale": 1.25,
       "autoHide": false,
@@ -528,12 +531,12 @@
       "openOnOverview": true,
       "visible": true,
       "popupGapsAuto": true,
-      "popupGapsManual": 50,
+      "popupGapsManual": 0,
       "maximizeDetection": false,
       "scrollEnabled": false,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
-      "shadowIntensity": 100,
+      "shadowIntensity": 0,
       "shadowOpacity": 10,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
@@ -541,7 +544,8 @@
       "iconScale": 1,
       "removeWidgetPadding": false,
       "maximizeWidgetText": false,
-      "maximizeWidgetIcons": false
+      "maximizeWidgetIcons": false,
+      "clickThrough": false
     }
   ],
   "desktopClockEnabled": false,
