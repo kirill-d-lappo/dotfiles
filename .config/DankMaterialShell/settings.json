@@ -1,6 +1,6 @@
 {
   "currentThemeName": "custom",
-  "currentThemeCategory": "registry",
+  "currentThemeCategory": "custom",
   "customThemeFile": "/home/klappo/.config/DankMaterialShell/themes/catppuccin/theme.json",
   "registryThemeVariants": {
     "rosePine": "moon",
@@ -273,24 +273,32 @@
     "HDMI-A-2": "backlight:intel_backlight"
   },
   "wifiNetworkPins": {
-    "preferredWifi": ["kira-2.4_5G"]
+    "preferredWifi": [
+      "kira-2.4_5G"
+    ]
   },
   "bluetoothDevicePins": {
-    "preferredDevice": ["34:88:5D:D2:B3:B7"]
+    "preferredDevice": [
+      "34:88:5D:D2:B3:B7"
+    ]
   },
   "audioInputDevicePins": {
-    "preferredInput": ["alsa_input.pci-0000_00_1f.3.analog-stereo"]
+    "preferredInput": [
+      "alsa_input.pci-0000_00_1f.3.analog-stereo"
+    ]
   },
   "audioOutputDevicePins": {
-    "preferredOutput": ["alsa_output.pci-0000_00_1f.3.analog-stereo"]
+    "preferredOutput": [
+      "alsa_output.pci-0000_00_1f.3.analog-stereo"
+    ]
   },
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
   "syncModeWithPortal": true,
   "terminalsAlwaysDark": false,
   "runDmsMatugenTemplates": true,
-  "matugenTemplateGtk": true,
-  "matugenTemplateNiri": true,
+  "matugenTemplateGtk": false,
+  "matugenTemplateNiri": false,
   "matugenTemplateHyprland": false,
   "matugenTemplateMangowc": false,
   "matugenTemplateQt5ct": true,
@@ -303,7 +311,7 @@
   "matugenTemplateGhostty": false,
   "matugenTemplateKitty": false,
   "matugenTemplateFoot": false,
-  "matugenTemplateAlacritty": false,
+  "matugenTemplateAlacritty": true,
   "matugenTemplateNeovim": false,
   "matugenTemplateWezterm": false,
   "matugenTemplateDgop": true,
@@ -340,7 +348,7 @@
   "notificationOverlayEnabled": false,
   "notificationPopupShadowEnabled": true,
   "notificationPopupPrivacyMode": false,
-  "modalDarkenBackground": true,
+  "modalDarkenBackground": false,
   "lockScreenShowPowerActions": true,
   "lockScreenShowSystemIcons": true,
   "lockScreenShowTime": true,
@@ -385,7 +393,12 @@
   "osdAudioOutputEnabled": true,
   "powerActionConfirm": true,
   "powerActionHoldDuration": 0.5,
-  "powerMenuActions": ["reboot", "logout", "poweroff", "lock"],
+  "powerMenuActions": [
+    "reboot",
+    "logout",
+    "poweroff",
+    "lock"
+  ],
   "powerMenuDefaultAction": "logout",
   "powerMenuGridLayout": false,
   "customPowerActionLock": "",
@@ -414,7 +427,9 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 1,
-      "screenPreferences": ["all"],
+      "screenPreferences": [
+        "all"
+      ],
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
@@ -492,8 +507,8 @@
       "spacing": 4,
       "innerPadding": 4,
       "bottomGap": 0,
-      "transparency": 1,
-      "widgetTransparency": 1,
+      "transparency": 0.7,
+      "widgetTransparency": 0,
       "squareCorners": false,
       "noBackground": false,
       "gothCornersEnabled": false,
@@ -523,7 +538,7 @@
       "shadowOpacity": 10,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
-      "widgetPadding": 8,
+      "widgetPadding": 4,
       "iconScale": 1,
       "removeWidgetPadding": false,
       "maximizeWidgetText": false,
@@ -555,7 +570,9 @@
   "desktopClockY": -1,
   "desktopClockWidth": 280,
   "desktopClockHeight": 180,
-  "desktopClockDisplayPreferences": ["all"],
+  "desktopClockDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -592,7 +609,9 @@
   "systemMonitorY": -1,
   "systemMonitorWidth": 320,
   "systemMonitorHeight": 480,
-  "systemMonitorDisplayPreferences": ["all"],
+  "systemMonitorDisplayPreferences": [
+    "all"
+  ],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
@@ -608,4 +627,3 @@
   "launcherPluginOrder": [],
   "configVersion": 5
 }
-

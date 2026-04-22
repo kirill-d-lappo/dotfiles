@@ -97,12 +97,6 @@ window-rule {
 }
 
 window-rule {
-  match app-id="Alacritty"
-
-	// Note [2026-02-08 klappo] opacity is controlled by alacrity itself 
-}
-
-window-rule {
   match app-id="Slack"
 
   default-column-width { proportion 0.25; }
@@ -200,6 +194,7 @@ window-rule {
 }
 
 window-rule {
+	  // Note [2026-02-08 klappo] opacity is controlled by alacrity itself 
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     match app-id="Alacritty"
     match app-id="zen"
@@ -207,7 +202,7 @@ window-rule {
     match app-id="kitty"
 
     draw-border-with-background false
-    opacity 0.9
+		opacity 0.97
 }
 
 window-rule {
