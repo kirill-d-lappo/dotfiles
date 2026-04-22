@@ -115,7 +115,7 @@ window-rule {
 	open-floating true
   default-column-width { proportion 0.25; }
   default-floating-position x=4 y=4 relative-to="bottom-right"
-  opacity 0.75
+  opacity 0.90
 
   border {
     on
@@ -124,6 +124,14 @@ window-rule {
     inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
     urgent-gradient from="#CC4444" to="#CC6B44" angle=180
   }
+}
+
+window-rule {
+	match app-id=r#"^org.telegram.desktop.*"# title="Media viewer" is-floating=false
+	opacity 1.0
+	border {
+		off
+	}
 }
 
 window-rule {
