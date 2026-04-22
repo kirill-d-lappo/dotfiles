@@ -39,7 +39,7 @@
   "showSeconds": false,
   "padHours12Hour": false,
   "useFahrenheit": false,
-  "windSpeedUnit": "kmh",
+  "windSpeedUnit": "ms",
   "nightModeEnabled": false,
   "animationSpeed": 1,
   "customAnimationDuration": 500,
@@ -174,7 +174,7 @@
   "appIdSubstitutions": [],
   "centeringMode": "geometric",
   "clockDateFormat": "ddd, MMM d",
-  "lockDateFormat": "",
+  "lockDateFormat": "dddd, MMMM d",
   "greeterRememberLastSession": true,
   "greeterRememberLastUser": true,
   "greeterEnableFprint": false,
@@ -273,24 +273,16 @@
     "HDMI-A-2": "backlight:intel_backlight"
   },
   "wifiNetworkPins": {
-    "preferredWifi": [
-      "kira-2.4_5G"
-    ]
+    "preferredWifi": ["kira-2.4_5G"]
   },
   "bluetoothDevicePins": {
-    "preferredDevice": [
-      "34:88:5D:D2:B3:B7"
-    ]
+    "preferredDevice": ["34:88:5D:D2:B3:B7"]
   },
   "audioInputDevicePins": {
-    "preferredInput": [
-      "alsa_input.pci-0000_00_1f.3.analog-stereo"
-    ]
+    "preferredInput": ["alsa_input.pci-0000_00_1f.3.analog-stereo"]
   },
   "audioOutputDevicePins": {
-    "preferredOutput": [
-      "alsa_output.pci-0000_00_1f.3.analog-stereo"
-    ]
+    "preferredOutput": ["alsa_output.pci-0000_00_1f.3.analog-stereo"]
   },
   "gtkThemingEnabled": false,
   "qtThemingEnabled": false,
@@ -364,7 +356,7 @@
   "u2fMode": "or",
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
-  "lockScreenNotificationMode": 0,
+  "lockScreenNotificationMode": 1,
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
@@ -393,14 +385,7 @@
   "osdAudioOutputEnabled": true,
   "powerActionConfirm": true,
   "powerActionHoldDuration": 0.5,
-  "powerMenuActions": [
-    "reboot",
-    "logout",
-    "poweroff",
-    "lock",
-    "suspend",
-    "restart"
-  ],
+  "powerMenuActions": ["reboot", "logout", "poweroff", "lock"],
   "powerMenuDefaultAction": "logout",
   "powerMenuGridLayout": false,
   "customPowerActionLock": "",
@@ -429,9 +414,7 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 1,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
@@ -572,9 +555,7 @@
   "desktopClockY": -1,
   "desktopClockWidth": 280,
   "desktopClockHeight": 180,
-  "desktopClockDisplayPreferences": [
-    "all"
-  ],
+  "desktopClockDisplayPreferences": ["all"],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -611,9 +592,7 @@
   "systemMonitorY": -1,
   "systemMonitorWidth": 320,
   "systemMonitorHeight": 480,
-  "systemMonitorDisplayPreferences": [
-    "all"
-  ],
+  "systemMonitorDisplayPreferences": ["all"],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
@@ -629,3 +608,4 @@
   "launcherPluginOrder": [],
   "configVersion": 5
 }
+
