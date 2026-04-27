@@ -76,17 +76,19 @@ window-rule {
 	open-maximized-to-edges false
 }
 
-// Note [2026-04-01 klappo] Google chrom picture-in-picture
+// Note [2026-04-01 klappo] Google Chrome picture-in-picture
 window-rule {
-    match app-id="" title="^Picture in picture$"
-    open-floating true
-    border {
-        on
-        width 1
-        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
-        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
-        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
-    }
+  match app-id="" title="^Picture in picture$"
+  open-floating true
+  default-floating-position x=4 y=4 relative-to="bottom-left"
+
+  border {
+    on
+    width 1
+    active-gradient from="#7fc8ff" to="#cba6f7" angle=180
+    inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
+    urgent-gradient from="#CC4444" to="#CC6B44" angle=180
+  }
 }
 
 // Note [2026/02/03 klappo] VS Code
