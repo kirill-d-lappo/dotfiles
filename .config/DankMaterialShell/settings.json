@@ -20,7 +20,7 @@
   "runUserMatugenTemplates": true,
   "matugenTargetMonitor": "",
   "popupTransparency": 1,
-  "dockTransparency": 0.85,
+  "dockTransparency": 0.7,
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "default",
   "controlCenterTileColorMode": "primary",
@@ -361,14 +361,14 @@
   "dockSpacing": 8,
   "dockBottomGap": 0,
   "dockMargin": 0,
-  "dockIconSize": 28,
-  "dockIndicatorStyle": "circle",
+  "dockIconSize": 24,
+  "dockIndicatorStyle": "line",
   "dockBorderEnabled": true,
   "dockBorderColor": "primary",
   "dockBorderOpacity": 1,
   "dockBorderThickness": 1,
-  "dockIsolateDisplays": false,
-  "dockLauncherEnabled": true,
+  "dockIsolateDisplays": true,
+  "dockLauncherEnabled": false,
   "dockLauncherLogoMode": "os",
   "dockLauncherLogoCustomPath": "",
   "dockLauncherLogoColorOverride": "",
@@ -445,7 +445,11 @@
   "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
-  "screenPreferences": {},
+  "screenPreferences": {
+    "wallpaper": [
+      "all"
+    ]
+  },
   "showOnLastDisplay": {},
   "niriOutputSettings": {},
   "hyprlandOutputSettings": {},
@@ -499,6 +503,7 @@
         {
           "id": "appsDock",
           "enabled": true,
+          "barMaxVisibleApps": 0,
           "barShowOverflowBadge": true
         }
       ],
@@ -551,7 +556,7 @@
       "borderColor": "secondary",
       "borderOpacity": 0.4,
       "borderThickness": 1,
-      "widgetOutlineEnabled": true,
+      "widgetOutlineEnabled": false,
       "widgetOutlineColor": "surfaceText",
       "widgetOutlineOpacity": 0.3,
       "widgetOutlineThickness": 1,
@@ -571,7 +576,7 @@
       "shadowOpacity": 10,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
-      "widgetPadding": 8,
+      "widgetPadding": 4,
       "iconScale": 1,
       "removeWidgetPadding": false,
       "maximizeWidgetText": false,
