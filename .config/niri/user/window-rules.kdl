@@ -147,6 +147,7 @@ window-rule {
   match app-id="Aimp" title="TrayControl"
 
   open-floating true
+	tiled-state true
 }
 
 window-rule {
@@ -204,14 +205,20 @@ window-rule {
 }
 
 window-rule {
-	  // Note [2026-02-08 klappo] opacity is controlled by alacrity itself 
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     match app-id="Alacritty"
     match app-id="zen"
     match app-id="com.mitchellh.ghostty"
     match app-id="kitty"
+		match app-id="org.gnome.Console"
 
     draw-border-with-background false
+		opacity 0.95
+}
+
+window-rule {
+	  // Note [2026-02-08 klappo] opacity is controlled by alacrity itself 
+    match app-id="Alacritty"
 		opacity 1.0
 }
 
@@ -283,27 +290,27 @@ window-rule {
 		match app-id="flameshot" title="flameshot"
 		open-floating true
 		open-fullscreen true
+    open-focused true
+		
+		geometry-corner-radius 0
+
+	  default-floating-position x=0 y=0 relative-to="bottom-left"
+
 		focus-ring {
 			off
 		}
+
 		border{
 			off
 		}
+		
 		shadow{
 			off
 		}
+
 		tab-indicator {
 
 		}
-    // animation = fade
-    // rounding = 0
-    // border_size = 0
-    // fullscreen_state = 0 0
-    // float = on
-    // pin = on
-    // monitor = DP-1
-    // move = 0 0
-    // size = (monitor_w*2) (monitor_h)
 }
 
 window-rule {
