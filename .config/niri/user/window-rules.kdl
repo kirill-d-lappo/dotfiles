@@ -45,8 +45,11 @@ window-rule{
 window-rule{
   match app-id=r#"jetbrains-.+"# is-floating=true
 
-  default-column-width { proportion 0.5; }
-  open-focused false
+//  default-column-width { proportion 0.5; }
+  open-focused true
+  open-floating true
+
+  default-floating-position x=450 y=200 relative-to="top-left"
 
 	// See notes on JB window radius below
 	geometry-corner-radius 12
