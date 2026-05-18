@@ -7,9 +7,6 @@ environment {
   XDG_CURRENT_DESKTOP "niri"
 }
 
-// Note [2026/02/03 klappo] Browser
-spawn-at-startup "google-chrome-stable";
-
 // Note [2026/02/03 klappo] show or not show help message at start
 hotkey-overlay {
     // skip-at-startup
@@ -54,4 +51,4 @@ include "user/window-rules.kdl"
 include "user/binds.kdl"
 include "user/animations.kdl"
 include "user/recent-windows.kdl"
-
+include "user/startup.kdl"
