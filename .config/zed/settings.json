@@ -120,6 +120,7 @@
     "sort_mode": "directories_first",
     "hide_root": true,
     "starts_open": true,
+    "auto_reveal_entries": true,
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -133,5 +134,16 @@
     "**/Thumbs.db",
     "**/.classpath",
     "**/.settings"
-  ]
+  ],
+  "languages": {
+    "PHP": {
+      "formatter": {
+        "external": {
+          "command": "vendor/bin/pint",
+          "arguments": ["{buffer_path}"]
+        }
+      },
+      "format_on_save": "on"
+    }
+  }
 }
