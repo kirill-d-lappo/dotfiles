@@ -9,6 +9,33 @@ window-rule {
 	// open-on-output "eDP-1"
 }
 
+// Any floating window
+// Open-floating when need to apply this
+window-rule{
+  match is-floating=true
+
+  open-focused true
+  open-floating true
+
+  border {
+    on
+    width 1
+    active-gradient from="#7fc8ff" to="#cba6f7" angle=180
+    inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
+    urgent-gradient from="#CC4444" to="#CC6B44" angle=180
+  }
+
+	shadow {
+    on
+    softness 20
+    spread 8
+    offset x=0 y=5
+    draw-behind-window true
+    color "#00000064"
+    inactive-color "#00000064"
+  }
+}
+
 // Note [2026-05-12 klappo] sometimes it is a notifications from some other windows like Chrome
 window-rule {
   // Note [2026-05-12 klappo] just ="" will not work, it will apply it to everything; need emptiness match
@@ -53,16 +80,6 @@ window-rule{
 
 	// See notes on JB window radius below
 	geometry-corner-radius 12
-
-	shadow {
-    on
-    softness 20
-    spread 8
-    offset x=0 y=5
-    draw-behind-window true
-    color "#00000064"
-    inactive-color "#00000064"
-  }
 }
 
 window-rule{
@@ -78,16 +95,6 @@ window-rule{
 	// Note [2026-04-13 klappo] Jetbrains Welcome window has ~12px radius;
   // Note [2026-04-13 klappo] as any other JB window I assume
 	geometry-corner-radius 12
-
-	shadow {
-    on
-    softness 20
-    spread 8
-    offset x=0 y=5
-    draw-behind-window true
-    color "#00000064"
-    inactive-color "#00000064"
-  }
 }
 
 window-rule {
@@ -103,14 +110,6 @@ window-rule {
   match app-id="" title="^Picture in picture$"
   open-floating true
   default-floating-position x=4 y=4 relative-to="bottom-left"
-
-  border {
-    on
-    width 1
-    active-gradient from="#7fc8ff" to="#cba6f7" angle=180
-    inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
-    urgent-gradient from="#CC4444" to="#CC6B44" angle=180
-  }
 }
 
 // Note [2026/02/03 klappo] VS Code
@@ -140,14 +139,6 @@ window-rule {
   default-column-width { proportion 0.25; }
   default-floating-position x=4 y=4 relative-to="bottom-right"
   opacity 0.90
-
-  border {
-    on
-    width 1
-    active-gradient from="#7fc8ff" to="#cba6f7" angle=180
-    inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
-    urgent-gradient from="#CC4444" to="#CC6B44" angle=180
-  }
 }
 
 window-rule {
@@ -174,7 +165,13 @@ window-rule {
 
 window-rule {
 	// Doesn't work when translated to other language obviously
-  match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler|Managing playlists|Add link|Information Box|Visualizations)$"#
+  match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler|Managing playlists|Add link|Information Box|Visualizations|.*Editor.*)$"#
+
+  open-floating true
+}
+
+window-rule {
+  match app-id="Aimp" title="Error"
 
   open-floating true
 }
@@ -285,13 +282,6 @@ window-rule {
 
   open-floating true
   default-column-width { proportion 0.5; }
-  border {
-        on
-        width 1
-        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
-        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
-        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
-    }
 }
 
 window-rule {
@@ -299,13 +289,6 @@ window-rule {
 
   open-floating true
   default-column-width { proportion 0.5; }
-  border {
-        on
-        width 1
-        active-gradient from="#7fc8ff" to="#cba6f7" angle=180
-        inactive-gradient from="#cba6f7" to="#7fc8ff" angle=180
-        urgent-gradient from="#CC4444" to="#CC6B44" angle=180
-    }
 }
 
 window-rule {
@@ -341,5 +324,23 @@ window-rule {
 	open-fullscreen false
 	open-maximized-to-edges false
 	open-maximized true
+}
+
+window-rule {
+  match app-id="dev.zed.Zed"
+
+  default-column-width { proportion 0.75; }
+	open-maximized false
+	open-maximized-to-edges false
+}
+
+window-rule{
+  match app-id="dev.zed.Zed" title=r#".*Settings.*"#
+
+  open-focused true
+  open-floating true
+
+  default-floating-position x=450 y=100 relative-to="top-left"
+
 }
 
