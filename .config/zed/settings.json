@@ -7,38 +7,62 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "context_servers": {
-    "mcp-server-github": {
-      "enabled": true,
-      "settings": {}
+  "agent_servers": {
+    "opencode": {
+      "type": "registry",
+      "favorite_config_option_values": {
+        "effort": [
+          "medium"
+        ],
+        "model": [
+          "github-copilot/claude-sonnet-4.5",
+          "github-copilot/claude-sonnet-4.6"
+        ]
+      }
     }
   },
   "icon_theme": {
-    "mode": "dark",
-    "light": "VSCode Icons for Zed (Light Official Icons)",
-    "dark": "VSCode Icons for Zed (Dark Official Icons)",
+    "mode": "light",
+    "light": "VSCode Icons for Zed (Dark Official Icons)",
+    "dark": "VSCode Icons for Zed (Dark Official Icons)"
   },
-  "base_keymap": "JetBrains",
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "vertical_scroll_margin": 1.0,
+  "buffer_font_fallbacks": [
+    ".ZedMono",
+    "Aptos Mono"
+  ],
+  "file_types": {
+    "xml": [
+      "*.csproj"
+    ],
+    "dotenv": [
+      ".env*"
+    ],
+  },
+  "show_whitespaces": "trailing",
+  "show_edit_predictions": true,
+  "base_keymap": "VSCode",
   "ui_font_size": 18,
   "buffer_font_size": 14,
-  "buffer_font_family": "FiraCode Nerd Font Mono",
+  "buffer_font_family": "FiraCode Nerd Font",
   "telemetry": {
     "metrics": false,
     "diagnostics": false,
   },
   "agent": {
+    "dock": "right",
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4o",
     },
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
-  },
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark",
+    "dark": "Tokyo Night Storm"
   },
   "inlay_hints": {
     "enabled": false,
@@ -48,7 +72,10 @@
     "show_background": true,
   },
   "preferred_line_length": 120,
-  "wrap_guides": [80, 120],
+  "wrap_guides": [
+    80,
+    120
+  ],
   "diagnostics": {
     "inline": {
       "enabled": true,
@@ -71,10 +98,40 @@
       "enabled": false,
     },
     "git_gutter": "tracked_files",
+    "enable_diff": true,
+    "blame": {
+      "show_avatar": true
+    }
   },
+  "format_on_save": "on",
+  "formatter": "language_server",
   "autosave": {
     "after_delay": {
       "milliseconds": 5000,
     },
   },
+  "always_treat_brackets_as_autoclosed": true,
+  "project_panel": {
+    "dock": "left",
+    "entry_spacing": "comfortable",
+    "file_icons": true,
+    "folder_icons": true,
+    "indent_size": 15,
+    "sort_mode": "directories_first",
+    "hide_root": true,
+    "starts_open": true,
+  },
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/obj",
+    "**/bin",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ]
 }
