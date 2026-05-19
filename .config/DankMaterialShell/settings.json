@@ -48,12 +48,12 @@
   "popoutCustomAnimationDuration": 150,
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
-  "enableRippleEffects": true,
-  "blurEnabled": false,
+  "enableRippleEffects": false,
+  "blurEnabled": true,
   "blurForegroundLayers": true,
   "blurLayerOutlineOpacity": 0.12,
   "blurBorderColor": "outline",
-  "blurBorderCustomColor": "#ffffff",
+  "blurBorderCustomColor": "#87ffffff",
   "blurBorderOpacity": 0.35,
   "wallpaperFillMode": "Fill",
   "blurredWallpaperLayer": false,
@@ -243,8 +243,8 @@
   "networkPreference": "auto",
   "iconTheme": "Numix-Circle",
   "cursorSettings": {
-    "theme": "Win7Bulid-cursors",
-    "size": 32,
+    "theme": "We10XOS-cursors",
+    "size": 33,
     "niri": {
       "hideWhenTyping": true,
       "hideAfterInactiveMs": 0
@@ -351,7 +351,7 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": false,
   "matugenTemplateEmacs": false,
-  "matugenTemplateZed": false,
+  "matugenTemplateZed": true,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
@@ -381,7 +381,7 @@
   "notificationOverlayEnabled": false,
   "notificationPopupShadowEnabled": true,
   "notificationPopupPrivacyMode": false,
-  "modalDarkenBackground": false,
+  "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
   "lockScreenShowSystemIcons": true,
   "lockScreenShowTime": true,
@@ -513,6 +513,10 @@
           "enabled": true
         },
         {
+          "id": "clipboard",
+          "enabled": true
+        },
+        {
           "id": "keyboard_layout_name",
           "enabled": true,
           "keyboardLayoutNameCompactMode": true
@@ -545,7 +549,7 @@
       "spacing": 4,
       "innerPadding": 4,
       "bottomGap": 0,
-      "transparency": 0.7,
+      "transparency": 0.6,
       "widgetTransparency": 0,
       "squareCorners": false,
       "noBackground": false,
@@ -559,7 +563,7 @@
       "widgetOutlineEnabled": false,
       "widgetOutlineColor": "surfaceText",
       "widgetOutlineOpacity": 0.3,
-      "widgetOutlineThickness": 1,
+      "widgetOutlineThickness": 10,
       "fontScale": 1.25,
       "autoHide": false,
       "autoHideDelay": 250,
@@ -573,7 +577,7 @@
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
       "shadowIntensity": 0,
-      "shadowOpacity": 10,
+      "shadowOpacity": 100,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
       "widgetPadding": 4,
@@ -653,7 +657,51 @@
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
-  "desktopWidgetInstances": [],
+  "desktopWidgetInstances": [
+    {
+      "id": "dw_1779219708058_afmqor886",
+      "widgetType": "desktopClock",
+      "name": "Desktop Clock",
+      "enabled": true,
+      "config": {
+        "style": "stacked",
+        "transparency": 0.44,
+        "colorMode": "secondary",
+        "customColor": "#ffffff",
+        "showDate": true,
+        "showAnalogNumbers": false,
+        "showAnalogSeconds": true,
+        "displayPreferences": [
+          "all"
+        ],
+        "showDigitalSeconds": false,
+        "showOnOverlay": false,
+        "syncPositionAcrossScreens": true,
+        "showOnOverview": true,
+        "clickThrough": true
+      },
+      "positions": {
+        "HDMI-A-2": {
+          "width": 449,
+          "height": 259,
+          "x": 1471,
+          "y": 0
+        },
+        "eDP-1": {
+          "width": 453,
+          "height": 272,
+          "x": 1467,
+          "y": 0
+        },
+        "_synced": {
+          "x": 0.8375,
+          "y": 0.287962962962963,
+          "width": 117,
+          "height": 277
+        }
+      }
+    }
+  ],
   "desktopWidgetGroups": [],
   "builtInPluginSettings": {
     "dms_settings_search": {

@@ -6,7 +6,6 @@ prefer-no-csd
 window-rule {
   geometry-corner-radius 4
   clip-to-geometry true
-	// open-on-output "eDP-1"
 }
 
 // Any floating window
