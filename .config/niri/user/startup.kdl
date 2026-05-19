@@ -1,9 +1,6 @@
 // Start anything on start up
 // ==========================
 
-// Polkit UI client
-spawn-at-startup "badged"
-
 // Note [2026/02/03 klappo] Browser
 spawn-at-startup "google-chrome-stable";
 
