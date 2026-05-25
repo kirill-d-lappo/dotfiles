@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "semantic_tokens": "combined",
   "cli_default_open_behavior": "existing_window",
   "buffer_font_features": {
     "calt": false // Disable ligatures
@@ -55,7 +56,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Fleet Dark"
+    "dark": "[AI] One Dark"
   },
   "inlay_hints": {
     "enabled": false,
@@ -128,6 +129,15 @@
     "**/.classpath",
     "**/.settings"
   ],
+  // C# class field color - maps LSP "field" semantic token to the "field" style in the theme
+  "global_lsp_settings": {
+    "semantic_token_rules": [
+      {
+        "token_type": "field",
+        "style": ["field"]
+      }
+    ]
+  },
   "languages": {
     "PHP": {
       "formatter": {
