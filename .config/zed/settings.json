@@ -7,19 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "existing_window",
+  "buffer_font_features": {
+    "calt": false // Disable ligatures
+  },
   "agent_servers": {
-    "opencode": {
-      "type": "registry",
-      "favorite_config_option_values": {
-        "effort": [
-          "medium"
-        ],
-        "model": [
-          "github-copilot/claude-sonnet-4.5",
-          "github-copilot/claude-sonnet-4.6"
-        ]
-      }
-    }
+    
   },
   "icon_theme": {
     "mode": "light",
@@ -62,7 +55,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "Tokyo Night Storm"
+    "dark": "Fleet Dark"
   },
   "inlay_hints": {
     "enabled": false,
@@ -140,10 +133,13 @@
       "formatter": {
         "external": {
           "command": "vendor/bin/pint",
-          "arguments": ["{buffer_path}"]
+          "arguments": [
+            "{buffer_path}"
+          ]
         }
       },
       "format_on_save": "on"
     }
   }
 }
+

@@ -153,6 +153,7 @@ window-rule {
 
   default-column-width { proportion 0.25; }
   open-floating false
+  opacity 0.97
 }
 
 window-rule {
@@ -160,6 +161,7 @@ window-rule {
 
   open-floating true
 	tiled-state true
+  default-floating-position x=4 y=4 relative-to="bottom-right"
 }
 
 window-rule {
@@ -328,7 +330,7 @@ window-rule {
 window-rule {
   match app-id="dev.zed.Zed"
 
-  default-column-width { proportion 0.75; }
+  default-column-width { proportion 1.0; }
 	open-maximized false
 	open-maximized-to-edges false
 }
