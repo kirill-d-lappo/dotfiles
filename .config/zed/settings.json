@@ -56,7 +56,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "[AI] One Dark"
+    "dark": "One Dark Vivid [Gen]"
   },
   "inlay_hints": {
     "enabled": false,
