@@ -109,7 +109,7 @@
   ],
   "julia.symbolCacheDownload": true,
   "julia.enableTelemetry": false,
-  "markdown-preview-enhanced.previewTheme": "github-dark.css",
+  "markdown-preview-enhanced.previewTheme": "github-light.css",
   "window.dialogStyle": "custom",
   "[nginx]": {
     "editor.defaultFormatter": "raynigon.nginx-formatter"

@@ -42,15 +42,15 @@
   "windSpeedUnit": "ms",
   "nightModeEnabled": false,
   "animationSpeed": 1,
-  "customAnimationDuration": 500,
-  "syncComponentAnimationSpeeds": true,
+  "customAnimationDuration": 159,
+  "syncComponentAnimationSpeeds": false,
   "popoutAnimationSpeed": 1,
   "popoutCustomAnimationDuration": 150,
   "modalAnimationSpeed": 1,
   "modalCustomAnimationDuration": 150,
   "enableRippleEffects": false,
-  "blurEnabled": true,
-  "blurForegroundLayers": true,
+  "blurEnabled": false,
+  "blurForegroundLayers": false,
   "blurLayerOutlineOpacity": 0.12,
   "blurBorderColor": "outline",
   "blurBorderCustomColor": "#87ffffff",
@@ -318,6 +318,7 @@
   },
   "audioOutputDevicePins": {
     "preferredOutput": [
+      "alsa_output.usb-SmartlinkTechnology_M7-00.iec958-stereo",
       "alsa_output.pci-0000_00_1f.3.analog-stereo"
     ]
   },

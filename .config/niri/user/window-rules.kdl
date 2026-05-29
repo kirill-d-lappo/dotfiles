@@ -166,15 +166,16 @@ window-rule {
 
 window-rule {
 	// Doesn't work when translated to other language obviously
-  match app-id="Aimp" title=r#"^(About|Skin Settings|Preferences|Sound Effects|Scheduler|Managing playlists|Add link|Information Box|Visualizations|.*Editor.*)$"#
+  match app-id="Aimp" title=r#"^(Error|About|Skin Settings|Preferences|Sound Effects|Scheduler|Managing playlists|Add link|Visualizations|.*Editor.*|Rename)$"#
 
   open-floating true
 }
 
 window-rule {
-  match app-id="Aimp" title="Error"
+  match app-id="Aimp" title=r#".*Information Box.*"#
 
   open-floating true
+  default-floating-position x=4 y=4 relative-to="bottom-right"
 }
 
 window-rule {
@@ -279,7 +280,7 @@ window-rule {
 
 // Note [2026-04-01 klappo] "Open Folder" dialog by Nautilus
 window-rule {
-  match app-id="org.gnome.Nautilus" title="Open Folder"
+  match app-id="org.gnome.Nautilus" title=r#"^(Open Folder|Files)$"#
 
   open-floating true
   default-column-width { proportion 0.5; }

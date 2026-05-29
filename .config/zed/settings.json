@@ -12,9 +12,7 @@
   "buffer_font_features": {
     "calt": false // Disable ligatures
   },
-  "agent_servers": {
-    
-  },
+  "agent_servers": {},
   "icon_theme": {
     "mode": "light",
     "light": "VSCode Icons for Zed (Dark Official Icons)",
@@ -30,11 +28,17 @@
   ],
   "file_types": {
     "xml": [
-      "*.csproj"
+      "*Directory.Build.props",
+      "*Directory.Packages.props",
+      "NuGet.Config",
+      "*.csproj",
     ],
     "dotenv": [
       ".env*"
     ],
+    "TOML": [
+      "Cargo.lock"
+    ]
   },
   "show_whitespaces": "trailing",
   "show_edit_predictions": true,
@@ -134,7 +138,9 @@
     "semantic_token_rules": [
       {
         "token_type": "field",
-        "style": ["field"]
+        "style": [
+          "field"
+        ]
       }
     ]
   },
@@ -152,4 +158,3 @@
     }
   }
 }
-
