@@ -43,4 +43,5 @@ lazy.setup({
   },
 })
 
+-- Had to put it here, after loading all theme plugins
 vim.cmd("colorscheme kanagawa-wave")
