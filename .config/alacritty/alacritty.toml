@@ -2,7 +2,7 @@
 TERM = "xterm-256color" # not all shells recognize "alacritty" value
 
 [general]
-import = ["./themes/tokyo_night.toml"]
+import = ["./themes/kanagawa-dragon.toml"]
 live_config_reload = true
 
 [window]
@@ -41,3 +41,4 @@ bindings = [
   # `extended-keys always` will pass through to inner applications (e.g., OpenCode CLI).
   { key = "Return", mods = "Shift", chars = "\u001b[13;2u" }
 ]
+

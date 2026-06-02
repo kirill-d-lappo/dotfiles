@@ -7,38 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "semantic_tokens": "combined",
   "cli_default_open_behavior": "existing_window",
   "buffer_font_features": {
-    "calt": false // Disable ligatures
+    "calt": false, // Disable ligatures
   },
   "agent_servers": {},
   "icon_theme": {
     "mode": "light",
     "light": "VSCode Icons for Zed (Dark Official Icons)",
-    "dark": "VSCode Icons for Zed (Dark Official Icons)"
+    "dark": "VSCode Icons for Zed (Dark Official Icons)",
   },
   "session": {
     "trust_all_worktrees": true,
   },
   "vertical_scroll_margin": 1.0,
-  "buffer_font_fallbacks": [
-    ".ZedMono",
-    "Aptos Mono"
-  ],
+  "buffer_font_fallbacks": [".ZedMono", "Aptos Mono"],
   "file_types": {
-    "xml": [
-      "*Directory.Build.props",
-      "*Directory.Packages.props",
-      "NuGet.Config",
-      "*.csproj",
-    ],
-    "dotenv": [
-      ".env*"
-    ],
-    "TOML": [
-      "Cargo.lock"
-    ]
+    "xml": ["*Directory.Build.props", "*Directory.Packages.props", "NuGet.Config", "*.csproj"],
+    "dotenv": [".env*"],
+    "TOML": ["Cargo.lock"],
   },
   "show_whitespaces": "trailing",
   "show_edit_predictions": true,
@@ -60,7 +57,7 @@
   "theme": {
     "mode": "dark",
     "light": "One Light",
-    "dark": "One Dark Vivid [Gen]"
+    "dark": "One Dark Vivid [Gen]",
   },
   "inlay_hints": {
     "enabled": false,
@@ -70,18 +67,16 @@
     "show_background": true,
   },
   "preferred_line_length": 120,
-  "wrap_guides": [
-    80,
-    120
-  ],
+  "wrap_guides": [80, 120],
   "diagnostics": {
+    "button": false,
     "inline": {
       "enabled": true,
     },
   },
   "tab_bar": {
     "show": false,
-    "show_nav_history_buttons": false,
+    "show_nav_history_buttons": true,
     "show_tab_bar_buttons": false,
   },
   "tabs": {
@@ -98,11 +93,11 @@
     "git_gutter": "tracked_files",
     "enable_diff": true,
     "blame": {
-      "show_avatar": true
-    }
+      "show_avatar": true,
+    },
   },
   "format_on_save": "on",
-  "formatter": "language_server",
+  "formatter": "auto",
   "autosave": {
     "after_delay": {
       "milliseconds": 5000,
@@ -131,30 +126,31 @@
     "**/.DS_Store",
     "**/Thumbs.db",
     "**/.classpath",
-    "**/.settings"
+    "**/.settings",
   ],
   // C# class field color - maps LSP "field" semantic token to the "field" style in the theme
   "global_lsp_settings": {
     "semantic_token_rules": [
       {
         "token_type": "field",
-        "style": [
-          "field"
-        ]
-      }
-    ]
+        "style": ["field"],
+      },
+    ],
   },
   "languages": {
+    "Markdown": {
+      "ensure_final_newline_on_save": true,
+      "format_on_save": "on",
+      "soft_wrap": "none",
+    },
     "PHP": {
       "formatter": {
         "external": {
           "command": "vendor/bin/pint",
-          "arguments": [
-            "{buffer_path}"
-          ]
-        }
+          "arguments": ["{buffer_path}"],
+        },
       },
-      "format_on_save": "on"
-    }
-  }
+      "format_on_save": "on",
+    },
+  },
 }
