@@ -1,0 +1,40 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Kirill Lappo
+	email = kirill-lappo@outlook.com
+
+[alias]
+	amend = commit --amend --no-edit
+	lol = log --pretty=format:'%x09%x09 %Cred%h%Creset -%Creset %<(60,trunc)%s%Cgreen%<(13,trunc)(%cr) %C(bold blue)%<(15,trunc)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit --graph
+
+[core]
+	editor = nvim -n --clean
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	syntax-theme = Dracula
+	line-numbers = true
+	side-by-side = false
+	navigate = true
+	light = false
+	tabs = 2
+
+[merge]
+	conflictstyle = zdiff3
+
+[diff]
+	colorMoved = default
+
+[fetch]
+	prune = true
+  pruneTags = true
+
+[push]
+	autoSetupRemote = true
+
+[init]
+	defaultBranch = main
+
