@@ -34,10 +34,10 @@ input {
 //        off
         tap
         natural-scroll
-				disabled-on-external-mouse
-				// disable when typing
+				// disabled-on-external-mouse
+				// Note [2026-06-04 klappo] disable when typing
 				dwt
-				// disable when traclkpoint
+				// Note [2026-06-04 klappo] disable when trackpoint
 				dwtp
     }
 
