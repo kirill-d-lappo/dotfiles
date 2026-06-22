@@ -8,13 +8,13 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "outline_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "collaboration_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "git_panel": {
-    "dock": "left"
+    "dock": "left",
   },
   "semantic_tokens": "combined",
   "cli_default_open_behavior": "existing_window",
@@ -33,7 +33,7 @@
   "vertical_scroll_margin": 1.0,
   "buffer_font_fallbacks": [".ZedMono", "Aptos Mono"],
   "file_types": {
-    "xml": ["*Directory.Build.props", "*Directory.Packages.props", "NuGet.Config", "*.csproj"],
+    "XML": ["props", "NuGet.Config", "csproj"],
     "dotenv": [".env*"],
     "TOML": ["Cargo.lock"],
   },
