@@ -3,17 +3,8 @@
   "editor.fontFamily": "'FiraCode Nerd Font','Droid Sans Mono', 'monospace', monospace",
   "editor.renderWhitespace": "trailing",
   "files.trimTrailingWhitespace": true,
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
   "redhat.telemetry.enabled": false,
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "explorer.confirmDelete": false,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
   "editor.inlineSuggest.enabled": true,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -88,32 +79,15 @@
       "icon": "bug"
     }
   },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "mssql.connections": [],
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
   "workbench.editor.showTabs": "none",
-  "workbench.colorTheme": "One Dark Vivid [Gen]",
   "editor.cursorSurroundingLinesStyle": "all",
   "editor.cursorSurroundingLines": 1,
   "files.associations": {
     "*.csproj": "xml",
     ".env*": "dotenv"
   },
-  "csharp.debug.justMyCode": false,
-  "terminal.integrated.commandsToSkipShell": [
-    "language-julia.interrupt"
-  ],
-  "julia.symbolCacheDownload": true,
-  "julia.enableTelemetry": false,
   "markdown-preview-enhanced.previewTheme": "github-light.css",
   "window.dialogStyle": "custom",
-  "[nginx]": {
-    "editor.defaultFormatter": "raynigon.nginx-formatter"
-  },
   "powershell.promptToUpdatePowerShell": false,
   "csv-edit.disableBorders": true,
   "csv-edit.writeOption_hasHeader": "true",
@@ -130,31 +104,22 @@
     "https://opencode.ai/": true,
     "https://raw.githubusercontent.com/devcontainers/spec/": true,
     "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/petabridge/Incrementalist/dev/src/Incrementalist.Cmd/Config/incrementalist.schema.json": true,
     "https://schemastore.azurewebsites.net/": true,
     "https://www.schemastore.org/": true
   },
-  "[shellscript]": {
-    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
-  },
-  "cSpell.userWords": [
-    "envsubst",
-    "healthcheck",
-    "klappo",
-    "Laravel",
-    "Ledning",
-    "RECAPTCHA",
-    "sendgrid",
-    "Timecheck",
-    "timetjek",
-    "VITE",
-    "WWWGROUP",
-    "WWWUSER"
-  ],
   "powershell.debugging.createTemporaryIntegratedConsole": true,
   "terminal.integrated.defaultProfile.linux": "bash",
   "editor.formatOnSave": true,
-  "laravel-pint.enable": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 2000,
-  "workbench.activityBar.location": "top"
+  "workbench.activityBar.location": "top",
+  "window.newWindowProfile": "Default",
+  "todo-tree.ripgrep.ripgrep": "rg",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.colorTheme": "One Dark Vivid [Gen]",
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "julia.symbolCacheDownload": true
 }
