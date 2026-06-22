@@ -346,3 +346,10 @@ window-rule{
 
 }
 
+window-rule {
+  match app-id="cursor"
+
+	open-fullscreen false
+	open-maximized-to-edges false
+	open-maximized true
+}
