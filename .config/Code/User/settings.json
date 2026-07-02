@@ -12,41 +12,41 @@
         "scope": "log.error",
         "settings": {
           "foreground": "#af1f1f",
-          "fontStyle": "bold"
-        }
+          "fontStyle": "bold",
+        },
       },
       {
         "scope": "log.warning",
         "settings": {
-          "foreground": "#f4ad42"
-        }
+          "foreground": "#f4ad42",
+        },
       },
       {
         "scope": "log.info",
         "settings": {
-          "foreground": "#66D3FA"
-        }
+          "foreground": "#66D3FA",
+        },
       },
       {
         "scope": "log.date",
         "settings": {
           "foreground": "#418ba7",
-          "fontStyle": "bold"
-        }
+          "fontStyle": "bold",
+        },
       },
       {
         "scope": "log.string",
         "settings": {
-          "foreground": "#cfc45c"
-        }
+          "foreground": "#cfc45c",
+        },
       },
       {
         "scope": "keyword.other.dotenv",
         "settings": {
-          "foreground": "#FF000000"
-        }
-      }
-    ]
+          "foreground": "#FF000000",
+        },
+      },
+    ],
   },
   "todo-tree.general.tags": [
     "todo",
@@ -58,33 +58,33 @@
   "todo-tree.highlights.defaultHighlight": {
     "foreground": "#F8DE7E",
     "icon": "file-directory",
-    "type": "text"
+    "type": "text",
   },
   "todo-tree.highlights.customHighlight": {
     "note": {
       "foreground": "#c4efff",
       "background": "#002c3a",
-      "icon": "note"
+      "icon": "note",
     },
     "todo": {
       "foreground": "#22c4ff",
-      "icon": "comment"
+      "icon": "comment",
     },
     "fixme": {
       "foreground": "#FFA500",
-      "icon": "flame"
+      "icon": "flame",
     },
     "bug": {
       "foreground": "#E84855",
-      "icon": "bug"
-    }
+      "icon": "bug",
+    },
   },
   "workbench.editor.showTabs": "none",
   "editor.cursorSurroundingLinesStyle": "all",
   "editor.cursorSurroundingLines": 1,
   "files.associations": {
     "*.csproj": "xml",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
   },
   "markdown-preview-enhanced.previewTheme": "github-light.css",
   "window.dialogStyle": "custom",
@@ -93,7 +93,6 @@
   "csv-edit.writeOption_hasHeader": "true",
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "julia.enableCrashReporter": false,
   "json.schemaDownload.trustedDomains": {
@@ -106,7 +105,7 @@
     "https://raw.githubusercontent.com/microsoft/vscode/": true,
     "https://raw.githubusercontent.com/petabridge/Incrementalist/dev/src/Incrementalist.Cmd/Config/incrementalist.schema.json": true,
     "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true
+    "https://www.schemastore.org/": true,
   },
   "powershell.debugging.createTemporaryIntegratedConsole": true,
   "terminal.integrated.defaultProfile.linux": "bash",
@@ -115,11 +114,19 @@
   "files.autoSaveDelay": 2000,
   "workbench.activityBar.location": "top",
   "window.newWindowProfile": "Default",
-  "todo-tree.ripgrep.ripgrep": "rg",
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.colorTheme": "One Dark Vivid [Gen]",
   "terminal.integrated.commandsToSkipShell": [
     "language-julia.interrupt"
   ],
-  "julia.symbolCacheDownload": true
+  "julia.symbolCacheDownload": true,
+  "laravel-pint.enable": true,
+  "workbench.iconTheme": "vscode-icons",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "workbench.colorTheme": "One Dark Vivid",
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+  },
 }

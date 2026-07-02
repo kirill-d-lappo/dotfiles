@@ -4,7 +4,7 @@
 prefer-no-csd
 
 window-rule {
-  geometry-corner-radius 4
+  geometry-corner-radius 6
   clip-to-geometry true
 }
 
@@ -202,7 +202,6 @@ window-rule {
     match app-id=r#"^org\.gnome\."#
 
     draw-border-with-background false
-    geometry-corner-radius 4
     clip-to-geometry true
 }
 
