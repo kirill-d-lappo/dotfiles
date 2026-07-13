@@ -129,4 +129,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
   },
+  "Devdb.colorTheme": "dark",
+  "Devdb.enableCodeLensForTextSelection": false,
+  "git.blame.editorDecoration.enabled": false,
 }
