@@ -11,7 +11,7 @@ layout {
         inactive-color "#505050"
     }
 
-    default-column-width { proportion 0.5; }
+    default-column-width { proportion 0.75; }
 
 		// Note [2026-04-16 klappo] background color covers background completely
     // background-color "#0b2958"
@@ -34,7 +34,7 @@ layout {
     // disabled
     border {
         off
-        width 4
+        width 1
         active-color   "#707070"      // Neutral gray
         inactive-color "#d0d0d0"      // Light gray
         urgent-color   "#cc4444"      // Softer red

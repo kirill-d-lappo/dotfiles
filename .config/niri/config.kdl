@@ -5,6 +5,7 @@
 
 environment {
   XDG_CURRENT_DESKTOP "niri"
+  QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
 // Note [2026/02/03 klappo] show or not show help message at start
@@ -35,14 +36,14 @@ debug {
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-include "dms/colors.kdl"
-include "dms/alttab.kdl"
-include "dms/binds.kdl"
-include "dms/cursor.kdl"
-include "dms/layout.kdl"
-include "dms/outputs.kdl"
-include "dms/wpblur.kdl"
 include "dms/windowrules.kdl"
+
+include optional=true "dms/colors.kdl"
+include optional=true "dms/layout.kdl"
+include optional=true "dms/alttab.kdl"
+include optional=true "dms/binds.kdl"
+include optional=true "dms/outputs.kdl"
+include optional=true "dms/cursor.kdl"
 
 include "user/input.kdl"
 include "user/output.kdl"
@@ -52,3 +53,4 @@ include "user/binds.kdl"
 include "user/animations.kdl"
 include "user/recent-windows.kdl"
 include "user/startup.kdl"
+
