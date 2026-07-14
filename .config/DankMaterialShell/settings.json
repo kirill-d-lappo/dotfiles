@@ -613,14 +613,7 @@
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
-  "connectedFrameBarStyleBackups": {
-    "default": {
-      "shadowIntensity": 0,
-      "squareCorners": false,
-      "gothCornersEnabled": false,
-      "borderEnabled": true
-    }
-  },
+  "connectedFrameBarStyleBackups": {},
   "barConfigs": [
     {
       "id": "default",
@@ -719,7 +712,7 @@
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
-      "borderEnabled": false,
+      "borderEnabled": true,
       "borderColor": "secondary",
       "borderOpacity": 0.4,
       "borderThickness": 1,
@@ -882,7 +875,7 @@
   ],
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
-  "frameEnabled": true,
+  "frameEnabled": false,
   "frameThickness": 14,
   "frameRounding": 8,
   "frameColor": "",
@@ -893,7 +886,7 @@
   "frameBarSize": 40,
   "frameShowOnOverview": true,
   "frameBlurEnabled": true,
-  "frameCloseGaps": true,
+  "frameCloseGaps": false,
   "frameLauncherEmergeSide": "bottom",
   "frameLauncherArcExtender": true,
   "frameLauncherEdgeHover": true,

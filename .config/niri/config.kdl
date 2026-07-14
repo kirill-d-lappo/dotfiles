@@ -36,8 +36,6 @@ debug {
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-include "dms/windowrules.kdl"
-
 include optional=true "dms/colors.kdl"
 include optional=true "dms/layout.kdl"
 include optional=true "dms/alttab.kdl"
@@ -45,12 +43,4 @@ include optional=true "dms/binds.kdl"
 include optional=true "dms/outputs.kdl"
 include optional=true "dms/cursor.kdl"
 
-include "user/input.kdl"
-include "user/output.kdl"
-include "user/layout.kdl"
-include "user/window-rules.kdl"
-include "user/binds.kdl"
-include "user/animations.kdl"
-include "user/recent-windows.kdl"
-include "user/startup.kdl"
-
+include "user/config.kdl"
