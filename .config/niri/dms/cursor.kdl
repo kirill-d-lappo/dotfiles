@@ -4,7 +4,6 @@
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
 cursor {
-    xcursor-theme "We10XOS-cursors"
-    xcursor-size 33
-    hide-when-typing
+    xcursor-theme "Win7Bulid-cursors"
+    xcursor-size 24
 }
