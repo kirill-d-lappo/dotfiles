@@ -18,7 +18,8 @@ binds {
     Mod+T hotkey-overlay-title="Open a Telegram" { spawn "Telegram"; }
 
 		// Note [2026-03-29 klappo] works only for dms
-    Ctrl+Alt+L repeat=false hotkey-overlay-title="Lock screen (dms)" { spawn-sh "dms ipc call lock lock"; }
+    // Ctrl+Alt+L repeat=false hotkey-overlay-title="Lock screen (dms)" { spawn-sh "dms ipc call lock lock"; }
+    Alt+L repeat=false hotkey-overlay-title="Lock screen (dms)" { spawn-sh "dms ipc call lock lock"; }
 
 
     Win+E hotkey-overlay-title="Open Files (nemo, nautiluse, etc)" { spawn-sh "nautilus || nemo"; }
