@@ -3,6 +3,8 @@
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
+prefer-no-csd
+
 environment {
   XDG_CURRENT_DESKTOP "niri"
 }

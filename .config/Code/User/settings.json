@@ -132,4 +132,5 @@
   "Devdb.colorTheme": "dark",
   "Devdb.enableCodeLensForTextSelection": false,
   "git.blame.editorDecoration.enabled": false,
+  "markdown-preview-enhanced.codeBlockTheme": "default.css",
 }
