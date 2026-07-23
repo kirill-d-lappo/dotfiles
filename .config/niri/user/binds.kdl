@@ -8,6 +8,9 @@ binds {
     // Spawns power menu
     Mod+P hotkey-overlay-title="Power Off Menu" allow-when-locked=false repeat=false { spawn-sh "dms ipc call powermenu open"; }
 
+    // Toggles notification menu
+    Mod+N hotkey-overlay-title="Toggle notifications window" allow-when-locked=false repeat=false { spawn-sh "dms ipc call notifications toggle"; }
+
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
     Ctrl+Alt+T hotkey-overlay-title="Open a Terminal (alacritty)" { spawn "alacritty"; }
