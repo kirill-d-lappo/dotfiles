@@ -48,12 +48,7 @@
       },
     ],
   },
-  "todo-tree.general.tags": [
-    "todo",
-    "bug",
-    "fixme",
-    "note"
-  ],
+  "todo-tree.general.tags": ["todo", "bug", "fixme", "note"],
   "todo-tree.regex.regexCaseSensitive": false,
   "todo-tree.highlights.defaultHighlight": {
     "foreground": "#F8DE7E",
@@ -116,12 +111,9 @@
   "window.newWindowProfile": "Default",
   "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "terminal.integrated.commandsToSkipShell": [
-    "language-julia.interrupt"
-  ],
+  "terminal.integrated.commandsToSkipShell": ["language-julia.interrupt"],
   "julia.symbolCacheDownload": true,
   "laravel-pint.enable": true,
-  "workbench.iconTheme": "vscode-icons",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
@@ -133,4 +125,5 @@
   "Devdb.enableCodeLensForTextSelection": false,
   "git.blame.editorDecoration.enabled": false,
   "markdown-preview-enhanced.codeBlockTheme": "default.css",
+  "workbench.iconTheme": "vscode-icons",
 }
