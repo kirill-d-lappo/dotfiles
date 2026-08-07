@@ -134,10 +134,10 @@ window-rule {
 window-rule {
 	match app-id=r#"^org.telegram.desktop.*"# title="Media viewer"
 
-	open-floating true
+	open-floating false
   default-column-width { proportion 0.25; }
   default-floating-position x=4 y=4 relative-to="bottom-right"
-  opacity 0.90
+  // opacity 0.90
 }
 
 window-rule {
