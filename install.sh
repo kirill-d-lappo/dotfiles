@@ -2,55 +2,6 @@
 
 set -e
 
-function config_git() {
-  # now general git configuration on a clean system, still doesn't break much on existing one
-  echo "Configuring git ...."
-
-  # setup name and email only when setup from scratch
-  if [[ "$(git config --global user.name)" == "" ]]; then
-    git config --global user.name "Kirill Lappo"
-  fi
-
-  if [[ "$(git config --global user.email)" == "" ]]; then
-    git config --global user.email "kirill-lappo@outlook.com"
-  fi
-
-  # "git amend": so you can meld working changes into latest commit (any other commit as well, but usually latest)
-  # "git amend -a": add everything to the latest commit, who cares
-  git config --global alias.amend "commit --amend --no-edit"
-
-  # "git lol": git history with graph and pretty format, lol ie log-one-line
-  # "git lol -a": show all branches
-  git config --global alias.lol "log --pretty=format:'%x09%x09 %Cred%h%Creset -%Creset %<(60,trunc)%s%Cgreen%<(13,trunc)(%cr) %C(bold blue)%<(15,trunc)<%an>%Creset %C(yellow)%d%Creset' --abbrev-commit --graph"
-
-  # edit messages using basic nvim, without plugins
-  git config --global core.editor "nvim -n --clean"
-
-  # using delta as a pager and diff tool
-  git config --global core.pager "delta"
-  git config --global interactive.diffFilter "delta --color-only"
-
-  git config --global delta.syntax-theme "Dracula"
-  git config --global delta.line-numbers "true"
-  git config --global delta.side-by-side "false"
-  git config --global delta.navigate "true"
-  git config --global delta.light "false"
-  git config --global delta.tabs 2
-
-  git config --global merge.conflictstyle zdiff3
-  git config --global diff.colorMoved default
-
-  # no need to prune everything manually at fetch/pull
-  git config --global fetch.prune true
-  git config --global fetch.pruneTags true
-
-  # just do "git push" and git will create remote branch and set it as upstream to your local branch
-  git config --global push.autoSetupRemote true
-
-  # default branch, PC my ass
-  git config --global init.defaultBranch main
-}
-
 function main() {
 
   REMOTE_CONFIG_REPO_URL="https://github.com/kirill-d-lappo/dotfiles.git"
@@ -133,19 +84,19 @@ function main() {
 
   cd -
 
-  config_git
-
   cargo_tools=("bat" "zoxide" "starship" "eza" "alacritty" "git-delta") # install cargo tools
   if has_command cargo; then
     echo "Installing helper tools using cargo"
     echo ""
 
     cargo install ${cargo_tools[*]}
-  else
+  elif has_command pacman; then
     echo "Installing helper tools using pacman"
     echo ""
 
-    sudo pacman -Sy install ${cargo_tools[*]}
+    sudo pacman -Sy ${cargo_tools[*]}
+  else
+    echo "Can't install tools"
   fi
 
   echo ""
