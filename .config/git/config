@@ -2,6 +2,14 @@
 [user]
 	name = Kirill Lappo
 	email = kirill-lappo@outlook.com
+  ; Example, need to specify per workplace in ~/.gitconfig
+	; signingkey = /home/klappo/.ssh/id_ed25519.pub
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
 
 [alias]
 	amend = commit --amend --no-edit
