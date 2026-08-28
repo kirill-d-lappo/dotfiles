@@ -151,4 +151,6 @@
   "dotnet.preferCSharpExtension": true,
   "dotnet.fileBasedApps.enableAutomaticDiscovery": true,
   "dotnet.enableXamlTools": false,
+  "intelephense.environment.phpVersion": "8.4.0",
+  "php.suggest.basic": false,
 }
