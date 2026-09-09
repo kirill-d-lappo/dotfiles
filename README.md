@@ -6,14 +6,6 @@
 - stow
 - curl
 
-## DE Requirements
-
-- swaync
-- swaybg
-- fuzzel
-- niri
-- waybar
-
 ## Installation
 
 ### Install Existing Dotfiles
