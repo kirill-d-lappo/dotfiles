@@ -11,7 +11,7 @@
 ### Install Existing Dotfiles
 
 ```bash
-curl -LSsf https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/install.sh | bash
+bash <(curl -LSsf https://raw.githubusercontent.com/kirill-d-lappo/dotfiles/refs/heads/main/install.sh)
 ```
 
 ## Sources
