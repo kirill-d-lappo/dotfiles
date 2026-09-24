@@ -1,2 +1,7 @@
 .dotfiles/
 .dotfiles.git/
+
+.config/Code
+!.config/Code/User/keybindings.json
+!.config/Code/User/settings.json
+!.config/Code/User/snippets/global-snips.code-snippets

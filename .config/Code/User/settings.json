@@ -1,156 +1,226 @@
 {
-  "window.titleBarStyle": "custom",
-  "editor.fontFamily": "'FiraCode Nerd Font','Droid Sans Mono', 'monospace', monospace",
-  "editor.renderWhitespace": "trailing",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.fontFamily": "FiraCode Nerd Font Mono",
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": false,
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 2,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnSave": true,
   "files.trimTrailingWhitespace": true,
-  "redhat.telemetry.enabled": false,
-  "explorer.confirmDelete": false,
-  "editor.inlineSuggest.enabled": true,
+  "files.associations": {
+    "*.DotSettings": "xml"
+  },
+  "terminal.integrated.fontWeight": "300",
+  "terminal.integrated.fontWeightBold": "400",
+  "git-graph.repository.commits.fetchAvatars": true,
+  "git-graph.repository.commits.initialLoad": 100,
+  "powershell.promptToUpdatePowerShell": false,
+  "workbench.iconTheme": "vscode-icons",
+  "telemetry.telemetryLevel": "error",
+  "todo-tree.general.tags": [
+    "todo",
+    "bug",
+    "fixme"
+  ],
+  "todo-tree.regex.regexCaseSensitive": false,
+  "todo-tree.highlights.defaultHighlight": {
+    "fontStyle": "italic",
+    "foreground": "#F8DE7E",
+    "icon": "file-directory",
+    "type": "text"
+  },
+  "todo-tree.highlights.customHighlight": {
+    "todo": {
+      "foreground": "#66D3FA",
+      "icon": "comment"
+    },
+    "fixme": {
+      "foreground": "#FFA500",
+      "icon": "flame"
+    },
+    "bug": {
+      "foreground": "#E84855",
+      "icon": "bug"
+    }
+  },
+  "editor.bracketPairColorization.enabled": true,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
         "scope": "log.error",
         "settings": {
           "foreground": "#af1f1f",
-          "fontStyle": "bold",
-        },
+          "fontStyle": "bold"
+        }
       },
       {
         "scope": "log.warning",
         "settings": {
-          "foreground": "#f4ad42",
-        },
+          "foreground": "#f4ad42"
+        }
       },
       {
         "scope": "log.info",
         "settings": {
-          "foreground": "#66D3FA",
-        },
+          "foreground": "#66D3FA"
+        }
       },
       {
         "scope": "log.date",
         "settings": {
           "foreground": "#418ba7",
-          "fontStyle": "bold",
-        },
+          "fontStyle": "bold"
+        }
       },
       {
         "scope": "log.string",
         "settings": {
-          "foreground": "#cfc45c",
-        },
-      },
-      {
-        "scope": "keyword.other.dotenv",
-        "settings": {
-          "foreground": "#FF000000",
-        },
-      },
-    ],
+          "foreground": "#cfc45c"
+        }
+      }
+    ]
   },
-  "todo-tree.general.tags": [
-    "todo",
-    "bug",
-    "fixme",
-    "note"
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "markdown.styles": [
+    "https://use.fontawesome.com/releases/v5.7.1/css/all.css"
   ],
-  "todo-tree.regex.regexCaseSensitive": false,
-  "todo-tree.highlights.defaultHighlight": {
-    "foreground": "#F8DE7E",
-    "icon": "file-directory",
-    "type": "text",
+  "workbench.colorTheme": "One Dark Vivid",
+  "git.mergeEditor": true,
+  "window.commandCenter": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "todo-tree.highlights.customHighlight": {
-    "note": {
-      "foreground": "#c4efff",
-      "background": "#002c3a",
-      "icon": "note",
-    },
-    "todo": {
-      "foreground": "#22c4ff",
-      "icon": "comment",
-    },
-    "fixme": {
-      "foreground": "#FFA500",
-      "icon": "flame",
-    },
-    "bug": {
-      "foreground": "#E84855",
-      "icon": "bug",
-    },
+  "editor.minimap.size": "fill",
+  "editor.minimap.showSlider": "always",
+  "terminal.integrated.shellIntegration.enabled": true,
+  "git.branchProtection": [
+    "main",
+    "master",
+    "dev",
+    "release*"
+  ],
+  "redhat.telemetry.enabled": false,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "workbench.editor.showTabs": "none",
-  "editor.cursorSurroundingLinesStyle": "all",
-  "editor.cursorSurroundingLines": 1,
-  "files.associations": {
-    "*.csproj": "xml",
-    ".env*": "dotenv",
+  "[handlebars]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "markdown-preview-enhanced.previewTheme": "github-light.css",
-  "window.dialogStyle": "custom",
-  "powershell.promptToUpdatePowerShell": false,
-  "csv-edit.disableBorders": true,
-  "csv-edit.writeOption_hasHeader": "true",
+  "editor.largeFileOptimizations": false,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.shellIntegration.decorationsEnabled": "overviewRuler",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+    "CONTAINSTABLE",
+    "FREETEXT",
+    "FREETEXTTABLE",
+    "Linq",
+    "NOLOCK",
+    "nstarts",
+    "Unmanaged",
+    "денормализировать",
+    "коммите",
+    "мьютекса",
+    "некластеризованного",
+    "Некластеризованные",
+    "некластеризованный",
+    "подзапросов",
+    "потокобезопасный",
+    "сфокусированности"
+  ],
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "ms-mssql.mssql"
+  },
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "terminal.integrated.defaultProfile.linux": "pwsh",
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    },
+    "nu": {
+      "path": "nu",
+      "icon": "terminal-bash"
+    }
+  },
+  "Lua.diagnostics.libraryFiles": "Enable",
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
   "python.defaultInterpreterPath": "/usr/bin/python3",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "workbench.startupEditor": "none",
-  "julia.enableCrashReporter": false,
-  "json.schemaDownload.trustedDomains": {
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://models.dev/model-schema.json": true,
-    "https://opencode.ai/": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://raw.githubusercontent.com/petabridge/Incrementalist/dev/src/Incrementalist.Cmd/Config/incrementalist.schema.json": true,
-    "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "powershell.debugging.createTemporaryIntegratedConsole": true,
-  "terminal.integrated.defaultProfile.linux": "bash",
-  "editor.formatOnSave": true,
-  "files.autoSave": "afterDelay",
-  "files.autoSaveDelay": 2000,
-  "workbench.activityBar.location": "top",
-  "window.newWindowProfile": "Default",
-  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
-  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
+  },
+  "explorer.confirmDelete": false,
   "terminal.integrated.commandsToSkipShell": [
     "language-julia.interrupt"
   ],
   "julia.symbolCacheDownload": true,
-  "laravel-pint.enable": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "julia.enableTelemetry": false,
+  "evenBetterToml.formatter.alignEntries": true,
+  "evenBetterToml.formatter.alignComments": true,
+  "evenBetterToml.formatter.arrayAutoCollapse": true,
+  "evenBetterToml.formatter.allowedBlankLines": 2,
+  "evenBetterToml.formatter.arrayTrailingComma": true,
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
-  "workbench.colorTheme": "One Dark Vivid",
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-  },
-  "Devdb.colorTheme": "dark",
-  "Devdb.enableCodeLensForTextSelection": false,
-  "git.blame.editorDecoration.enabled": false,
-  "markdown-preview-enhanced.codeBlockTheme": "default.css",
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.editorAssociations": {
-    "*.copilotmd": "vscode.markdown.preview.editor",
-    "{git,gitlens,chat-editing-snapshot-text-model,copilot,git-graph,git-graph-3}:/**/*.qrc": "default",
-    "*.qrc": "qt-core.qrcEditor"
-  },
-  "qt-core.additionalQtPaths": [
-    {
-      "name": "Qt-5.15.19-linux-g++-x86_64_from_PATH",
-      "path": "/usr/bin/qmake"
-    }
-  ],
-  "[jsonc]": {
+  "csv-edit.readOption_hasHeader": "true",
+  "[snippets]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "chat.viewSessions.orientation": "stacked",
-  "dotnet.preferCSharpExtension": true,
-  "dotnet.fileBasedApps.enableAutomaticDiscovery": true,
-  "dotnet.enableXamlTools": false,
-  "intelephense.environment.phpVersion": "8.4.0",
-  "php.suggest.basic": false,
+  "update.showReleaseNotes": false,
+  "chat.agent.enabled": false,
+  "workbench.editor.showTabs": "none",
+  "mssql.connectionGroups": [
+    {
+      "name": "ROOT",
+      "id": "ROOT"
+    }
+  ],
+  "editor.unicodeHighlight.allowedLocales": {
+    "ru": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
