@@ -94,7 +94,7 @@ function main() {
     echo "Installing helper tools using pacman"
     echo ""
 
-    sudo pacman -Syy ${cargo_tools[*]}
+    sudo pacman -Syy --noconfirm ${cargo_tools[*]}
   else
     echo "Can't install tools"
   fi
