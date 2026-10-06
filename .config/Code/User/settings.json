@@ -150,12 +150,11 @@
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
-  "terminal.integrated.defaultProfile.linux": "pwsh",
+  "terminal.integrated.defaultProfile.linux": "bash",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.profiles.linux": {
     "bash": {
-      "path": "bash",
-      "icon": "terminal-bash"
+      "path": "/usr/bin/bash"
     },
     "zsh": {
       "path": "zsh"
@@ -222,5 +221,5 @@
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  }
+  },
 }

@@ -13,4 +13,14 @@ if ($IsWindows) {
 
 . "$PSScriptRoot/PowerShell.Utils.ps1"
 
-Set-PSReadlineKeyHandler -Key Tab -Function Complete
+# --- PSReadLine ---
+Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+Set-PSReadLineOption -MaximumHistoryCount 10000
+
+Set-PSReadLineKeyHandler -Key Tab       -Function Complete
+Set-PSReadLineKeyHandler -Key UpArrow   -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+Set-PSReadLineKeyHandler -Key Ctrl+d    -Function DeleteCharOrExit
+
