@@ -4,6 +4,9 @@
 
 --theme="DarkNeon"
 
+# Exclude line numbers from default setup
+--style=changes,grid,header-filename,snip
+
 # Custom profile settings from dotfiles repo
 --map-syntax ".dotfiles_profile:Bourne Again Shell (bash)"
 --map-syntax ".local_profile:Bourne Again Shell (bash)"
