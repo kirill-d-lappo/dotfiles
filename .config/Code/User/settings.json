@@ -44,6 +44,7 @@
       "icon": "bug"
     }
   },
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "editor.bracketPairColorization.enabled": true,
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -201,7 +202,15 @@
   "evenBetterToml.formatter.allowedBlankLines": 2,
   "evenBetterToml.formatter.arrayTrailingComma": true,
   "[rust]": {
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": true,
+      "strings": true
+    },
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.parameterHints.cycle": false,
+    "editor.parameterHints.enabled": true
   },
   "csv-edit.readOption_hasHeader": "true",
   "[snippets]": {
@@ -222,4 +231,7 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "zenMode.centerLayout": true,
+  "workbench.editor.centeredLayoutFixedWidth": true,
+  "workbench.editor.centeredLayoutAutoResize": true,
 }

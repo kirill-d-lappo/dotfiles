@@ -1,0 +1,38 @@
+// This config is in the KDL format: https://kdl.dev
+// "/-" comments out the following node.
+// Check the wiki for a full description of the configuration:
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+prefer-no-csd
+
+environment {
+  XDG_CURRENT_DESKTOP "niri"
+}
+
+// Note [2026/02/03 klappo] show or not show help message at start
+hotkey-overlay {
+    // skip-at-startup
+}
+
+// config-notification {
+//     disable-failed
+// }
+
+gestures {
+    hot-corners {
+        off
+    }
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+

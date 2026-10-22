@@ -1,7 +1,8 @@
 // Full list of defaults: https://github.com/YaLTeR/niri/wiki/Getting-Started#main-default-hotkeys
 binds {
 
-    Mod+Shift+Slash { show-hotkey-overlay; }
+    // Note [2026-10-22 klappo] disabled; will try to use DMS's Keybinds Cheatsheet
+    // Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Shift+E { quit; }
     Mod+Shift+P { power-off-monitors; }
 

@@ -31,5 +31,9 @@
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward",
         "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.saveAll"
     }
 ]

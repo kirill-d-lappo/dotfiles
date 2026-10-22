@@ -1,47 +1,6 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-// Check the wiki for a full description of the configuration:
-// https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+// Duke (DMS) config entrypoint
+include optional=true "dms.kdl"
 
-prefer-no-csd
+// User config entrypoint
+include optional=true "user/config.kdl"
 
-environment {
-  XDG_CURRENT_DESKTOP "niri"
-}
-
-// Note [2026/02/03 klappo] show or not show help message at start
-hotkey-overlay {
-    // skip-at-startup
-}
-
-// config-notification {
-//     disable-failed
-// }
-
-gestures {
-    hot-corners {
-        off
-    }
-}
-
-overview {
-    workspace-shadow {
-        off
-    }
-}
-
-debug {
-    honor-xdg-activation-with-invalid-serial
-}
-
-
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-
-include optional=true "dms/colors.kdl"
-include optional=true "dms/layout.kdl"
-include optional=true "dms/alttab.kdl"
-include optional=true "dms/binds.kdl"
-include optional=true "dms/outputs.kdl"
-include optional=true "dms/cursor.kdl"
-
-include "user/config.kdl"
