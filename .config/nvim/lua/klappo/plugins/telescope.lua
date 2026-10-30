@@ -5,10 +5,12 @@ return {
 		"nvim-tree/nvim-web-devicons",
 		{
 			"nvim-telescope/telescope-fzf-native.nvim",
-			-- linux build only
-			build = "make",
-			-- windows build only, have to execute manually
-			-- build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release ; cmake --build build --config Release ; cp ./build/Release/libfzf.dll ./build/libfzf.dll",
+			-- linux: uses just make, builds fine
+			-- windows: as of 2026-10-30 it requires manual actions =(
+			build = vim.fn.has("win32") == 1
+					and
+					"cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release ; cmake --build build --config Release ; cp ./build/Release/libfzf.dll ./build/libfzf.dll"
+					or "make",
 		},
 		"folke/todo-comments.nvim",
 		"rcarriga/nvim-notify", -- for some reason telescope can't load notify without that dep time to time
